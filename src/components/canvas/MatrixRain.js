@@ -52,11 +52,15 @@ const MatrixRain = () => {
                 if (y > 0) {
                     // test gradient
                     const gradient = ctx.createLinearGradient(x, y * fontSize - 10, x, y * fontSize + 10);
-                    gradient.addColorStop(0, "#008000");
-                    gradient.addColorStop(0.5, "#00FF00");
-                    gradient.addColorStop(1, "#008000");
-                    // ctx.fillStyle = "#0F0";
-                    ctx.fillStyle = gradient;
+                    
+                    // test 1 zielony jaśniejszy gradient:
+                    // gradient.addColorStop(0, "#00ff00");
+                    // gradient.addColorStop(0.5, "#008000");
+                    // gradient.addColorStop(1, "#008000");
+                    
+                    // wersja basic kolorystyczna bez gradientu
+                    ctx.fillStyle = "#0F0";
+                    // ctx.fillStyle = gradient;
                     ctx.fillText(text, x, y * fontSize);
                 }
 
