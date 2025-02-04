@@ -5,13 +5,20 @@ import TurnOnTitleLetters from "./TurnOnTitleLetters";
 
 function BlackBoard() {
 	const [visible, setVisible] = useState(false);
+	const [isMounted, setIsMounted] = useState(false); 
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
+		const backgroundTimer = setTimeout(() => {
 			setVisible(true);
+			
+			const titleLettersGenerateTimer = setTimeout(()=>{
+				setIsMounted(true);
+			}, 1000);
+
+			return () => clearTimeout(titleLettersGenerateTimer);
 		}, 5000);
 
-		return () => clearTimeout(timer);
+		return () => clearTimeout(backgroundTimer);
 	}, []);
 
 	return (
@@ -23,7 +30,7 @@ function BlackBoard() {
 					animate={{ opacity: 0.85 }}
 					transition={{ duration: 3.1, ease: "easeInOut" }}
 				>
-					<TurnOnTitleLetters />
+					{isMounted && <TurnOnTitleLetters />}
 				</motion.div>
 			)}
 		</>
