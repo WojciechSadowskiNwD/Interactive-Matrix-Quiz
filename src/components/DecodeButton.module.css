@@ -3,11 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 210px;
     height: 52px;
-    margin: 12px;
+    margin: 13px;
     font-size: 18px;
-    /* font-weight: bold; */
     border-radius: 30px;
     background: linear-gradient(145deg, #0f0 10%, #004400 90%);
     border: 2px solid #00ff00;

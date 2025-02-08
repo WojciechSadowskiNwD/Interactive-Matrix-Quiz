@@ -4,22 +4,36 @@ import DecodeButton from "./DecodeButton";
 
 
 export default function ButtonsPanel() {
-	// const [isMounted, setIsMounted] = useState(false);
+	const [mountedBtn, setMountedBtn] = useState(
+		Array(4).fill(false)
+	);
+	const [count, setCount] = useState(0);
+	
 
-	// useEffect(() => {
-	// 	const timer = setTimeout(() => {
-	// 		setIsMounted(true);
-	// 	}, 3000);
+	useEffect(()=>{
 
-	// 	return () => clearTimeout(timer);
-	// }, []);
+		const timer = setTimeout(()=>{
+			if(count<mountedBtn.length){
+				setMountedBtn((prev)=>{
+					const newState = [...prev];
+					newState[count] = true;
+					return newState;
+				})
+				setCount((prev) => prev + 1);
+			}
+		},150);
+
+		return ()=>clearTimeout(timer);
+
+
+	},[count])
 
 	return (
 		<div className={styles.buttonPanelContainer}>
-			<DecodeButton>START</DecodeButton>
-			<DecodeButton>SCORE Board</DecodeButton>
-			<DecodeButton>ABOUT App</DecodeButton>
-			<DecodeButton>ABOUT Dev</DecodeButton>
+			{mountedBtn[0] && <DecodeButton>START</DecodeButton>}
+			{mountedBtn[1] && <DecodeButton>SCORE Board</DecodeButton>}
+			{mountedBtn[2] && <DecodeButton>ABOUT App</DecodeButton>}
+			{mountedBtn[3] && <DecodeButton>ABOUT Dev</DecodeButton>}
 		</div>
 	);
 }
