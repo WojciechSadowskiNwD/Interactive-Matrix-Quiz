@@ -72,17 +72,3 @@ function TurnOnTitleLetters() {
 }
 
 export default TurnOnTitleLetters;
-
-// version basic:
-// return (
-// 	<div className={styles.titleLettersBox}>
-// 		{titleLetters.split("").map((letter, i) => (
-// 			<span
-// 				key={i}
-// 				style={{ visibility: isVisibleLetters[i] ? "visible" : "hidden" }}
-// 			>
-// 				{letter}
-// 			</span>
-// 		))}
-// 	</div>
-// );

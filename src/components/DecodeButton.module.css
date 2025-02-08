@@ -1,0 +1,21 @@
+.RandomCodeButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 52px;
+    margin: 12px;
+    font-size: 18px;
+    /* font-weight: bold; */
+    border-radius: 30px;
+    background: linear-gradient(145deg, #0f0 10%, #004400 90%);
+    border: 2px solid #00ff00;
+    color: #0f0;
+    text-shadow: 0 0 5px #00ff00;
+    text-shadow: 0 0 5px #13d70c;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    font-family: "Courier New", monospace;
+    letter-spacing: 1.2px;
+}

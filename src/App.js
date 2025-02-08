@@ -13,17 +13,19 @@ const App = () => {
 
 export default App;
 
+
+
 // UWAGA
 // 1.5 odtwarzacz, pamiętać dodać po wykonaniu animacji logotypu
 
 
 // INFORMACJE, ZARYS PROJEKTU
 // 1. na czarnym ekranie od góry zaczynają spadać zielone znaki kodu matrixa +
-// * 1.5 *** później to zrobię ---->> uruchamia się odtworzacz muzyki z utworem openingu pierwszego matrixa
+// * 1.5 ***na  później ---->> uruchamia się odtworzacz muzyki z utworem openingu pierwszego matrixa
 // 2. po kilku sekundach tło ciemnieje aż do pełnej czerni
-
 // 3. teraz ucruchamia się animacja generująca/uzupełniająca widoczność liter tytułu aplikacji the matrix. Literki jedna po drugiej pojawiają się ale w różnej niemal przypadkowej kolejności
 // 4. Po uzupełnieniu całego tytułu 'the matrix' rozpocznie się druga animacja. Zza tego tyzułu wysuną się dwa wyrazy. Pierwszy "interactive" pójdzie nad logo. Drugi 'quiz' pójdzie pod logo, przesunięcie bedzie pływające.
+
 // 5. Po zakończeniu tych sekwencji pojawi się też panel dostępnych opcji- linków poniżej.
 // Prawdopodobnie będą to bloczki zielonego koloru z następującymi wartościami: 'START', 'ABOUT DEVELOPER', 'ABOUT THIS APP', "SCORE BOARD"
 // *. O dostępnych przyciskach: START - uruchamia aplikację, ABOUT DEVELOPER - informacje o mnie oraz link do portfolio, również kontakt, ABOUT THIS APP - informacja że przeznaczenie apki jest wyłącznie w celach edukacyjnych oraz poglądowych dla zaprezentowania moich umiejętności, stanowiąc również formę chołdu dla twórców serii tych filmów. Dodatkowo wymienienie jakich rozwiązań użyłem w kodzie, SCORE BOARD - tablica wyników z pobitymi rekordami

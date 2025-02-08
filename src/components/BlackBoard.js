@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
-import styles from "./BlackBoard.module.css";
-import { motion } from "framer-motion";
 import TurnOnTitleLetters from "./TurnOnTitleLetters";
+import ButtonsPanel from "./ButtonsPanel";
+import { motion } from "framer-motion";
+import styles from "./BlackBoard.module.css";
 
 function BlackBoard() {
 	const [visible, setVisible] = useState(false);
-	const [isMounted, setIsMounted] = useState(false); 
+	const [isTitleMounted, setIsTitleMounted] = useState(false); 
+	const [isPanelBtnsMounted, setIsPanelBtnsMounted] = useState(false); 
 
 	useEffect(() => {
 		const backgroundTimer = setTimeout(() => {
 			setVisible(true);
 			
 			const titleLettersGenerateTimer = setTimeout(()=>{
-				setIsMounted(true);
+				setIsTitleMounted(true);
 			}, 1000);
+			const showPanelBtnsTimer = setTimeout(()=>{
+				setIsPanelBtnsMounted(true);
+			}, 5000);
 
-			return () => clearTimeout(titleLettersGenerateTimer);
+			return () => {
+				clearTimeout(titleLettersGenerateTimer);
+				clearTimeout(showPanelBtnsTimer);
+			}
 		}, 5000);
 
 		return () => clearTimeout(backgroundTimer);
@@ -30,7 +38,8 @@ function BlackBoard() {
 					animate={{ opacity: 0.85 }}
 					transition={{ duration: 3.1, ease: "easeInOut" }}
 				>
-					{isMounted && <TurnOnTitleLetters />}
+					{isTitleMounted && <TurnOnTitleLetters />}
+					{isPanelBtnsMounted && <ButtonsPanel/>}
 				</motion.div>
 			)}
 		</>
