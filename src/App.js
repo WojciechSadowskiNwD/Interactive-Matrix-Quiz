@@ -13,8 +13,8 @@ const App = () => {
 
 export default App;
 
-// RWD:
-// 360px/ 375px/ 
+// RWD: px
+// 360/ 375/ 390/ 412/ 576/ 768/ 810/ 992/ 1024/ 1200/
 
 // UWAGA
 // 1.5 odtwarzacz, pamiętać dodać po wykonaniu animacji logotypu

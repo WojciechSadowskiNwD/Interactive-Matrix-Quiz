@@ -1,11 +1,37 @@
 .BlackBoard {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    height: 100%;
+    transform: translateX(-50%);
+    left: 50%;
     text-align: center;
-    overflow: hidden;
+    background-color: black;
+    overflow-x: hidden;
 }
 
+@media(min-width: 992px){
+    .BlackBoard{
+        width: 90%;
+        height: 95vh;
+        max-height: 780px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    }
+}
+@media(min-width: 1200px){
+    .BlackBoard{
+        max-width: 900px;
+        max-height: 740px;
+    }
+}
+@media(min-width: 1400px){
+    .BlackBoard{
+        max-width: 1000px;
+        max-height: 780px;
+    }
+}

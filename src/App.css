@@ -1,6 +1,6 @@
 style.css
 
-/* Zapewniamy, że canvas wypełnia cały ekran */
+
 canvas {
   position: absolute;
   top: 0;
@@ -11,11 +11,10 @@ canvas {
   background-color: black;
 }
 
-/* Ustalamy globalne style, by tekst był dobrze widoczny */
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Courier New', monospace;
   background-color: black;
   color: white;
@@ -23,15 +22,11 @@ body {
 .neon-text {
   font-size: 4rem;
   font-weight: bold;
-  color: #00ff00; /* Neonowa zieleń */
+  color: #00ff00;
   text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
   font-family: Arial, sans-serif;
 }
 
-
-
-
-/* Dostosowanie stylu dla czcionki w animacji */
 @keyframes matrixRain {
   0% {
     color: green;

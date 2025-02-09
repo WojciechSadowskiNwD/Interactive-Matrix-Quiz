@@ -60,7 +60,7 @@ function DecodeButton({ children }) {
 
 	return (
 		<motion.div
-		className={styles.RandomCodeButton}
+		className={styles.randomCodeButton}
 			variants={motionHowToMoveBtn}
 			initial="move"
 			animate="move"

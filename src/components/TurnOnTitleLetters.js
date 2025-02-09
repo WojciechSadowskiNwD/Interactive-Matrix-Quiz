@@ -10,6 +10,7 @@ function TurnOnTitleLetters() {
 		Array(titleLetters.length).fill(false)
 	);
 	const [showExraText, setShowExraText] = useState(false);
+	const [adjustFirstChild, setAdjustFirstChild] = useState(false); //spr czy szerokosc osiagnieta
 
 	useEffect(() => {
 		// Order of activation(visible on) of title letters:
@@ -27,6 +28,14 @@ function TurnOnTitleLetters() {
 				if (i === showSequences.length - 1) {
 					setTimeout(() => {
 						setShowExraText(true);
+
+						setTimeout(()=>{
+							if(window.innerWidth >= 390){
+								setAdjustFirstChild(true);
+							}
+						},100);
+
+
 					}, 500);
 				}
 			}, i * 400);
@@ -51,7 +60,8 @@ function TurnOnTitleLetters() {
 					<motion.div
 						className={styles.extraText}
 						initial={{ y: -50, opacity: 0 }}
-						animate={{ y: -65, opacity: 1 }}
+						// animate={{ y: -65, opacity: 1 }}
+						animate={{ y: adjustFirstChild ? -74 : -65, opacity: 1 }}
 						transition={{ duration: 0.4, ease: "easeOut" }}
 					>
 						Interactive
