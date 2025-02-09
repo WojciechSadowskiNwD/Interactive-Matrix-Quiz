@@ -3,18 +3,19 @@
 	flex-direction: column;
 	position: relative;
 	align-items: center;
-    /* background-color: red; */
+	height: 250px;
+    /* background-color: rgba(255, 0, 0, 0.522); */
 }
 
 .titleLettersBox {
 	position: relative;
-	top: 100px;
+	top: 90px;
 	font-size: 2.4rem;
 	width: 90%;
     max-width: 330px;
 	color: rgb(69, 192, 69);
 	z-index: 1;
-	/* background-color: red; */
+	/* background-color: orange; */
 }
 
 .extraText {
@@ -25,8 +26,8 @@
 	font-weight: bold;
 	opacity: 0;
 	z-index: 0;
-    color: white;
     color:rgba(240, 248, 255, 0.767);
+	/* background-color: pink; */
 }
 
 .extraText:first-child {

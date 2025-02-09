@@ -65,6 +65,7 @@ function DecodeButton({ children }) {
 			initial="move"
 			animate="move"
 			transition={{ duration: 1, ease: "easeInOut" }}
+			whileHover={{ scale: 1.1, transition: { duration: 0.2, ease: "easeOut" } }}
 		>
 			{randomBinaryCode}
 		</motion.div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TurnOnTitleLetters from "./TurnOnTitleLetters";
 import ButtonsPanel from "./ButtonsPanel";
+import Footer from "./Footer";
 import { motion } from "framer-motion";
 import styles from "./BlackBoard.module.css";
 
@@ -40,6 +41,7 @@ function BlackBoard() {
 				>
 					{isTitleMounted && <TurnOnTitleLetters />}
 					{isPanelBtnsMounted && <ButtonsPanel/>}
+					<Footer/>
 				</motion.div>
 			)}
 		</>
