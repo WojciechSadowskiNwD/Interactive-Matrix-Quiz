@@ -1,23 +1,43 @@
-import MatrixRain from "./components/canvas/MatrixRain";
-import BlackBoard from "./components/BlackBoard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import ScoreBoard from "./pages/ScoreBoard";
+import AboutApp from "./pages/AboutApp";
+import AboutDev from "./pages/AboutDev";
 import "./App.css";
 
 const App = () => {
 	return (
-		<div className="App">
-			<MatrixRain />
-			<BlackBoard />
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Homepage />} />
+				<Route path="scoreBoard" element={<ScoreBoard />}/>
+				<Route path="aboutApp" element={<AboutApp/>}/>
+				<Route path="aboutDev" element={<AboutDev/>}/>
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
 export default App;
 
-// RWD: px
-// 360/ 375/ 390/ 412/ 576/ 768/ 810/ 992/ 1024/ 1200/
 
-// UWAGA
-// 1.5 odtwarzacz, pamiętać dodać po wykonaniu animacji logotypu
+
+{
+	/* <TestComponent/> */
+}
+{
+	/* <TestComponent text="Hello, Neo." /> */
+}
+
+// // prawa autorskie, należy dopisać:
+// "Ten projekt to nieoficjalny quiz inspirowany serią filmów The Matrix. Nie jest w żaden sposób powiązany ani autoryzowany przez Warner Bros. Wykorzystany wyłącznie w celach edukacyjnych i demonstracyjnych."
+
+// RWD: px
+// 360/ 375/ 390/ 412/ 576/ 768/ 810/ 992/ 1024/ 1200/ 1400/ - zrobione na etapie wykonania animacji wstępnej oraz pokazanego ekranu z dostępnymi przyciskami
+
+// Po kliknięciu start:
+// Please type your name:
+// Następnie mamy przywitanie oraz wybór pigułek
 
 // INFORMACJE, ZARYS PROJEKTU
 // 1. na czarnym ekranie od góry zaczynają spadać zielone znaki kodu matrixa +

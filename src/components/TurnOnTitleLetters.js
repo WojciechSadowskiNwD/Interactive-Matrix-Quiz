@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import styles from "./TurnOnTitleLetters.module.css";
 
 function TurnOnTitleLetters() {
-	const titleLetters = "THE MATRIX";
+	// const titleLetters = "THE MATRIX";
+	const titleLetters = "THE MATRIZ"; //prawa autorskie
 
 	// fill this Array this value -> [false,false,....,false]
 	const [isVisibleLetters, setIsVisibleLetters] = useState(

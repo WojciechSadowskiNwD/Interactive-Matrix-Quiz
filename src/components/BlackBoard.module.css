@@ -17,7 +17,7 @@
     .BlackBoard{
         width: 90%;
         height: 95vh;
-        max-height: 780px;
+        max-height: 740px;
         top: 50%;
         transform: translate(-50%, -50%);
         box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);

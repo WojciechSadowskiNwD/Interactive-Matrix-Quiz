@@ -6,7 +6,7 @@ export default function Footer() {
 
 	return (
 		<div className={styles.footer}>
-			<p>&copy; {year} Matrix Quiz. Follow the white rabbit.</p>
+			<p>&copy; {year} Matrix-inspir. Follow the white rabbit.</p>
 		</div>
 	);
 }
