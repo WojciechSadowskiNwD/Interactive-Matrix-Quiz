@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./ButtonsPanel.module.css";
+import styles from "./ButtonsPanel.module.scss";
 import DecodeButton from "./DecodeButton";
 import { Link } from "react-router-dom";
 

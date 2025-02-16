@@ -1,10 +1,12 @@
+@import "../styles/global.scss";
+
+
 .titleContainer {
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	align-items: center;
 	height: 250px;
-	/* background-color: rgba(255, 0, 0, 0.522); */
 }
 
 .titleLettersBox {
@@ -13,10 +15,9 @@
 	font-size: 2.4rem;
 	width: 90%;
 	max-width: 330px;
-	color: rgb(69, 192, 69);
+	color: $logo-color;
 	z-index: 1;
-	/* background-color: orange; */
-	text-shadow: 0 0 5px #13d70c;
+	text-shadow: $logo-color-shadow;
 }
 
 .extraText {
@@ -27,8 +28,7 @@
 	font-weight: bold;
 	opacity: 0;
 	z-index: 0;
-	color: rgba(240, 248, 255, 0.767);
-	/* background-color: pink; */
+	color: $ghost-text-color;
 }
 
 .extraText:first-child {
@@ -38,23 +38,22 @@
 	bottom: -30px;
 	left: 55%;
 	font-size: 2rem;
-	color: rgba(240, 248, 255, 0.8);
+	color: $ghost-text-color;
 	text-shadow: none;
 }
 
-@media (min-width: 390px) {
-	.titleLettersBox {
+@include responsive(xs) {
+	.titleContainer {
 		font-size: 2.6rem;
 	}
 	.extraText {
-		/* font-size: 1.5rem; */
 		font-size: 1.6rem;
 	}
 	.extraText:last-child {
 		bottom: -28px;
 	}
 }
-@media (min-width: 1200px) {
+@include responsive(xl) {
 	.titleLettersBox {
 		font-size: 2.7rem;
 	}
@@ -64,10 +63,9 @@
 		font-size: 1.9rem;
 	}
 }
-@media(min-width: 1400px){
-    .titleLettersBox {
+@include responsive(xxl) {
+	.titleLettersBox {
 		font-size: 2.75rem;
-		/* text-shadow: 0 0 5px #13d70c; */
 	}
 	.extraText:last-child {
 		left: 60%;

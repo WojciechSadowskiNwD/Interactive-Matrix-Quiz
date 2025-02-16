@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .buttonPanelContainer {
 	position: relative;
 	display: flex;
@@ -8,22 +10,21 @@
 	height: 360px;
 	margin-top: 20px;
 	padding-top: 35px;
-	/* background-color: rgba(255, 255, 255, 0.305); */
 }
 
-@media(min-width: 375px) {
+@include responsive(xs-1){
 	.buttonPanelContainer{
 		margin-top: 10px;
 		padding-top: 0;
 	}
 }
-@media(min-width: 390px){
+@include responsive(xs-2){
 	.buttonPanelContainer{	
 		margin-top: 50px;	
 		padding-top: 20px;
 	}
 }
-@media(min-width: 412px){
+@include responsive(md-1){
 	.buttonPanelContainer{	
 		margin-top: 60px;	
 		padding-top: 30px;
@@ -31,19 +32,19 @@
 		height: 380px;
 	}
 }
-@media(min-width: 576px){
+@include responsive(md-2){
 	.buttonPanelContainer{	
 		margin-bottom: 50px;
 		height: 100%;
 	}
 }
-/* on higher desktop */
-@media(min-height: 860px){
+@include responsive(high-md){
 	.buttonPanelContainer{
 		margin-top: 14%;
 	}
+
 }
-@media(min-height: 915px){
+@include responsive(high-lg){
 	.buttonPanelContainer{
 		margin-top: 19%;
 	}

@@ -1,25 +1,4 @@
-// Do zrobienia jako osobne pliki:
-
-//1. Colors variables:
-$background-color: #000000;
-$shadow-color: rgba(0, 255, 0, 0.5);
-
-//2. Mixin for media queries:
-@mixin responsive($breakpoint) {
-	@if $breakpoint == lg {
-		@media (min-width: 992px) {
-			@content;
-		}
-	} @else if $breakpoint == xl {
-		@media (min-width: 1200px) {
-			@content;
-		}
-	} @else if $breakpoint == xxl {
-		@media (min-width: 1400px) {
-			@content;
-		}
-	}
-}
+@import '../styles/global.scss';
 
 .BlackBoard {
 	display: flex;
