@@ -1,0 +1,54 @@
+// Do zrobienia jako osobne pliki:
+
+//1. Colors variables:
+$background-color: #000000;
+$shadow-color: rgba(0, 255, 0, 0.5);
+
+//2. Mixin for media queries:
+@mixin responsive($breakpoint) {
+	@if $breakpoint == lg {
+		@media (min-width: 992px) {
+			@content;
+		}
+	} @else if $breakpoint == xl {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	} @else if $breakpoint == xxl {
+		@media (min-width: 1400px) {
+			@content;
+		}
+	}
+}
+
+.BlackBoard {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	height: 100%;
+	transform: translateX(-50%);
+	left: 50%;
+	text-align: center;
+	background-color: $background-color;
+	overflow-x: hidden;
+    
+    @include responsive(lg) {
+        width: 90%;
+        height: 95vh;
+        max-height: 740px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 15px $shadow-color;
+    }
+    @include responsive(xl) {
+        max-width: 900px;
+        max-height: 740px;
+    }
+    @include responsive(xxl) {
+        max-width: 1000px;
+        max-height: 780px;
+    }
+}

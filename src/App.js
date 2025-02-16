@@ -3,7 +3,7 @@ import Homepage from "./pages/Homepage";
 import ScoreBoard from "./pages/ScoreBoard";
 import AboutApp from "./pages/AboutApp";
 import AboutDev from "./pages/AboutDev";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
 	return (
@@ -38,6 +38,13 @@ export default App;
 // Po kliknięciu start:
 // Please type your name:
 // Następnie mamy przywitanie oraz wybór pigułek
+// Będą koła ratunkowe np opcja 50/50 odsłoni mi dwie błedne odp. Pytania gener. losowo.
+// Dźwięk przy klikaniu, zorientować się jak to zrobić
+
+
+
+
+
 
 // INFORMACJE, ZARYS PROJEKTU
 // 1. na czarnym ekranie od góry zaczynają spadać zielone znaki kodu matrixa +
