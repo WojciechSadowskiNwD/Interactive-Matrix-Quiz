@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import styles from "./DecodeButton.module.css";
+import styles from "./DecodeButton.module.scss";
 
 function DecodeButton({ children }) {
 	const targetWord = children;
@@ -36,7 +36,6 @@ function DecodeButton({ children }) {
 	useEffect(() => {
 		if (count >= targetWordLength) return;
 
-		// const timeInterval = isFirstInterval ? 1000 : 300;
 		const timeInterval = isFirstInterval ? 1500 : 300;
 
 		const timeout = setTimeout(() => {
@@ -52,6 +51,7 @@ function DecodeButton({ children }) {
 
 		return () => clearTimeout(timeout);
 	}, [count, targetWordLength, isFirstInterval]);
+
 
 	// module for button animation
 	const motionHowToMoveBtn = {
