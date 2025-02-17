@@ -19,9 +19,9 @@ const App = () => {
 };
 
 export default App;
-
-// Zrobić commit
-// Stworzyłem folder styles i przeniosłem do nowych plików zmienne oraz mixina. Pliki te importuję do utworzonego global.scss, ten jest importowany do index.scss oraz także do wszystkich ...modules.scss / Przekształciłem kolejne pliki css + refactor w scss oraz rozbudowałem _mixins.scss 
+// Co dalej do zrobienia w projekcie:
+// Sprawdzić ButtonPanel.js pod optymalizację
+// Przejść do reszty plików jakie z module.css tutaj są pod refactor
 
 
 

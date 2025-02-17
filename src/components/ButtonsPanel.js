@@ -1,49 +1,43 @@
 import { useEffect, useState } from "react";
-import styles from "./ButtonsPanel.module.scss";
-import DecodeButton from "./DecodeButton";
 import { Link } from "react-router-dom";
+import DecodeButton from "./DecodeButton";
+import styles from "./ButtonsPanel.module.scss";
+
+const buttons = [
+	{path: "/", label: "START"},
+	{path: "scoreBoard", label: "SCORE Board"},
+	{path: "aboutApp", label: "ABOUT App"},
+	{path: "aboutDev", label: "ABOUT Dev"},
+];
 
 export default function ButtonsPanel() {
-	const [mountedBtn, setMountedBtn] = useState(Array(4).fill(false));
-	const [count, setCount] = useState(0);
+	const [mountedBtn, setMountedBtn] = useState({});
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			if (count < mountedBtn.length) {
-				setMountedBtn((prev) => {
-					const newState = [...prev];
-					newState[count] = true;
-					return newState;
-				});
-				setCount((prev) => prev + 1);
-			}
+
+	useEffect(()=>{
+		 if(Object.keys(mountedBtn).length >= buttons.length) return;
+
+		const timer = setTimeout(()=>{
+			setMountedBtn((prev)=> ({
+				...prev,
+				[Object.keys(prev).length]: true,
+			}));
 		}, 150);
-
-		return () => clearTimeout(timer);
-	}, [count]);
+		
+		return ()=> clearTimeout(timer);
+	},[mountedBtn])
 
 	return (
 		<div className={styles.buttonPanelContainer}>
-			{mountedBtn[0] && (
-				<Link to="/">
-					<DecodeButton>START</DecodeButton>
-				</Link>
-			)}
-			{mountedBtn[1] && (
-				<Link to="scoreBoard">
-					<DecodeButton>SCORE Board</DecodeButton>
-				</Link>
-			)}
-			{mountedBtn[2] && (
-				<Link to="aboutApp">
-					<DecodeButton>ABOUT App</DecodeButton>
-				</Link>
-			)}
-			{mountedBtn[3] && (
-				<Link to="aboutDev">
-					<DecodeButton>ABOUT Dev</DecodeButton>
-				</Link>
-			)}
+
+			{buttons.map(({path, label},index) =>
+				mountedBtn[index] ? (
+					<Link to={path} key={path}>
+						<DecodeButton>{label}</DecodeButton>
+					</Link>
+					) : null
+				)
+			}
 		</div>
 	);
 }
