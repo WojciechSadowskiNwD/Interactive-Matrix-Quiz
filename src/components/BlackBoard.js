@@ -6,29 +6,36 @@ import AboutApp from "../pages/AboutApp";
 import AboutDev from "../pages/AboutDev";
 import styles from "./BlackBoard.module.scss";
 
-// Pozostaje mechanizm przygaszania ekranu do czarnej planszy
+// Mechanizm przygaszania ekranu do czarnej planszy
 function BlackBoard() {
 	const [isVisible, setIsVisible] = useState(false);
 	const [activeComponent, setActiveComponent] = useState("options");
+	const [firstLaunch, setFirstLaunch] = useState(true);
+
 
 	useEffect(() => {
 		const timer = setTimeout(() => setIsVisible(true), 5000);
 		return () => clearTimeout(timer);
 	}, []);
 
-	// render the clicked section
+	const backToOptions = () => {
+		if(firstLaunch) {
+			setFirstLaunch(false);
+		}
+		setActiveComponent("options");
+	};
+
+	// Render the clicked section
 	const renderComponent = () => {
 		switch (activeComponent) {
 			case "scoreBoard":
-				return <ScoreBoard onBack={()=> setActiveComponent("options")}/>;
+				return <ScoreBoard onBack={() => backToOptions()} />;
 			case "aboutApp":
-				return <AboutApp onBack={()=> setActiveComponent("options")}/>;
+				return <AboutApp onBack={() => backToOptions()} />;
 			case "aboutDev":
-				return <AboutDev onBack={()=> setActiveComponent("options")}/>;
+				return <AboutDev onBack={() => backToOptions()} />;
 			default:
-				return (
-					<OptionsPanel setActiveComponent={setActiveComponent}/>
-				);
+				return <OptionsPanel setActiveComponent={setActiveComponent} firstLaunch={firstLaunch} />;
 		}
 	};
 

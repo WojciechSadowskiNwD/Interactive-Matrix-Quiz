@@ -17,15 +17,8 @@ const App = () => {
 export default App;
 // Co dalej do zrobienia w projekcie:
 
-// 18.02.2025 zmiany i nowa koncepcja struktury projektu
-// Zmieniłem w App ścieżki, pozostawiono 2 route-y do StartApp oraz EnterTheQuiz
-// Zamieniono nazwę komponentu z Homepage na StartApp, oraz dodano komponent dla rozpoczęcia Quizu: EnterTheQuiz. Pierwszy button to Link, reszta powoduje wyłączenie komponentu OptionsPanel i włączenie klikniętego.
-// BlackBoard + MatrixRain stanowią tło dla kilku komponentów: OptionsPanel, ScoreBoard, AboutApp, AboutDev.
-// Zmieniono nazwę z ButtonsPanel na ButtonsContainer
-// Dokonano refactor kilku komponentów aby w efekcie klikania w przyciski wszystko działało poprawnie. Najwięcej zmian w ButtonContainer. Teraz w oparciu o tablicę obiektów buttons mapujemy wyświetlanie przycisków z warunkiem dla wyświetlenia pierwszego jako Link jeżeli w tablicy obiektów istnieje 'path'.
-
-// trzeba zrobić powrót, w sensie options ma szybciej wysiwetlac literki loga itd (state z zera zmienic i tyle)
-
+// 20.02.2025
+// trzeba poprawić powrót, z klikniętego buttona do komponentów (trzech - psedo pages) do options z powrotem. Celem jest szybsze wyśietlenie elementów komponentu niż w momencie pierwszego jego uruchmienia, jakiego user doświadcza zaraz po uruchomieniu aplikacji pierwszy raz. (state z zera zmienic i tyle).
 
 
 

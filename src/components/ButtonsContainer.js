@@ -10,7 +10,6 @@ const buttons = [
 	{ key: "aboutDev", label: "ABOUT Dev" },
 ];
 
-
 export default function ButtonsContainer({setActiveComponent}) {
 	const [mountedBtn, setMountedBtn] = useState({});
 
@@ -45,24 +44,3 @@ export default function ButtonsContainer({setActiveComponent}) {
 		</div>
 	);
 }
-
-
-
-
-
-// return (
-// 	<div className={styles.buttonsContainer}>
-// 		{/* tu nie ma teraz opóźnienia, zrobić raczej setTimeout jakiś i tyle */}
-// 		<Link to="/">
-// 			<DecodeButton>START</DecodeButton>
-// 		</Link>
-// 		{buttons.map(({ key, label }, index) =>
-// 			mountedBtn[index] ? (
-// 				<button className={styles.btn} key={key} onClick={() => setActiveComponent(key)}>
-// 					<DecodeButton>{label}</DecodeButton>
-// 				</button>
-// 			) : null
-// 		)}
-// 	</div>
-// );
-// }
