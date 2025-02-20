@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -5,48 +7,47 @@
 	transform: translateX(-50%);
 	width: 95%;
 	padding: 5px;
-	border-top: 1px solid rgba(240, 248, 255, 0.767);
-	color:rgba(240, 248, 255, 0.767);
-	/* background-color: red; */
+	border-top: 1px solid $ghost-text-color;
+	color: $ghost-text-color;
 }
 
 p {
 	font-size: 12px;
 }
 
-@media(min-width: 390px){
-	.footer{
+@include responsive(xs-2) {
+	.footer {
 		width: 92%;
 		padding: 7px;
 	}
-	p{
+	p {
 		font-size: 13px;
 	}
 }
-@media(min-width: 768px){
-	.footer{
+@include responsive(md-3) {
+	.footer {
 		width: 90%;
 		padding: 5px;
 	}
-	p{
+	p {
 		font-size: 14px;
 	}
 }
-@media(min-width: 992px){
-	.footer{
+@include responsive(lg) {
+	.footer {
 		border-top: 1px solid rgba(240, 248, 255, 0.658);
 	}
 }
-@media(min-width: 1200px){
-	.footer{
+@include responsive(xl) {
+	.footer {
 		padding: 4px;
 	}
 }
-@media(min-width: 1400px){
-    .footer{
+@include responsive(xxl) {
+	.footer {
 		padding: 5px;
 	}
-	p{
+	p {
 		font-size: 15px;
 	}
 }

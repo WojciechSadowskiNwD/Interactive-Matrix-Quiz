@@ -1,7 +1,9 @@
 import BlackBoard from "../components/BlackBoard";
 import MatrixRain from "../components/canvas/MatrixRain";
 
-function Homepage() {
+
+// To będzie tło dla ekranu startowego oraz 3 pozostałych pages poza EnterTheQuiz
+function StartApp() {
 	return (
 		<>
 			<MatrixRain />
@@ -10,4 +12,4 @@ function Homepage() {
 	);
 }
 
-export default Homepage;
+export default StartApp;

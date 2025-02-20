@@ -1,36 +1,47 @@
 import { useEffect, useState } from "react";
-import TurnOnTitleLetters from "./TurnOnTitleLetters";
-import ButtonsPanel from "./ButtonsPanel";
-import Footer from "./Footer";
 import { motion } from "framer-motion";
+import OptionsPanel from "./OptionsPanel";
+import ScoreBoard from "../pages/ScoreBoard";
+import AboutApp from "../pages/AboutApp";
+import AboutDev from "../pages/AboutDev";
 import styles from "./BlackBoard.module.scss";
 
-
+// Pozostaje mechanizm przygaszania ekranu do czarnej planszy
 function BlackBoard() {
-	const [step, setStep] = useState(0);
+	const [isVisible, setIsVisible] = useState(false);
+	const [activeComponent, setActiveComponent] = useState("options");
 
-	useEffect(()=>{
-		const timers = [
-			setTimeout(()=> setStep(1), 5000),
-			setTimeout(()=> setStep(2), 6000),
-			setTimeout(()=> setStep(3), 10000),
-		];
+	useEffect(() => {
+		const timer = setTimeout(() => setIsVisible(true), 5000);
+		return () => clearTimeout(timer);
+	}, []);
 
-		return ()=> timers.forEach(clearTimeout);
-	},[]);
+	// render the clicked section
+	const renderComponent = () => {
+		switch (activeComponent) {
+			case "scoreBoard":
+				return <ScoreBoard onBack={()=> setActiveComponent("options")}/>;
+			case "aboutApp":
+				return <AboutApp onBack={()=> setActiveComponent("options")}/>;
+			case "aboutDev":
+				return <AboutDev onBack={()=> setActiveComponent("options")}/>;
+			default:
+				return (
+					<OptionsPanel setActiveComponent={setActiveComponent}/>
+				);
+		}
+	};
 
 	return (
 		<>
-			{step >=1 && (
+			{isVisible && (
 				<motion.div
 					className={styles.BlackBoard}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 0.85 }}
 					transition={{ duration: 3.1, ease: "easeInOut" }}
 				>
-					{step >=2 && <TurnOnTitleLetters />}
-					{step >=3 && <ButtonsPanel/>}
-					<Footer/>
+					{renderComponent()}
 				</motion.div>
 			)}
 		</>

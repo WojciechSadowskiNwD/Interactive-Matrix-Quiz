@@ -7,10 +7,11 @@
 
 
 // Czyli komponent będzie przyjmował nazwę usera oraz liczbę punktów.
-function ScoreBoard(){
+function ScoreBoard({onBack}){
     return (
         <div>
             <h1>Score board</h1>
+            <button onClick={onBack}>Back</button>
         </div>
     )
 }

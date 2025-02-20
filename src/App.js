@@ -1,18 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import ScoreBoard from "./pages/ScoreBoard";
-import AboutApp from "./pages/AboutApp";
-import AboutDev from "./pages/AboutDev";
+import StartApp from "./pages/StartApp";
+import EnterTheQuiz from "./pages/EnterTheQuiz";
 import "./App.scss";
 
 const App = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Homepage />} />
-				<Route path="scoreBoard" element={<ScoreBoard />}/>
-				<Route path="aboutApp" element={<AboutApp/>}/>
-				<Route path="aboutDev" element={<AboutDev/>}/>
+				<Route path="/" element={<StartApp />} />
+				<Route path="/enterTheQuiz" element={<EnterTheQuiz />} />
 			</Routes>
 		</BrowserRouter>
 	);
@@ -20,8 +16,16 @@ const App = () => {
 
 export default App;
 // Co dalej do zrobienia w projekcie:
-// Sprawdzić ButtonPanel.js pod optymalizację
-// Przejść do reszty plików jakie z module.css tutaj są pod refactor
+
+// 18.02.2025 zmiany i nowa koncepcja struktury projektu
+// Zmieniłem w App ścieżki, pozostawiono 2 route-y do StartApp oraz EnterTheQuiz
+// Zamieniono nazwę komponentu z Homepage na StartApp, oraz dodano komponent dla rozpoczęcia Quizu: EnterTheQuiz. Pierwszy button to Link, reszta powoduje wyłączenie komponentu OptionsPanel i włączenie klikniętego.
+// BlackBoard + MatrixRain stanowią tło dla kilku komponentów: OptionsPanel, ScoreBoard, AboutApp, AboutDev.
+// Zmieniono nazwę z ButtonsPanel na ButtonsContainer
+// Dokonano refactor kilku komponentów aby w efekcie klikania w przyciski wszystko działało poprawnie. Najwięcej zmian w ButtonContainer. Teraz w oparciu o tablicę obiektów buttons mapujemy wyświetlanie przycisków z warunkiem dla wyświetlenia pierwszego jako Link jeżeli w tablicy obiektów istnieje 'path'.
+
+// trzeba zrobić powrót, w sensie options ma szybciej wysiwetlac literki loga itd (state z zera zmienic i tyle)
+
 
 
 
@@ -43,11 +47,6 @@ export default App;
 // Następnie mamy przywitanie oraz wybór pigułek
 // Będą koła ratunkowe np opcja 50/50 odsłoni mi dwie błedne odp. Pytania gener. losowo.
 // Dźwięk przy klikaniu, zorientować się jak to zrobić
-
-
-
-
-
 
 // INFORMACJE, ZARYS PROJEKTU
 // 1. na czarnym ekranie od góry zaczynają spadać zielone znaki kodu matrixa +

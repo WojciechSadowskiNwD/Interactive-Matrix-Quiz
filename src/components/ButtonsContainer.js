@@ -1,0 +1,68 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import DecodeButton from "./DecodeButton";
+import styles from "./ButtonsContainer.module.scss";
+
+const buttons = [
+	{ key: "start", label: "START", path: "/enterTheQuiz" },
+	{ key: "scoreBoard", label: "SCORE Board" },
+	{ key: "aboutApp", label: "ABOUT App" },
+	{ key: "aboutDev", label: "ABOUT Dev" },
+];
+
+
+export default function ButtonsContainer({setActiveComponent}) {
+	const [mountedBtn, setMountedBtn] = useState({});
+
+	useEffect(() => {
+		if (Object.keys(mountedBtn).length >= buttons.length) return;
+
+		const timer = setTimeout(() => {
+			setMountedBtn((prev) => ({
+				...prev,
+				[Object.keys(prev).length]: true,
+			}));
+		}, 150);
+
+		return () => clearTimeout(timer);
+	}, [mountedBtn]);
+
+	return (
+		<div className={styles.buttonsContainer}>
+			{buttons.map(({ key, label, path }, index) =>
+				mountedBtn[index] ? (
+					path ? (
+						<Link to={path} key={key}>
+							<DecodeButton>{label}</DecodeButton>
+						</Link>
+					) : (
+					<button className={styles.btn} key={key} onClick={() => setActiveComponent(key)}>
+						<DecodeButton>{label}</DecodeButton>
+					</button>
+					)
+				) : null
+			)}
+		</div>
+	);
+}
+
+
+
+
+
+// return (
+// 	<div className={styles.buttonsContainer}>
+// 		{/* tu nie ma teraz opóźnienia, zrobić raczej setTimeout jakiś i tyle */}
+// 		<Link to="/">
+// 			<DecodeButton>START</DecodeButton>
+// 		</Link>
+// 		{buttons.map(({ key, label }, index) =>
+// 			mountedBtn[index] ? (
+// 				<button className={styles.btn} key={key} onClick={() => setActiveComponent(key)}>
+// 					<DecodeButton>{label}</DecodeButton>
+// 				</button>
+// 			) : null
+// 		)}
+// 	</div>
+// );
+// }

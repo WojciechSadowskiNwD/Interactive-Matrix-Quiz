@@ -1,6 +1,6 @@
 @import "../styles/global.scss";
 
-.buttonPanelContainer {
+.buttonsContainer {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -11,21 +11,25 @@
 	margin-top: 20px;
 	padding-top: 35px;
 }
+.btn {
+	background-color: transparent;
+	border: none;
+}
 
 @include responsive(xs-1){
-	.buttonPanelContainer{
+	.buttonsContainer{
 		margin-top: 10px;
 		padding-top: 0;
 	}
 }
 @include responsive(xs-2){
-	.buttonPanelContainer{	
+	.buttonsContainer{	
 		margin-top: 50px;	
 		padding-top: 20px;
 	}
 }
 @include responsive(md-1){
-	.buttonPanelContainer{	
+	.buttonsContainer{	
 		margin-top: 60px;	
 		padding-top: 30px;
 		margin-bottom: 90px;
@@ -33,19 +37,19 @@
 	}
 }
 @include responsive(md-2){
-	.buttonPanelContainer{	
+	.buttonsContainer{	
 		margin-bottom: 50px;
 		height: 100%;
 	}
 }
 @include responsive(high-md){
-	.buttonPanelContainer{
+	.buttonsContainer{
 		margin-top: 14%;
 	}
 
 }
 @include responsive(high-lg){
-	.buttonPanelContainer{
+	.buttonsContainer{
 		margin-top: 19%;
 	}
 }
