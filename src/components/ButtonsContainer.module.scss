@@ -10,10 +10,12 @@
 	height: 360px;
 	margin-top: 20px;
 	padding-top: 35px;
+	cursor: none;
 }
 .btn {
 	background-color: transparent;
 	border: none;
+	cursor: none;
 }
 
 @include responsive(xs-1){

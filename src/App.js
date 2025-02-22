@@ -18,8 +18,7 @@ export default App;
 // Co dalej do zrobienia w projekcie:
 
 // 20.02.2025
-// trzeba poprawić powrót, z klikniętego buttona do komponentów (trzech - psedo pages) do options z powrotem. Celem jest szybsze wyśietlenie elementów komponentu niż w momencie pierwszego jego uruchmienia, jakiego user doświadcza zaraz po uruchomieniu aplikacji pierwszy raz. (state z zera zmienic i tyle).
-
+// Należy już przejść do budowania pseudo pages. Najpierw szablon dla SCORE BOARD (mechanika pojawi się później, gdy będzie już quiz i zrobimy tutaj "backend")
 
 
 {

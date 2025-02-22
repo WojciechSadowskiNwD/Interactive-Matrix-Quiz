@@ -19,7 +19,7 @@
     text-shadow: 0 0 15px $shadow-color;
     font-family: "Courier New", monospace;
     letter-spacing: 1.5px;
-    cursor: pointer;
+    cursor: none;
 }
 
 @include responsive(xs-2){

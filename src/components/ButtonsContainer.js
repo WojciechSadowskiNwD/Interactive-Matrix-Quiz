@@ -10,7 +10,7 @@ const buttons = [
 	{ key: "aboutDev", label: "ABOUT Dev" },
 ];
 
-export default function ButtonsContainer({setActiveComponent}) {
+export default function ButtonsContainer({ setActiveComponent }) {
 	const [mountedBtn, setMountedBtn] = useState({});
 
 	useEffect(() => {
@@ -32,12 +32,18 @@ export default function ButtonsContainer({setActiveComponent}) {
 				mountedBtn[index] ? (
 					path ? (
 						<Link to={path} key={key}>
-							<DecodeButton>{label}</DecodeButton>
+							<button className={styles.btn}>
+								<DecodeButton>{label}</DecodeButton>
+							</button>
 						</Link>
 					) : (
-					<button className={styles.btn} key={key} onClick={() => setActiveComponent(key)}>
-						<DecodeButton>{label}</DecodeButton>
-					</button>
+						<button
+							className={styles.btn}
+							key={key}
+							onClick={() => setActiveComponent(key)}
+						>
+							<DecodeButton>{label}</DecodeButton>
+						</button>
 					)
 				) : null
 			)}
