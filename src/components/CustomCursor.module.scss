@@ -1,3 +1,5 @@
+@import '../styles/global.scss';
+
 .customCursor {
 	position: fixed;
 	width: 0;
@@ -9,4 +11,11 @@
 	transform: translate(-50%, -50%);
 	// filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
 	transition: filter .3s;
+	opacity: 0;
+}
+
+@include responsive(md-1){
+	.customCursor{
+		opacity: 1;
+	}
 }
