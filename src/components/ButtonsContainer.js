@@ -32,13 +32,16 @@ export default function ButtonsContainer({ setActiveComponent }) {
 				mountedBtn[index] ? (
 					path ? (
 						<Link to={path} key={key}>
-							<button className={styles.btn}>
+							<button className={styles.btn}
+								data-action = "goToSubPage"
+							>
 								<DecodeButton>{label}</DecodeButton>
 							</button>
 						</Link>
 					) : (
 						<button
 							className={styles.btn}
+							data-action = "goToSubPage"
 							key={key}
 							onClick={() => setActiveComponent(key)}
 						>

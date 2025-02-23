@@ -7,10 +7,10 @@ import AboutDev from "../pages/AboutDev";
 import styles from "./BlackBoard.module.scss";
 
 // Mechanizm przygaszania ekranu do czarnej planszy
-function BlackBoard() {
+// FirsthLaunch wykorzystujemy w OptionsPanel i CustomCursor
+function BlackBoard({firstLaunch, setFirstLaunch}) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [activeComponent, setActiveComponent] = useState("options");
-	const [firstLaunch, setFirstLaunch] = useState(true);
 
 
 	useEffect(() => {

@@ -1,3 +1,4 @@
+import styles from './ScoreBoard.module.scss';
 // DO wyników scoreboard:
 // Własne API w Firebase (łatwe i szybkie)
 // "Jeśli chcesz przechowywać wyniki graczy, możesz użyć Firebase Firestore jako bazy danych. Nie musisz pisać backendu, wystarczy kilka zapytań do Firestore.
@@ -9,8 +10,9 @@
 // Czyli komponent będzie przyjmował nazwę usera oraz liczbę punktów.
 function ScoreBoard({onBack}){
     return (
-        <div>
-            <h1>Score board</h1>
+        <div className={styles.scoreBoard}>
+            <div className={styles.titleBanner}>
+                <div className={styles.frames}></div>Score board</div>
             <button onClick={onBack}>Back</button>
         </div>
     )
