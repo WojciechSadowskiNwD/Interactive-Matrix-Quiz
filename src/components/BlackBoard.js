@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { isFirstLaunch, itIsVisible, changeActiveComponent } from "../store/uiSlice";
 import { motion } from "framer-motion";
 import OptionsPanel from "./OptionsPanel";
 import ScoreBoard from "../pages/ScoreBoard";
@@ -6,23 +8,23 @@ import AboutApp from "../pages/AboutApp";
 import AboutDev from "../pages/AboutDev";
 import styles from "./BlackBoard.module.scss";
 
-// Mechanizm przygaszania ekranu do czarnej planszy
-// FirsthLaunch wykorzystujemy w OptionsPanel i CustomCursor
-function BlackBoard({firstLaunch, setFirstLaunch}) {
-	const [isVisible, setIsVisible] = useState(false);
-	const [activeComponent, setActiveComponent] = useState("options");
 
+function BlackBoard() {
+	const dispatch = useDispatch();
+	const { firstLaunch, isVisible, activeComponent } = useSelector(
+		(store) => store.ui
+	);
 
 	useEffect(() => {
-		const timer = setTimeout(() => setIsVisible(true), 5000);
+		const timer = setTimeout(() => dispatch(itIsVisible(true)), 5000);
 		return () => clearTimeout(timer);
-	}, []);
+	}, [dispatch]);  //added dispatch in dependencies
 
 	const backToOptions = () => {
-		if(firstLaunch) {
-			setFirstLaunch(false);
+		if (firstLaunch) {
+			dispatch(isFirstLaunch(false));
 		}
-		setActiveComponent("options");
+		dispatch(changeActiveComponent("options"));
 	};
 
 	// Render the clicked section
@@ -35,7 +37,7 @@ function BlackBoard({firstLaunch, setFirstLaunch}) {
 			case "aboutDev":
 				return <AboutDev onBack={() => backToOptions()} />;
 			default:
-				return <OptionsPanel setActiveComponent={setActiveComponent} firstLaunch={firstLaunch} />;
+				return <OptionsPanel />;
 		}
 	};
 

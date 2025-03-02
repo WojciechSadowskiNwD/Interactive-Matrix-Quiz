@@ -60,7 +60,6 @@ function TurnOnTitleLetters() {
 					<motion.div
 						className={styles.extraText}
 						initial={{ y: -50, opacity: 0 }}
-						// animate={{ y: -65, opacity: 1 }}
 						animate={{ y: adjustFirstChild ? -74 : -65, opacity: 1 }}
 						transition={{ duration: 0.4, ease: "easeOut" }}
 					>

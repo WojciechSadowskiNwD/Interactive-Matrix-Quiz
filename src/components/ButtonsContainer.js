@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { changeActiveComponent } from "../store/uiSlice";
 import DecodeButton from "./DecodeButton";
 import styles from "./ButtonsContainer.module.scss";
 
@@ -10,7 +12,8 @@ const buttons = [
 	{ key: "aboutDev", label: "ABOUT Dev" },
 ];
 
-export default function ButtonsContainer({ setActiveComponent }) {
+export default function ButtonsContainer() {
+	const dispatch = useDispatch;
 	const [mountedBtn, setMountedBtn] = useState({});
 
 	useEffect(() => {
@@ -32,18 +35,16 @@ export default function ButtonsContainer({ setActiveComponent }) {
 				mountedBtn[index] ? (
 					path ? (
 						<Link to={path} key={key}>
-							<button className={styles.btn}
-								data-action = "goToSubPage"
-							>
+							<button className={styles.btn} data-action="goToSubPage">
 								<DecodeButton>{label}</DecodeButton>
 							</button>
 						</Link>
 					) : (
 						<button
 							className={styles.btn}
-							data-action = "goToSubPage"
+							data-action="goToSubPage"
 							key={key}
-							onClick={() => setActiveComponent(key)}
+							onClick={() => dispatch(changeActiveComponent(key))}
 						>
 							<DecodeButton>{label}</DecodeButton>
 						</button>

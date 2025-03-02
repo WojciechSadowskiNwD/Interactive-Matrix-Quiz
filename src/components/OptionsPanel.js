@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import TurnOnTitleLetters from "./TurnOnTitleLetters";
 import ButtonsContainer from "./ButtonsContainer";
 import Footer from "./Footer";
 
 // Here prop drill !
-export default function OptionsPanel({setActiveComponent, firstLaunch}) {
+export default function OptionsPanel() {
+	const { firstLaunch } = useSelector((store) => store.ui);
 	const [step, setStep] = useState(0);
 	let timeTriggers = [500, 4000];
 
-	if(firstLaunch){
+	if (firstLaunch) {
 		timeTriggers[0] = 2500;
 		timeTriggers[1] = 6500;
 	}
 
 	useEffect(() => {
-
 		const timers = [
 			setTimeout(() => setStep(1), timeTriggers[0]),
 			setTimeout(() => setStep(2), timeTriggers[1]),
@@ -26,7 +27,9 @@ export default function OptionsPanel({setActiveComponent, firstLaunch}) {
 	return (
 		<>
 			{step >= 1 && <TurnOnTitleLetters />}
-			{step >= 2 && <ButtonsContainer setActiveComponent={setActiveComponent}/>}
+			{step >= 2 && (
+				<ButtonsContainer />
+			)}
 			<Footer />
 		</>
 	);
