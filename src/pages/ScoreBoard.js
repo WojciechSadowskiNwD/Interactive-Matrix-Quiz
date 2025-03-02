@@ -13,7 +13,7 @@ function ScoreBoard({onBack}){
         <div className={styles.scoreBoard}>
             <div className={styles.titleBanner}>
                 <div className={styles.frames}></div>Score board</div>
-            <button onClick={onBack}>Back</button>
+            <button onClick={onBack} data-action="goBack">Back</button>
         </div>
     )
 }

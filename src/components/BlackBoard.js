@@ -18,7 +18,7 @@ function BlackBoard() {
 	useEffect(() => {
 		const timer = setTimeout(() => dispatch(itIsVisible(true)), 5000);
 		return () => clearTimeout(timer);
-	}, [dispatch]);  //added dispatch in dependencies
+	}, [dispatch]);
 
 	const backToOptions = () => {
 		if (firstLaunch) {

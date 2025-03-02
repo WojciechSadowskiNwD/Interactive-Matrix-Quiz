@@ -9,7 +9,7 @@ function TurnOnTitleLetters() {
 	const [isVisibleLetters, setIsVisibleLetters] = useState(
 		Array(titleLetters.length).fill(false)
 	);
-	const [showExraText, setShowExraText] = useState(false);
+	const [showExtraText, setShowExtraText] = useState(false);
 	const [adjustFirstChild, setAdjustFirstChild] = useState(false); //spr czy szerokosc osiagnieta
 
 	useEffect(() => {
@@ -27,7 +27,7 @@ function TurnOnTitleLetters() {
 
 				if (i === showSequences.length - 1) {
 					setTimeout(() => {
-						setShowExraText(true);
+						setShowExtraText(true);
 
 						setTimeout(()=>{
 							if(window.innerWidth >= 390){
@@ -55,7 +55,7 @@ function TurnOnTitleLetters() {
 					</span>
 				))}
 				{/* ExtraText */}
-				{showExraText && (
+				{showExtraText && (
 				<>
 					<motion.div
 						className={styles.extraText}

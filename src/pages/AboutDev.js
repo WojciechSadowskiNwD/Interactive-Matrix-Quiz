@@ -1,6 +1,6 @@
 import styles from "./AboutDev.module.scss";
 
-function AboutApp({ onBack }) {
+function AboutDev({ onBack }) {
 	return (
 		<div>
 			<h1>About dev</h1>
@@ -11,4 +11,4 @@ function AboutApp({ onBack }) {
 	);
 }
 
-export default AboutApp;
+export default AboutDev;

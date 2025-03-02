@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { changeActiveComponent } from "../store/uiSlice";
+import { changeActiveComponent, isFirstLaunch } from "../store/uiSlice";
 import DecodeButton from "./DecodeButton";
 import styles from "./ButtonsContainer.module.scss";
 
@@ -13,7 +13,7 @@ const buttons = [
 ];
 
 export default function ButtonsContainer() {
-	const dispatch = useDispatch;
+	const dispatch = useDispatch();
 	const [mountedBtn, setMountedBtn] = useState({});
 
 	useEffect(() => {
@@ -28,6 +28,12 @@ export default function ButtonsContainer() {
 
 		return () => clearTimeout(timer);
 	}, [mountedBtn]);
+
+	// after click any btn on optionsPanel:
+	const handleClick = (key) => {
+		dispatch(isFirstLaunch(false));
+		dispatch(changeActiveComponent(key));
+	}
 
 	return (
 		<div className={styles.buttonsContainer}>
@@ -44,7 +50,7 @@ export default function ButtonsContainer() {
 							className={styles.btn}
 							data-action="goToSubPage"
 							key={key}
-							onClick={() => dispatch(changeActiveComponent(key))}
+							onClick={() => handleClick(key)}
 						>
 							<DecodeButton>{label}</DecodeButton>
 						</button>

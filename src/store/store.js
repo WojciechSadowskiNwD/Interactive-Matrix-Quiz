@@ -1,11 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
 import uiReducer from "./uiSlice";
+import cursorReducer from "./cursorSlice";
 
 
 const store = configureStore({
     reducer: {
-        // cursor: cursorReducer,
         ui: uiReducer,
+        cursor: cursorReducer,
     }
 })
 

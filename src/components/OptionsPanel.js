@@ -4,7 +4,7 @@ import TurnOnTitleLetters from "./TurnOnTitleLetters";
 import ButtonsContainer from "./ButtonsContainer";
 import Footer from "./Footer";
 
-// Here prop drill !
+
 export default function OptionsPanel() {
 	const { firstLaunch } = useSelector((store) => store.ui);
 	const [step, setStep] = useState(0);
@@ -22,7 +22,7 @@ export default function OptionsPanel() {
 		];
 
 		return () => timers.forEach(clearTimeout);
-	}, []);
+	}, []);  //don't add timeTriggers!
 
 	return (
 		<>

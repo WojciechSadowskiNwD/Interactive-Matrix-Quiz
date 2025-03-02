@@ -2,7 +2,7 @@ function AboutApp({onBack}){
     return (
         <div>
             <h1>About app</h1>
-            <button onClick={onBack}>Back</button>
+            <button onClick={onBack} data-action="goBack">Back</button>
         </div>
     )
 }
