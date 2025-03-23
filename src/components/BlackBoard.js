@@ -11,7 +11,7 @@ import styles from "./BlackBoard.module.scss";
 
 function BlackBoard() {
 	const dispatch = useDispatch();
-	const { firstLaunch, isVisible, activeComponent } = useSelector(
+	const { isVisible, activeComponent } = useSelector(
 		(store) => store.ui
 	);
 
@@ -20,22 +20,16 @@ function BlackBoard() {
 		return () => clearTimeout(timer);
 	}, [dispatch]);
 
-	const backToOptions = () => {
-		if (firstLaunch) {
-			dispatch(isFirstLaunch(false));
-		}
-		dispatch(changeActiveComponent("options"));
-	};
 
 	// Render the clicked section
 	const renderComponent = () => {
 		switch (activeComponent) {
 			case "scoreBoard":
-				return <ScoreBoard onBack={() => backToOptions()} />;
+				return <ScoreBoard />;
 			case "aboutApp":
-				return <AboutApp onBack={() => backToOptions()} />;
+				return <AboutApp />;
 			case "aboutDev":
-				return <AboutDev onBack={() => backToOptions()} />;
+				return <AboutDev />;
 			default:
 				return <OptionsPanel />;
 		}

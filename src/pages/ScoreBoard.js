@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import styles from "./ScoreBoard.module.scss";
 // DO wyników scoreboard:
 // Własne API w Firebase (łatwe i szybkie)
@@ -7,7 +7,7 @@ import styles from "./ScoreBoard.module.scss";
 // 🔹 Dodawanie wyniku do bazy Firebase..." - ok do zorientowania się w temacie na później i wdrożenia wewn. projektu
 
 // Czyli komponent będzie przyjmował nazwę usera oraz liczbę punktów.
-function ScoreBoard({ onBack }) {
+function ScoreBoard({ onBack }) { 
 	return (
 		<div className={styles.scoreBoard}>
 			<div className={styles.titleBanner}>
@@ -76,41 +76,63 @@ function ScoreBoard({ onBack }) {
 				</div>
 			</div>
 
-			<motion.button
-				onClick={onBack}
-				data-action="goBack"
-				className={styles.btn_back}
-				initial={{
-					backgroundColor: "rgba(0,128,0,0.626)",
-					boxShadow: "0px 0px 115px #ccff00",
-				}}
-				animate={{
-					backgroundColor: [
-						"rgba(0,128,0,0.626)",
-						"#00aa00",
-						"rgba(0,128,0,0.626)",
-					],
-					boxShoadow: [
-						"0px 0px 5px #00ff00",
-						"0px 0px 20px #00ff00",
-						"0px 0px 5px #00ff00",
-					],
-				}}
-				transition={{
-					duration: 4,
-					repeat: Infinity,
-					repeatType: "loop",
-					ease: "easeInOut",
-				}}
-			>
-				<i className={`fa-solid fa-backward-fast ${styles.back_icon}`}></i>
-				<em className={styles.em}>Back</em>
-			</motion.button>
+			<PulsingReturnBtn onBack={onBack} />
 		</div>
 	);
 }
 
 export default ScoreBoard;
+
+
+
+
+
+
+
+
+
+
+// function PulsingReturnBtn({onBack}) {
+// 	return (
+// 		<motion.button
+// 		onClick={onBack}
+// 		data-action="goBack"
+// 		className={styles.btn_back}
+// 		initial={{
+// 			backgroundColor: "rgba(0,128,0,0.626)",
+// 			boxShadow: "0px 0px 115px #ccff00",
+// 		}}
+// 		animate={{
+// 			backgroundColor: [
+// 				"rgba(0,128,0,0.626)",
+// 				"#00aa00",
+// 				"rgba(0,128,0,0.626)",
+// 			],
+// 			boxShoadow: [
+// 				"0px 0px 5px #00ff00",
+// 				"0px 0px 20px #00ff00",
+// 				"0px 0px 5px #00ff00",
+// 			],
+// 		}}
+// 		transition={{
+// 			duration: 4,
+// 			repeat: Infinity,
+// 			repeatType: "loop",
+// 			ease: "easeInOut",
+// 		}}
+// 	>
+// 		<i className={`fa-solid fa-backward-fast ${styles.back_icon}`}></i>
+// 		<em className={styles.em}>Back</em>
+// 	</motion.button>
+// 	)
+// }
+
+
+
+
+
+
+
 
 // Jak ma to wyglądać?
 //1. Nagłówek, tytuł - SCORE BOARD
