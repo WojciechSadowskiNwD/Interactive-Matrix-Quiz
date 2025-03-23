@@ -7,86 +7,204 @@
 	align-items: center;
 	// background-color: rgba(255, 0, 0, 0.503);
 	height: 600px;
+
+    .green_frame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 92%;
+        margin-top: 12%;
+        margin-bottom: 12%;
+        padding-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid rgba(172, 255, 47, 0.712);
+        //nie wiem czy nie usune ramki
+    }
 }
 
 .titleBanner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 	width: 80%;
-    height: 45px;
+	height: 45px;
 	margin-top: 50px;
 	padding: 10px;
-    font-family: "Orbitron", serif;
+	font-family: "Orbitron", serif;
 	text-transform: uppercase;
-    font-weight: 500;
+	font-weight: 500;
 	font-size: 25px;
-    letter-spacing: 1.3px;
-    word-spacing: 3px;
-    // color: $ghost-text-color;
-    text-shadow: $logo-color-shadow;
-    filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	letter-spacing: 1.3px;
+	word-spacing: 3px;
+	// color: $ghost-text-color;
+	text-shadow: $logo-color-shadow;
+	filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
 
-    clip-path: polygon(
-        25px 0%, calc(100% - 25px) 0%, 
-        100% 25px, 100% calc(100% - 25px), 
-        calc(100% - 25px) 100%, 25px 100%, 
-        0% calc(100% - 25px), 0% 25px
-    );
-    border: 2px solid greenyellow;
+	clip-path: polygon(
+		25px 0%,
+		calc(100% - 25px) 0%,
+		100% 25px,
+		100% calc(100% - 25px),
+		calc(100% - 25px) 100%,
+		25px 100%,
+		0% calc(100% - 25px),
+		0% 25px
+	);
+	border: 2px solid greenyellow;
 	background-color: #000000c9;
 
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        transform: rotate(45deg);
-        width: 11px;
-        height: 100px;
-        background-color: greenyellow;
-        filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        transform: rotate(-45deg);
-        width: 12px;
-        height: 100px;
-        background-color: greenyellow;
-        filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
-    }
-    
+	&::before {
+		content: "";
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		transform: rotate(45deg);
+		width: 11px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		transform: rotate(-45deg);
+		width: 12px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
 }
-.frames{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: -18px;
-        left: -20px;
-        transform: rotate(135deg);
-        width: 10px;
-        height: 100px;
-        background-color: greenyellow;
-        filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+.frames {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -18px;
+		left: -20px;
+		transform: rotate(135deg);
+		width: 10px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -20px;
+		right: -18px;
+		transform: rotate(-135deg);
+		width: 10px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+}
+.label_informations {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	// margin-top: 50px;
+	// margin-bottom: 15px;
+    text-transform: uppercase;
+	width: 100%;
+	width: 90%;
+    background-color: rgba(0, 128, 0, 0.626);
+	border-radius: 8px;
+	border: 1px dotted #00ff00;
+
+	.label_rank {
+        
     }
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -20px;
-        right: -18px;
-        transform: rotate(-135deg);
-        width: 10px;
-        height: 100px;
-        background-color: greenyellow;
-        filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+    .label_info {
+        display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+        width: 65%;
+        font-size: 18px;
+
+        .label_name {
+            width: 50%;
+        }
     }
+    .label_paragraph{
+        font-size: 16px;
+    }
+}
+
+.score_box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 15px;
+	// margin-bottom: 15px;
+	width: 80%;
+	width: 90%;
+	border-radius: 8px;
+	// background-color: #ffffff5b;
+	border: 1px dotted #00ff00;
+
+	.position_rank {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1.5px solid #00ff00;
+		border-radius: 8px;
+		width: 50px;
+		height: 80%;
+		background-color: rgba(0, 0, 0, 0.9);
+		filter: drop-shadow(0 0 1px white) drop-shadow(0 0 10px #00ff00);
+
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.position_info {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		border: 1px solid #00ff00;
+		border-radius: 8px;
+		width: 72%;
+		height: 80%;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		background-color: rgba(0, 0, 0, 0.9);
+		filter: drop-shadow(0 0 1px white) drop-shadow(0 0 10px #00ff00);
+
+		p {
+			font-size: 18.5px;
+		}
+		.user_name {
+			width: 50%;
+			// background-color: #fff;
+			// border-right: 1px dotted white;
+		}
+	}
+}
+.btn_back {
+	padding: 12px 24px;
+	font-family: "Courier New", monospace;
+	color: #fff;
+	background-color: rgba(0, 128, 0, 0.626);
+}
+.em {
+	margin-left: 12px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.back_icon {
+	font-size: 17px;
 }
