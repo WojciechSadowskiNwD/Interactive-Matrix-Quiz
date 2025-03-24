@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	height: 600px;
+	height: 100vh;
 
 	.green_frame {
 		display: flex;
@@ -21,4 +21,29 @@
 	}
 }
 
-// xs-1 do zrobienia
+@include responsive(xs-1) {
+	.scoreBoard {
+		.green_frame {
+			margin-top: 11%;
+			margin-bottom: 5%;
+			padding-bottom: 10px;
+		}
+	}
+}
+@include responsive(xs-2) {
+	.scoreBoard {
+		.green_frame {
+			margin-top: 15%;
+			margin-bottom: 12%;
+			padding-bottom: 15px;
+		}
+	}
+}
+@include responsive(high-sm){
+	.scoreBoard {
+		.green_frame {
+			margin-top: 20%;
+			margin-bottom: 15%;
+		}
+	}
+}

@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .btn_back {
 	padding: 12px 24px;
 	font-family: "Courier New", monospace;
@@ -13,4 +15,14 @@
 
 .back_icon {
 	font-size: 17px;
+}
+
+
+@include responsive(xs-2) {
+	.btn_back {
+		padding: 14px 28px;
+	}
+	.em {
+		font-size: 21px;
+	}
 }
