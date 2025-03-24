@@ -10,14 +10,12 @@ export default function PulsingReturnBtn() {
 		(store) => store.ui
 	);
 
-
     const backToOptions = () => {
             if (firstLaunch) {
                 dispatch(isFirstLaunch(false));
             }
             dispatch(changeActiveComponent("options"));
         };
-
 
 	return (
 		<motion.button

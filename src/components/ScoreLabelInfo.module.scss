@@ -1,0 +1,32 @@
+.label_info_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	// margin-top: 50px;
+	// margin-bottom: 15px;
+	text-transform: uppercase;
+	width: 100%;
+	width: 90%;
+	background-color: rgba(0, 128, 0, 0.626);
+	border-radius: 8px;
+	border: 1px dotted #00ff00;
+
+	.label_rank {
+	}
+	.label_info {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		width: 65%;
+		font-size: 18px;
+
+		.label_name {
+			width: 50%;
+		}
+	}
+	.label_paragraph {
+		font-size: 16px;
+	}
+}
