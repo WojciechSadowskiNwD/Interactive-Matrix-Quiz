@@ -1,0 +1,18 @@
+@import "../styles/global.scss";
+// @import "../../public/img/AvatarM.jpg";
+
+.about_title_box {
+    font-family: "Orbitron", serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 1.3px;
+    word-spacing: 3px;
+    // color: #00ff0063;
+    // color: #00ff00;
+    text-shadow: $logo-color-shadow-b;
+    // filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+    // filter: drop-shadow(0 0 1px white) drop-shadow(0 0 10px #00ff00);
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.319)) drop-shadow(0 0 10px #00ff00);
+
+}

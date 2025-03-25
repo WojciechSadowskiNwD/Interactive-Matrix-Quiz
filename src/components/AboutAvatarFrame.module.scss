@@ -1,0 +1,27 @@
+@import "../styles/global.scss";
+
+.about_avatar_frame {
+    position: relative;
+    width: 62%;
+    height: 200px;
+    margin-bottom: 30px;
+    border: 1px solid #00ff00;
+    border: 2px solid #ffffff;
+    border-radius: 17px;
+    box-shadow: $logo-color-shadow;
+    // filter: drop-shadow(1px 1px 10px #00ff00) drop-shadow(0 0 5px #00ff00);
+    // filter: drop-shadow(1px 1px 10px #ffffff) drop-shadow(0 0 5px #00ff00);
+    filter: drop-shadow(1px 1px 10px #a8ff69) drop-shadow(0 0 5px #91ff65);
+    overflow: hidden;
+    
+    .avatar_img {
+        width: 100%;
+        height: 100%;
+    }
+    .matrix_blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #00ff0029;
+    }
+}

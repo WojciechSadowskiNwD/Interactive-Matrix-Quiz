@@ -1,0 +1,31 @@
+.about_icon_container{
+    .about_icon_box {
+        position: relative;
+        width: 80px;
+        height: 70px;
+        margin: 10px;
+        background-color: #fff;
+    
+    
+        .icon_img {
+            width: 100%;
+            height: 100%;
+        }
+        .matrix_blur{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #00fbff29;
+            background-color: #00ff0029;
+            background-color: #00ff9529;
+        }
+    
+    }
+    .about_icon_text {
+        font-size: 15px;
+        font-style: italic;
+        font-family: 'Courier New', monospace;
+        font-family: Arial, sans-serif;
+    }
+
+}

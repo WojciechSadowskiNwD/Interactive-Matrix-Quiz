@@ -99,3 +99,22 @@
 		font-size: 25px;
 	}
 }
+@include responsive(md-2) {
+	.titleBanner {
+		margin-top: 6vh;
+	}
+}
+@include responsive(md-3) {
+	.titleBanner {
+		font-size: 26px;
+		letter-spacing: 1.7px;
+		word-spacing: 5px;
+	}
+}
+@include responsive(lg) {
+	.titleBanner {
+		margin-top: 5.5vh;
+		max-height: 40px;
+		padding: 8px;
+	}
+}

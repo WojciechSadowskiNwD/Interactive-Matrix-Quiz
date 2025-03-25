@@ -17,10 +17,8 @@ const App = () => {
 export default App;
 // Co dalej do zrobienia w projekcie:
 
-// 20.02.2025
-// Należy już przejść do budowania pseudo pages. Najpierw szablon dla SCORE BOARD (mechanika pojawi się później, gdy będzie już quiz i zrobimy tutaj "backend")
 
-// Zacząłem budować CustomCursor, pierwsze uruchomienie działa ok, każde następne już zawiera błąd polegający na zbyt długim montowaniu wskaźnika w/w bo aż po 5s a nie po 1s od przejścia do AboutDev co jest nieakceptowalne i tym teraz należy się zająć.
+// Teraz należy zając się pseudopages: About App oraz About Dev - najlepiej zrobić na wzór ScoreBoard
 
 {
 	/* <TestComponent/> */

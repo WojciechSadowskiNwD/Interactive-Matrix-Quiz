@@ -1,10 +1,11 @@
+@import "../styles/global.scss";
+
 .score_box {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 	margin-top: 15px;
-	width: 80%;
 	width: 90%;
 	border-radius: 8px;
 	border: 1px dotted #00ff00;
@@ -45,5 +46,17 @@
 		.user_name {
 			width: 50%;
 		}
+	}
+}
+
+@include responsive(md-2){
+	.score_box {
+		width: 91%;
+	}
+}
+@include responsive(lg){
+	.score_box {
+		width: 91%;
+		height: 7.3vh;
 	}
 }

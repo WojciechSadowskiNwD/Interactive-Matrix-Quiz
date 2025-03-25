@@ -6,6 +6,7 @@
 	color: #fff;
 	background-color: rgba(0, 128, 0, 0.626);
     border: none;
+	cursor: none;
 }
 .em {
 	margin-left: 12px;
@@ -24,5 +25,10 @@
 	}
 	.em {
 		font-size: 21px;
+	}
+}
+@include responsive(lg) {
+	.btn_back {
+		padding: 12px 28px;
 	}
 }
