@@ -1,4 +1,4 @@
-
+@import "../styles/global.scss";
 
 .about_container {
 	display: flex;
@@ -19,6 +19,14 @@
 		background-color: #ffffff0f;
         padding-bottom: 15px;
 
-		
+		@include responsive(md-3) {
+			width: 90%;
+		}
+		@include responsive(lg) {
+			width: 98%;
+		}
+		@include responsive(high-sm-1) {
+			padding-bottom: 22px;
+		}
 	}
 }

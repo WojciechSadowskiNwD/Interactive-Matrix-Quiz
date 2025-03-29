@@ -44,7 +44,7 @@
 		height: 100%;
 	}
 }
-@include responsive(high-md){
+@include responsive(high-md-2){
 	.buttonsContainer{
 		margin-top: 14%;
 	}

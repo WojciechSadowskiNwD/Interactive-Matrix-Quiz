@@ -1,11 +1,35 @@
+@import "../styles/global.scss";
+
 .about_icons_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 90%;
-    height: 250px;
-    margin-bottom: 20px;
-    background-color: #ffffff0c;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 90%;
+	height: 250px;
+	margin-bottom: 20px;
+	// background-color: #ffffff07;
+
+	@include responsive(md-1) {
+		height: 250px;
+	}
+	@include responsive(lg) {
+		width: 80%;
+	}
+	@include responsive(high-sm-1) {
+		height: 235px;
+	}
+	@include responsive(high-md-1) {
+		height: 256px;
+	}
+	@include responsive(high-md-2) {
+		height: 256px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	@include responsive(high-lg) {
+		margin-bottom: 40px;
+		height: 265px;
+	}
 }

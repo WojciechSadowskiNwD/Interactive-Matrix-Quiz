@@ -10,19 +10,19 @@ function AboutDev({ onBack }) {
 	return (
 		<div className={styles.about_container}>
 			<div className={styles.about_frame}>
-				<AboutTitle/>
-				<AboutAvatarFrame/>
-				<AboutSectionInfo/>
+				<AboutTitle>
+					About dev
+				</AboutTitle>
+				<AboutAvatarFrame />
+				<AboutSectionInfo />
 				<AboutIconsContainer>
-					<AboutIconSkill img="img/reactIcon.jpg" text="JavaScript"/>
-					<AboutIconSkill img="img/reactIcon.jpg" text="React"/>
-					<AboutIconSkill img="img/SassIcon.jpg" text="Sass"/>
-					<AboutIconSkill img="img/SassIcon.jpg" text="Rest API"/>
-					<AboutIconSkill img="img/reactIcon.jpg" text="Git"/>
-					<AboutIconSkill img="img/TypeScriptIcon.jpg" text="TypeScript"/>
+					<AboutIconSkill img="img/JSIcon.jpg" text="JavaScript" />
+					<AboutIconSkill img="img/reactIcon.jpg" text="React" />
+					<AboutIconSkill img="img/SassIcon.jpg" text="Sass" />
+					<AboutIconSkill img="img/restApiIcon.jpg" text="Rest API" />
+					<AboutIconSkill img="img/TSIcon2.png" text="TypeScript" />
+					<AboutIconSkill img="img/GitIcon.jpg" text="Git" />
 				</AboutIconsContainer>
-
-
 
 				<PulsingReturnBtn onBack={onBack} />
 			</div>
@@ -31,5 +31,3 @@ function AboutDev({ onBack }) {
 }
 
 export default AboutDev;
-
-

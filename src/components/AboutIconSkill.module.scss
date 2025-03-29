@@ -1,10 +1,11 @@
+@import "../styles/global.scss";
+
 .about_icon_container{
     .about_icon_box {
         position: relative;
-        width: 80px;
-        height: 70px;
+        width: 76px;
+        height: 68px;
         margin: 10px;
-        background-color: #fff;
     
     
         .icon_img {
@@ -15,8 +16,6 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #00fbff29;
-            background-color: #00ff0029;
             background-color: #00ff9529;
         }
     
@@ -28,4 +27,110 @@
         font-family: Arial, sans-serif;
     }
 
+}
+
+@include responsive(high-sm-1) {
+    .about_icon_container{
+        
+        .about_icon_box {
+            width: 70px;
+            height: 60px;
+            margin: 12px;
+            margin-top: 8px;
+        }
+        .about_icon_text {
+            font-size: 16px;
+        }
+    }
+}
+@include responsive(high-sm-2) {
+    .about_icon_container{
+
+        .about_icon_text {
+            font-size: 16px;
+            letter-spacing: .5px;
+        }
+    }
+}
+@include responsive(high-md-1) {
+    .about_icon_container{
+        .about_icon_box {
+            width: 74px;
+            margin: 12px;
+            margin-top: 10px;
+        }
+
+        .about_icon_text {
+            font-size: 16.5px;
+            letter-spacing: .7px;
+        }
+    }
+}
+@include responsive(high-lg) {
+    .about_icon_container{
+        .about_icon_box {
+            width: 76px;
+            margin: 14px;
+            margin-top: 10px;
+        }
+
+    }
+}
+@include responsive(md-2) {
+    .about_icon_container{
+        padding: 5px;
+        padding-top: 0;
+
+        .about_icon_box {
+            width: 70px;
+            height: 60px;
+            margin: 14px;
+            margin-top: 5px;
+        }
+
+    }
+}
+@include responsive(md-3) {
+    .about_icon_container{
+        .about_icon_box {
+            margin-left: 9px;
+            margin-right: 9px;
+            border-radius: 5px;
+        }
+        .about_icon_text {
+            font-size: 15.5px;
+            letter-spacing: .1px;
+        }
+    }
+}
+@include responsive(lg) {
+    .about_icon_container{
+        .about_icon_box {
+            width: 72px;
+            height: 64px;
+            margin: 16px;
+            margin-top: 5px;
+        }
+
+        .about_icon_text {
+            font-size: 17px;
+            letter-spacing: .6px;
+        }
+    }
+}
+@include responsive(high-md-2) {
+    .about_icon_container{
+        .about_icon_box {
+            width: 76px;
+            height: 68px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 10px;
+        }
+
+        .about_icon_text {
+            font-size: 16.5px;
+            letter-spacing: .7px;
+        }
+    }
 }

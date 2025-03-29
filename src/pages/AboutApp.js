@@ -1,8 +1,14 @@
+import AboutTitle from "../components/AboutTitle";
+import PulsingReturnBtn from "../components/PulsingReturnBtn";
+
 function AboutApp({onBack}){
     return (
         <div>
-            <h1>About app</h1>
-            <button onClick={onBack} data-action="goBack">Back</button>
+            <AboutTitle>
+                About App
+            </AboutTitle>
+
+            <PulsingReturnBtn onBack={onBack} />
         </div>
     )
 }
