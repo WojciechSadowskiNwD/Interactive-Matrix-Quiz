@@ -1,0 +1,17 @@
+.aboutText_box {
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 5px;
+	// background-color: rgba(255, 0, 0, 0.432);
+
+	.aboutText_box_text {
+		font-size: 16px;
+		letter-spacing: 0.3px;
+	}
+	.aboutText_box_span {
+		content: "\A";
+		white-space: pre;   //the same effect as the <br> tag
+		color: rgb(142, 142, 142);
+	}
+}

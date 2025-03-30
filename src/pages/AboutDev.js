@@ -4,15 +4,13 @@ import AboutIconSkill from "../components/AboutIconSkill";
 import AboutSectionInfo from "../components/AboutSectionInfo";
 import AboutTitle from "../components/AboutTitle";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
-import styles from "./AboutDev.module.scss";
+import styles from "./About.module.scss";
 
 function AboutDev({ onBack }) {
 	return (
 		<div className={styles.about_container}>
 			<div className={styles.about_frame}>
-				<AboutTitle>
-					About dev
-				</AboutTitle>
+				<AboutTitle>About dev</AboutTitle>
 				<AboutAvatarFrame />
 				<AboutSectionInfo />
 				<AboutIconsContainer>
