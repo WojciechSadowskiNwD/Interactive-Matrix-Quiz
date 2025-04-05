@@ -6,11 +6,12 @@ import AboutTitle from "../components/AboutTitle";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import styles from "./About.module.scss";
 
+
 function AboutDev({ onBack }) {
 	return (
 		<div className={styles.about_container}>
 			<div className={styles.about_frame}>
-				<AboutTitle>About dev</AboutTitle>
+				<AboutTitle marginTitle={styles.marginTitleB}>About dev</AboutTitle>
 				<AboutAvatarFrame />
 				<AboutSectionInfo />
 				<AboutIconsContainer>
@@ -22,7 +23,7 @@ function AboutDev({ onBack }) {
 					<AboutIconSkill img="img/GitIcon.jpg" text="Git" />
 				</AboutIconsContainer>
 
-				<PulsingReturnBtn onBack={onBack} />
+				<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtraAD}/>
 			</div>
 		</div>
 	);

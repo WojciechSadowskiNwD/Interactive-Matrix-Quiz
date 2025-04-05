@@ -18,7 +18,14 @@
 	font-size: 17px;
 }
 
-
+@include responsive(xs-1) {
+	.btn_back {
+		margin-top: -15px;
+	}
+	.em {
+		// font-size: 21px;
+	}
+}
 @include responsive(xs-2) {
 	.btn_back {
 		padding: 14px 28px;
@@ -35,7 +42,17 @@
 }
 @include responsive(lg) {
 	.btn_back {
-		padding: 12px 28px;
+		padding: 10px 24px;
 		margin-bottom: 25px;
+	}
+}
+@include responsive(high-sm-3) {
+	.btn_back {
+		margin-bottom: 10px;
+	}
+}
+@include responsive(high-lg) {
+	.btn_back {
+		margin-bottom: 20px;
 	}
 }

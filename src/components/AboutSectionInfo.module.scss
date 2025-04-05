@@ -1,6 +1,10 @@
 @import "../styles/global.scss";
 
 .about_section_info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	width: 80%;
 	height: 50px;
 	margin-bottom: 25px;
@@ -36,12 +40,13 @@
 		}
 	}
 }
+@include responsive(md-1) {
+	.about_section_info {
+		margin-bottom: 15px;
+	}
+}
 @include responsive(md-2) {
 	.about_section_info {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 		height: 50px;
 		min-height: 40px;
 
@@ -61,6 +66,7 @@
 @include responsive(lg) {
 	.about_section_info {
 		width: 75%;
+		height: 66px;
 		
 		.about_title {
 			font-size: 18px;
@@ -68,9 +74,20 @@
 		}
 	}
 }
+@include responsive(xxl){
+	.about_section_info{
+		margin-top: 10px;
+	}
+}
 @include responsive(high-md-2) {
 	.about_section_info {
-		height: 55px;
-		min-height: 44px;
+		margin-bottom: 5px;
+		height: 50px;
+		min-height: 48px;
+
+		.about_title {
+			font-size: 19px;
+			letter-spacing: 0.9px;
+		}
 	}
 }

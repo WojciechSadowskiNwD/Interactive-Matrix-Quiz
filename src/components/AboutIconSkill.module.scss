@@ -43,7 +43,7 @@
         }
     }
 }
-@include responsive(high-sm-2) {
+@include responsive(high-sm-3) {
     .about_icon_container{
 
         .about_icon_text {
@@ -80,6 +80,7 @@
     .about_icon_container{
         padding: 5px;
         padding-top: 0;
+        margin-left: 10px;
 
         .about_icon_box {
             width: 70px;
@@ -105,6 +106,8 @@
 }
 @include responsive(lg) {
     .about_icon_container{
+        margin-left: 0;
+
         .about_icon_box {
             width: 72px;
             height: 64px;

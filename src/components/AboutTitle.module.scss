@@ -11,9 +11,16 @@
 	filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.319))
 		drop-shadow(0 0 10px #00ff00);
 
+	@include responsive(md-1) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 60px;
+		// background-color: #ffffff1d;
+	}
 	@include responsive(md-2) {
-		margin-top: 30px;
-		margin-bottom: 15px;
+		margin-top: 15px;
+		margin-bottom: 5px;
 		height: 60px;
 		font-size: 19.5px;
 		line-height: 0;
@@ -23,16 +30,31 @@
 		font-size: 20px;
 	}
 	@include responsive(lg) {
-		margin-bottom: 30px;
-		font-size: 21px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		font-size: 21.5px;
+	}
+	@include responsive(xxl) {
+		margin-top: 15px;
+		margin-bottom: 12px;
 	}
 	@include responsive(high-sm-1) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 60px;
 		font-size: 17px;
+		margin-bottom: 15px;
+	}
+	@include responsive(high-md-1) {
+		margin-top: 20px;
+		margin-bottom: 15px;
 	}
 	@include responsive(high-md-2) {
-		font-size: 20px;
+		font-size: 21px;
+		margin-bottom: 20px;
 	}
 	@include responsive(high-lg) {
-		font-size: 21px;
+		font-size: 22px;
 	}
 }

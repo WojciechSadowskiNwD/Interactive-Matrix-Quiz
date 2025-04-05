@@ -58,7 +58,7 @@ function ScoreBoard({ onBack }) {
 				))}
 			</div>
 
-			<PulsingReturnBtn onBack={onBack} />
+			<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtra}/>
 		</div>
 	);
 }

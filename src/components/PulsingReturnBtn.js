@@ -3,7 +3,7 @@ import { isFirstLaunch, changeActiveComponent } from '../store/uiSlice';
 import styles from './PulsingReturnBtn.module.scss';
 import { motion } from "framer-motion";
 
-export default function PulsingReturnBtn() {
+export default function PulsingReturnBtn({marginExtra=""}) {
 
     const dispatch = useDispatch();
 	const { firstLaunch } = useSelector(
@@ -21,7 +21,7 @@ export default function PulsingReturnBtn() {
 		<motion.button
 		onClick={() => backToOptions()}
 		data-action="goBack"
-		className={styles.btn_back}
+		className={`${styles.btn_back} ${marginExtra}`}
 		initial={{
 			backgroundColor: "rgba(0,128,0,0.626)",
 			boxShadow: "0px 0px 115px #ccff00",

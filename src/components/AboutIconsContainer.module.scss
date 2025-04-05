@@ -11,8 +11,16 @@
 	margin-bottom: 20px;
 	// background-color: #ffffff07;
 
+	@include responsive(xs-2) {
+		margin-bottom: 30px;
+	}
 	@include responsive(md-1) {
-		height: 250px;
+		margin-top: 10px;
+		height: 220px;
+	}
+	@include responsive(md-1) {
+		margin-top: 10px;
+		height: 220px;
 	}
 	@include responsive(lg) {
 		width: 80%;
@@ -20,8 +28,14 @@
 	@include responsive(high-sm-1) {
 		height: 235px;
 	}
+	@include responsive(high-sm-2) {
+		min-width: 85%;
+	}
 	@include responsive(high-md-1) {
+		width: 75%;
 		height: 256px;
+		margin-bottom: 40px;
+		// background-color: red;
 	}
 	@include responsive(high-md-2) {
 		height: 256px;
