@@ -1,45 +1,35 @@
+import { useEffect, useState } from "react";
+import {collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import {db} from "../firebaseConfig";
+
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import ScoreLabelInfo from "../components/ScoreLabelInfo";
 import ScoreTitleBanner from "../components/ScoreTitleBanner";
 import ScoreUserBar from "../components/ScoreUserBar";
 import styles from "./ScoreBoard.module.scss";
-// DO wyników scoreboard:
-// Własne API w Firebase (łatwe i szybkie)
-// "Jeśli chcesz przechowywać wyniki graczy, możesz użyć Firebase Firestore jako bazy danych. Nie musisz pisać backendu, wystarczy kilka zapytań do Firestore.
 
-// 🔹 Dodawanie wyniku do bazy Firebase..." - ok do zorientowania się w temacie na później i wdrożenia wewn. projektu
 
-// Czyli komponent będzie przyjmował nazwę usera oraz liczbę punktów.
 function ScoreBoard({ onBack }) {
 
-	// table best record, top 5 users
-	const highestRecords = [
-		{
-			id: 0,
-			nick: "Adam16",
-			points: 998,
-		},
-		{
-			id: 1,
-			nick: "DimestioBM4",
-			points: 871,
-		},
-		{
-			id: 2,
-			nick: "Nerupbis111",
-			points: 747,
-		},
-		{
-			id: 3,
-			nick: "Katrio001",
-			points: 690,
-		},
-		{
-			id: 4,
-			nick: "Xavier219",
-			points: 438,
-		},
-	];
+	const [highestRecords, setHighestRecords] = useState([]);
+
+	useEffect(() => {
+		const fetchScores = async () => {
+			const q = query(collection(db, "scores"), orderBy("points", "desc"), limit(5));
+			const querySnapshot = await getDocs(q);
+
+			const scores = querySnapshot.docs.map((doc, index) => ({
+				id: doc.id,
+				nick: doc.data().nick,
+				points: doc.data().points,
+			}));
+
+			setHighestRecords(scores);
+		};
+
+		fetchScores();
+	}, []);
+
 
 	return (
 		<div className={styles.scoreBoard}>
@@ -67,9 +57,7 @@ export default ScoreBoard;
 
 
 // Jak ma to wyglądać?
-//1. Nagłówek, tytuł - SCORE BOARD
-//2. Tabela wyników - wygląd?
-//3. Dane o userach: name/nick + points
+// opcjonalnie:
 //#. Wyliczenie wyników moja koncepcja. Jeżeli będziemy mieć losowe generowanie pytań, to można wprowadzić system nagrody w zamian za wielokrotność podawania poprawnych odpowiedzi po sobie bez żadnej pomyłki:
 // Jedna odpowiedź poprawna - 100% punktów, dwie bez pomyłki 110%, trzy bez pomyłki 120%, itd.
 // Ponadto wartoby na końcu wziąć pod uwagę czas wyrażony w sekundach, jaki pozostał userowi po zakończonym quizie. Można go przeliczyć na dodatkową punktację oraz dodać do zgromadzonych punktów. W ten sposób mamy już bardziej złożony sytem i wyższą motywację do powtórzenia przez niego samej zabawy.
