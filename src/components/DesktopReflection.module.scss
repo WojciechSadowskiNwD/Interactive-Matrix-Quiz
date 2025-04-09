@@ -1,0 +1,27 @@
+.blackDesktop{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+
+    .terminalContainer {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 95%;
+        z-index: 100;
+    }
+
+    .blackDesktop_img {
+        position: absolute;
+        top: 12vh;
+        width: 160vw;
+        height: 100vh;
+        opacity: .7;
+    }
+}
+  

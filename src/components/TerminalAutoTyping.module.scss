@@ -1,0 +1,25 @@
+.terminal {
+    background-color: black;
+    color: #51d751;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    font-size: 18px;
+    width: 90%;
+    white-space: pre-wrap;
+  }
+  
+  .cursor_box {
+    display: inline-block;
+    width: 15px;
+    height: 18px;
+    background-color: #00ff00;
+    margin-left: 5px;
+    vertical-align: bottom;
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  

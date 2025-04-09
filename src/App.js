@@ -18,7 +18,6 @@ export default App;
 // Co dalej do zrobienia w projekcie:
 
 
-// Teraz należy zając się pseudopages: About App oraz About Dev - najlepiej zrobić na wzór ScoreBoard
 
 {
 	/* <TestComponent/> */
@@ -30,12 +29,14 @@ export default App;
 // // prawa autorskie, należy dopisać:
 // "Ten projekt to nieoficjalny quiz inspirowany serią filmów The Matrix. Nie jest w żaden sposób powiązany ani autoryzowany przez Warner Bros. Wykorzystany wyłącznie w celach edukacyjnych i demonstracyjnych."
 
-// RWD: px
-// 360/ 375/ 390/ 412/ 576/ 768/ 810/ 992/ 1024/ 1200/ 1400/ - zrobione na etapie wykonania animacji wstępnej oraz pokazanego ekranu z dostępnymi przyciskami
 
 // Po kliknięciu start:
-// Please type your name:
-// Następnie mamy przywitanie oraz wybór pigułek
+// Pierwszy ekran powitanie i wybór gracza:
+// A. Please type your name: np Hello user, type your nick... - wpisuje
+// B. Choose your avatar: np 4,5 dostępnych portretów
+// * - W trakcie quizu, gdzieś w rogu będzie widać portret, nick oraz zbierane punkty
+
+// Następnie mamy przywitanie oraz wybór pigułek (poziom skomplikowania: łatwy/trudny)
 // Będą koła ratunkowe np opcja 50/50 odsłoni mi dwie błedne odp. Pytania gener. losowo.
 // Dźwięk przy klikaniu, zorientować się jak to zrobić
 
