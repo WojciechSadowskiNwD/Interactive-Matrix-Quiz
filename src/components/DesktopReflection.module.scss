@@ -3,25 +3,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
-
-    .terminalContainer {
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        width: 95%;
-        z-index: 100;
-    }
+    overflow: hidden;
+    // background-color: #000;
+    background-color: #000000d9;
 
     .blackDesktop_img {
         position: absolute;
         top: 12vh;
         width: 160vw;
         height: 100vh;
-        opacity: .7;
+        opacity: .8;
     }
 }
-  

@@ -1,25 +1,32 @@
 .terminal {
-    background-color: black;
-    color: #51d751;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 15px;
-    font-size: 18px;
-    width: 90%;
-    white-space: pre-wrap;
-  }
-  
-  .cursor_box {
-    display: inline-block;
-    width: 15px;
-    height: 18px;
-    background-color: #00ff00;
-    margin-left: 5px;
-    vertical-align: bottom;
-    animation: blink 1s steps(2, start) infinite;
-  }
+	position: relative;
+	top: 1%;
+	width: 90%;
+	padding: 15px;
+	padding-right: 20px;
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre-wrap;
+	z-index: 100;
+	color: #51d751;
+}
 
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-  
+.cursor_box {
+	display: inline-block;
+	width: 15px;
+	height: 18px;
+	margin-left: 5px;
+	vertical-align: bottom;
+	background-color: #00ff00;
+	animation: blink 1s steps(2, start)  11 forwards;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}

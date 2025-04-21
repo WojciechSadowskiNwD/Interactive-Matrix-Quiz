@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { isFirstLaunch, itIsVisible, changeActiveComponent } from "../store/uiSlice";
+import { itIsVisible } from "../store/uiSlice";
 import { motion } from "framer-motion";
 import OptionsPanel from "./OptionsPanel";
 import ScoreBoard from "../pages/ScoreBoard";
@@ -31,7 +31,7 @@ function BlackBoard() {
 			case "aboutDev":
 				return <AboutDev />;
 			default:
-				return <OptionsPanel />;
+				return <OptionsPanel />; //start this component first
 		}
 	};
 

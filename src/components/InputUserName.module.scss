@@ -1,0 +1,30 @@
+.inputName_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15px;
+	width: 90%;
+	height: 60px;
+
+	.inputName {
+		padding: 10px 20px;
+		font-size: 17px;
+		letter-spacing: 1px;
+		text-align: center;
+		color: #51d751;
+		background-color: transparent;
+		border: 1px solid #00ff0059;
+		z-index: 1;
+
+		&:disabled {
+			color: #99eaff;
+			text-shadow: 0 0 15px #66d9ff, 0 0 15px #33bbff;
+			border-color: #1a9ad186;
+			opacity: 0.6;
+			cursor: not-allowed;
+		}
+	}
+	.inputName:focus {
+		outline: none;
+	}
+}
