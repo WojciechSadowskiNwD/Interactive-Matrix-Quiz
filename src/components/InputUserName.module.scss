@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .inputName_box {
 	display: flex;
 	justify-content: center;
@@ -5,7 +7,7 @@
 	margin-top: 15px;
 	width: 90%;
 	height: 60px;
-
+	
 	.inputName {
 		padding: 10px 20px;
 		font-size: 17px;
@@ -20,11 +22,43 @@
 			color: #99eaff;
 			text-shadow: 0 0 15px #66d9ff, 0 0 15px #33bbff;
 			border-color: #1a9ad186;
+			border-color: #1a9ad1ed;
 			opacity: 0.6;
 			cursor: not-allowed;
+		}
+
+		@include responsive(xs-1) {
+			font-size: 16px;
 		}
 	}
 	.inputName:focus {
 		outline: none;
+	}
+}
+@include responsive(xs-2) {
+	.inputName_box {
+		margin-bottom: 10px;
+
+		.inputName {
+			font-size: 17px;
+		}
+	}
+}
+@include responsive(md-1) {
+	.inputName_box {
+
+		.inputName {
+			font-size: 18px;
+			min-width: 280px;
+		}
+	}
+}
+@include responsive(high-md-2) {
+	.inputName_box {
+		margin-top: 24px;
+
+		.inputName {
+			font-size: 18.5px;
+		}
 	}
 }

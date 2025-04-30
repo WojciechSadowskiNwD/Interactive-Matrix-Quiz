@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { setUserAvatar } from "../store/userSlice";
@@ -23,22 +23,43 @@ console.log(avatars.length);
 
 function ManualSlider() {
 	const dispatch = useDispatch();
-	const selectedAvatar = useSelector((store)=> store.user.selectedAvatar);
+	const selectedAvatar = useSelector((store) => store.user.selectedAvatar);
 
 	const [shiftWidth, setShiftWidth] = useState(0);
-	const [index, setIndex] = useState(0);
+	const [shiftStep, setShiftStep] = useState(200); //default value
 
+	useEffect(() => {
+		const updateShiftStep = () => {
+			if (window.innerWidth < 375) {
+				setShiftStep(200);
+			} else if (window.innerWidth === 375) {
+				setShiftStep(205);
+			} else if (window.innerWidth >= 412) {
+				setShiftStep(215);
+				// console.log("obecna szerokość: 412px");
+			}
+		};
+		updateShiftStep();
+
+		// listening change desktop view
+		window.addEventListener("resize", updateShiftStep);
+		return () => window.removeEventListener("resize", updateShiftStep);
+	}, []);
+
+	const [index, setIndex] = useState(0);
 
 	const handlePrev = () => {
 		if (index > 0) {
 			setIndex((i) => i - 1);
-			setShiftWidth((prev) => prev - 200);
+			// setShiftWidth((prev) => prev - 200);
+			setShiftWidth((prev) => prev - shiftStep);
 		}
 	};
 	const handleNext = () => {
 		if (index < avatars.length - 1) {
 			setIndex((i) => i + 1);
-			setShiftWidth((prev) => prev + 200);
+			// setShiftWidth((prev) => prev + 200);
+			setShiftWidth((prev) => prev + shiftStep);
 		}
 	};
 
@@ -49,12 +70,19 @@ function ManualSlider() {
 			transition={{ duration: 0.8, ease: "easeOut" }}
 			className={styles.slider_wrapper}
 		>
-			<button
+			<motion.button
 				className={`${styles.btn_nav} ${styles.btn_prev}`}
 				onClick={handlePrev}
+				whileHover={{
+					scale: 1.1,
+					backgroundColor: "rgb(0, 80, 166)",
+					boxShadow: "0 0 15px rgb(0, 80, 166)",
+					cursor: "none"
+				}}
+				transition={{ type: "spring", stiffness: 600 }}
 			>
 				&#9664;
-			</button>
+			</motion.button>
 
 			<div className={styles.slider_box}>
 				<div
@@ -70,7 +98,6 @@ function ManualSlider() {
 							key={i}
 							onClick={() => dispatch(setUserAvatar(avatar))}
 						>
-
 							<div
 								className={`${styles.item_shadow} ${
 									selectedAvatar === avatar ? styles.selected : ""
@@ -86,12 +113,19 @@ function ManualSlider() {
 				</div>
 			</div>
 
-			<button
+			<motion.button
 				className={`${styles.btn_nav} ${styles.btn_next}`}
 				onClick={handleNext}
+				whileHover={{
+					scale: 1.1,
+					backgroundColor: "rgb(185, 0, 0)",
+					boxShadow: "0 0 15px rgb(185, 0, 0)",
+					cursor: "none"
+				}}
+				transition={{ type: "spring", stiffness: 600 }}
 			>
 				&#9654;
-			</button>
+			</motion.button>
 		</motion.div>
 	);
 }

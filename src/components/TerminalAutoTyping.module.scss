@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .terminal {
 	position: relative;
 	top: 1%;
@@ -9,6 +11,32 @@
 	white-space: pre-wrap;
 	z-index: 100;
 	color: #51d751;
+	// background-color: red;
+	
+	@include responsive(xs-1) {
+		width: 85%;
+	}
+	@include responsive(high-sm-2) {
+		font-size: 18.5px;
+		margin-bottom: 10px;
+	}
+	@include responsive(xs-2) {
+		width: 85%;
+		font-size: 19px;
+		margin-bottom: 20px;
+	}
+	@include responsive(md-1) {
+		top: 1.5%;
+		font-size: 20px;
+	}
+	@include responsive(md-2) {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	@include responsive(high-md-2) {
+		margin-top: 20px;
+	}
 }
 
 .cursor_box {

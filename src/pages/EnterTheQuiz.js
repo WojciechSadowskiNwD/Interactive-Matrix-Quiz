@@ -1,5 +1,6 @@
 import MatrixRain from "../components/canvas/MatrixRain";
 import DesktopReflection from "../components/DesktopReflection";
+import CustomCursor from "../components/CustomCursor";
 
 // Uruchomienie quizu - później
 function EnterTheQuiz() {
@@ -7,6 +8,7 @@ function EnterTheQuiz() {
         <>
             <MatrixRain/>
             <DesktopReflection/>
+            <CustomCursor/>
         </>
     )
 }

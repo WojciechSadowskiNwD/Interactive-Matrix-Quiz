@@ -89,7 +89,7 @@ export default function DesktopReflection() {
 
 			<img
 				className={styles.blackDesktop_img}
-				src="img/DesktopFaceShadow.png"
+				src="img/DesktopFaceShadow.webp"
 				alt="man face reflection in black desktop"
 			/>
 		</div>
