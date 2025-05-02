@@ -19,7 +19,12 @@ const avatars = [
 	"img/avatars/avatar_zion_woman_2.webp",
 ];
 
+
+
+// ile mamy avatarów w kolekcji foto?
 console.log(avatars.length);
+
+
 
 function ManualSlider() {
 	const dispatch = useDispatch();
@@ -27,6 +32,7 @@ function ManualSlider() {
 
 	const [shiftWidth, setShiftWidth] = useState(0);
 	const [shiftStep, setShiftStep] = useState(200); //default value
+	const [x, setX] = useState(1); // value for function btn: handleNext
 
 	useEffect(() => {
 		const updateShiftStep = () => {
@@ -34,9 +40,12 @@ function ManualSlider() {
 				setShiftStep(200);
 			} else if (window.innerWidth === 375) {
 				setShiftStep(205);
-			} else if (window.innerWidth >= 412) {
+			} else if (window.innerWidth === 412) {
 				setShiftStep(215);
-				// console.log("obecna szerokość: 412px");
+			} else if(window.innerWidth >= 992) {
+				// console.log("obecna szerokość: 992px");
+				setShiftStep(190);
+				setX(2);
 			}
 		};
 		updateShiftStep();
@@ -51,14 +60,12 @@ function ManualSlider() {
 	const handlePrev = () => {
 		if (index > 0) {
 			setIndex((i) => i - 1);
-			// setShiftWidth((prev) => prev - 200);
 			setShiftWidth((prev) => prev - shiftStep);
 		}
 	};
 	const handleNext = () => {
-		if (index < avatars.length - 1) {
+		if (index < avatars.length - x) {
 			setIndex((i) => i + 1);
-			// setShiftWidth((prev) => prev + 200);
 			setShiftWidth((prev) => prev + shiftStep);
 		}
 	};

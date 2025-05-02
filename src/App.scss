@@ -1,49 +1,57 @@
-@import './styles/global.scss';
+@import "./styles/global.scss";
 
 canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-color: $background-color;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: $background-color;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: 'Courier New', monospace;
-  background-color: $background-color;
-  color: $text-color;
-  cursor: none;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	font-family: "Courier New", monospace;
+	background-color: $background-color;
+	color: $text-color;
+	cursor: none;
 }
 .neon-text {
-  font-size: 4rem;
-  font-weight: bold;
-  color: $primary-color;
-  text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 40px $primary-color;
-  font-family: Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: bold;
+	color: $primary-color;
+	text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color,
+		0 0 20px $primary-color, 0 0 40px $primary-color;
+	font-family: Arial, sans-serif;
 }
 
 a {
-  text-decoration: none;
-  cursor: none;
+	text-decoration: none;
+	cursor: none;
 }
 
 // pulsing button
 .margin_extra {
-  margin-top: 50px;
+	margin-top: 50px;
 }
 
-
+.quizContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.705);
+}
 
 @keyframes matrixRain {
-  0% {
-    color: green;
-  }
-  100% {
-    color: lightgreen;
-  }
+	0% {
+		color: green;
+	}
+	100% {
+		color: lightgreen;
+	}
 }

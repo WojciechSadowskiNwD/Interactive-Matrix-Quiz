@@ -37,6 +37,9 @@
 	@include responsive(high-md-2) {
 		margin-top: 20px;
 	}
+	@include responsive(lg){
+		width: 80%;
+	}
 }
 
 .cursor_box {

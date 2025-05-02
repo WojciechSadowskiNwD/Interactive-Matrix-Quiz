@@ -59,10 +59,14 @@
 @include responsive(high-md-2) {
 	.button_wrapper{
 		bottom: 40px;
-		// background-color: orange;
 		.accept_btn {
 			margin-top: 0px;
-			// background-color: #fff;
 		}
+	}
+}
+
+@include responsive(lg){
+	.button_wrapper{
+		align-items: end;
 	}
 }

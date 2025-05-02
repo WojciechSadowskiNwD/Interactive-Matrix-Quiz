@@ -5,11 +5,11 @@ import CustomCursor from "../components/CustomCursor";
 // Uruchomienie quizu - później
 function EnterTheQuiz() {
     return (
-        <>
+        <div className="quizContainer">
             <MatrixRain/>
             <DesktopReflection/>
             <CustomCursor/>
-        </>
+        </div>
     )
 }
 

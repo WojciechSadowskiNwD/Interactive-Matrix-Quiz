@@ -136,3 +136,23 @@
 		}
 	}
 }
+
+@include responsive(lg){
+	.slider_wrapper {
+		height: 250px;
+		// background-color: #fff;
+
+		.slider_box {
+			// width: 670px;  // na szerszy
+			// width: 460px;
+			width: 410px;
+			// background-color: rgb(155, 155, 155);
+
+			.slider {
+				.slider_item {
+					min-width: 160px;
+				}
+			}
+			}
+	}
+}
