@@ -1,0 +1,62 @@
+@import "../styles/global.scss";
+
+.option {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 300px;
+	height: 50px;
+	border: 1px solid #00ff00;
+	text-shadow: $logo-color-shadow;
+	filter: drop-shadow(0 0 5px white) drop-shadow(0 0 20px #00ff00);
+	background-color: black;
+	transition: .3s;
+
+	clip-path: polygon(
+		10px 0%,
+		calc(105% - 25px) 0%,
+		100% 25px,
+		100% calc(100% - 25px),
+		calc(100% - 15px) 100%,
+		15px 100%,
+		0% calc(100% - 25px),
+		0% 25px,
+	);
+	border: 2px solid greenyellow;
+	background-color: #000000c9;
+	&::before {
+		content: "";
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		transform: rotate(45deg);
+		width: 11px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		transform: rotate(-45deg);
+		width: 12px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+
+	&:hover {
+		transform: translateX(-10%);
+		// background-color: black;
+	}
+}
+
+.correct_answer{
+	background-color: rgba(117, 117, 117, 0.922);
+}
+.wrong_answer {
+	background-color: black;
+}

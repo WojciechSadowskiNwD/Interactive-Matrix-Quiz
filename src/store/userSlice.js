@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	userName: null,
-	selectedAvatar: null,
+	// userName: null,
+	userName: "Adam154",
+	// selectedAvatar: null,
+	selectedAvatar: "img/avatars/avatar_zion_woman_1.webp",
 };
 
 const userSlice = createSlice({
@@ -18,7 +20,6 @@ const userSlice = createSlice({
 		},
 	},
 });
-
 
 export const { setUserName, setUserAvatar } = userSlice.actions;
 export default userSlice.reducer;
