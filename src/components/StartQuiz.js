@@ -3,9 +3,41 @@ import StartQuizDeadline from "./StartQuizDeadline";
 import StartQuizQuestionNum from "./StartQuizQuestionNum";
 import TerminalAutoTyping from "./TerminalAutoTyping";
 import StartQuizQuestionOption from "./StartQuizQuestionOption";
+import { fetchQuizQuestions } from "../fetchQuizQuestions ";
 import styles from "./StartQuiz.module.scss";
+import { useEffect, useState } from "react";
+
 
 function StartQuiz() {
+
+	const [questions, setQuestions] = useState([]); //here we get questions from fetch
+	const [currentIndex, setCurrentIndex] = useState(0); //show current quiz question
+	const [selected, setSelected] = useState(null); //when user click into one option
+	const [showAnswer, setShowAnswer] = useState(false);
+
+	// download all questions
+	useEffect(()=>{
+		const loadQuestions = async () => {
+			const data = await fetchQuizQuestions();
+			setQuestions(data);
+		};
+		loadQuestions();
+	},[]);
+
+	// test 1 info wait for...
+	if(questions.length === 0 ) {
+		return <div>Loading quiz...</div>;
+	}
+	// ......................................
+
+
+	// show download collection
+	console.log(questions);
+
+
+
+
+
 	return (
 		<div className={styles.startQuiz}>
 			<StartQuizTopBar />
@@ -25,7 +57,7 @@ function StartQuiz() {
 				</div>
 			</div>
 		</div>
-	);
+	);	
 }
 
 export default StartQuiz;
