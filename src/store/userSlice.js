@@ -19,10 +19,11 @@ const userSlice = createSlice({
 			state.selectedAvatar = action.payload;
 		},
 		setCurrentScore: (state, action) => {
-			state.currentScore = action.payload;
-		}
+			state.currentScore = state.currentScore + action.payload;
+		},
 	},
 });
 
-export const { setUserName, setUserAvatar, setCurrentScore } = userSlice.actions;
+export const { setUserName, setUserAvatar, setCurrentScore } =
+	userSlice.actions;
 export default userSlice.reducer;

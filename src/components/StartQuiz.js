@@ -8,12 +8,17 @@ import TerminalAutoTyping from "./TerminalAutoTyping";
 import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
 import StartQuizAnswerOptions from "./StartQuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
+import { useDispatch } from "react-redux";
+import { setCurrentScore } from "../store/userSlice";
 
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [selected, setSelected] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
+	const [corrAnswers, setCorrAnswers] = useState(0);
+
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		const loadQuestions = async () => {
@@ -35,6 +40,21 @@ function StartQuiz() {
 		if (!showAnswer) {
 			setSelected(optionKey);
 			setShowAnswer(true);
+
+			if(!showAnswer && optionKey === currentQuestion.correctAnswer){
+				dispatch(setCurrentScore(20));
+				setCorrAnswers((prev)=> prev+1);
+				console.log("Brawo zgadłeś");
+				
+				if(corrAnswers >= 3){
+					// add bonus points
+					dispatch(setCurrentScore(10));
+				}
+
+			}else if(!showAnswer && optionKey !== currentQuestion.correctAnswer){
+				console.log("Nieprawda");
+				setCorrAnswers(0);
+			}
 		}
 	};
 

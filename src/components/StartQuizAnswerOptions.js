@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import StartQuizQuestionOption from "./StartQuizQuestionOption";
 import styles from "./StartQuizAnswerOptions.module.scss";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { setCurrentScore } from "../store/userSlice";
 
 function StartQuizAnswerOptions({
 	options,
@@ -11,6 +13,8 @@ function StartQuizAnswerOptions({
 	onClick,
 }) {
 	const [showOptions, setShowOptions] = useState(false);
+
+    const dispatch = useDispatch();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -30,6 +34,7 @@ function StartQuizAnswerOptions({
 					if (showAnswer) {
 						if (isCorrectAnswer) {
 							className = styles.correct;
+
 							if (isSelected) {
 								className += ` ${styles.selectedCorrect}`;
 							}

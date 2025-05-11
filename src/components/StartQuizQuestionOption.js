@@ -5,7 +5,7 @@ function StartQuizQuestionOption({children, className="", onClick}){
     return(
         <div className={`${styles.option} ${className}`} onClick={onClick}>
             <div className={styles.frames}></div>
-            <p className={styles.text}>{children}</p>
+            <div className={styles.text}>{children}</div>
         </div>
     )
 }
