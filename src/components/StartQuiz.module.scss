@@ -3,7 +3,7 @@
 .startQuiz {
 	width: 100%;
 	height: 100%;
-	// background-color: rgb(49, 0, 0);
+	// background-color: rgb(79, 0, 0);  //active for duration of testing
 	z-index: 99;
 
 	.question_wrapper {
@@ -25,7 +25,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			width: 90%;
-			height: 160px;
+			height: 180px;
 			border: 1px solid #00ff00;
 			border-radius: 10px;
 			filter: drop-shadow(0 0 5px white) drop-shadow(0 0 40px #00ff00);
@@ -38,7 +38,26 @@
 			align-items: center;
 			width: 100%;
 			height: 280px;
-			// background-color: rgba(0, 128, 0, 0.162);
+			height: 340px;
+			// background-color: rgba(128, 255, 0, 0.233);
 		}
 	}
+}
+.wrong {
+	background-color: rgba(33, 33, 104, 0.956) !important;	
+	color: white;
+}
+.correct {
+	background-color: rgba(255, 99, 71, 0.177) !important;
+	color: white;
+}
+.selectedCorrect {
+	background-color: rgba(255, 99, 71, 0.177) !important;
+	color: white;
+	transform: translateX(-10%) !important;
+}
+.selectedWrong {
+	background-color: rgba(33, 33, 104, 0.956) !important;	
+	color: white;
+	transform: translateX(-10%) !important;
 }

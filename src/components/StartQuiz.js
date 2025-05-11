@@ -1,82 +1,109 @@
+import { useEffect, useState } from "react";
+import { fetchQuizQuestions } from "../fetchQuizQuestions ";
+
 import StartQuizTopBar from "./StartQuizTopBar";
 import StartQuizDeadline from "./StartQuizDeadline";
 import StartQuizQuestionNum from "./StartQuizQuestionNum";
 import TerminalAutoTyping from "./TerminalAutoTyping";
 import StartQuizQuestionOption from "./StartQuizQuestionOption";
-import { fetchQuizQuestions } from "../fetchQuizQuestions ";
 import styles from "./StartQuiz.module.scss";
-import { useEffect, useState } from "react";
-
+import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
 
 function StartQuiz() {
-
-	const [questions, setQuestions] = useState([]); //here we get questions from fetch
-	const [currentIndex, setCurrentIndex] = useState(0); //show current quiz question
-	const [selected, setSelected] = useState(null); //when user click into one option
+	const [questions, setQuestions] = useState([]);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [selected, setSelected] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
 
-	// download all questions
-	useEffect(()=>{
+	useEffect(() => {
 		const loadQuestions = async () => {
 			const data = await fetchQuizQuestions();
 			setQuestions(data);
 		};
 		loadQuestions();
-	},[]);
+	}, []);
 
-	// test 1 info wait for...
-	if(questions.length === 0 ) {
+	if (questions.length === 0 || !questions[currentIndex]) {
 		return <div>Loading quiz...</div>;
 	}
-	// ......................................
 
+	const currentQuestion = questions[currentIndex];
+	const isCorrect = selected === currentQuestion.correctAnswer;
+	const isLast = currentIndex === questions.length - 1;
 
-	// show download collection
-	console.log(questions);
+	const handleSelect = (optionKey) => {
+		if (!showAnswer) {
+			setSelected(optionKey);
+			setShowAnswer(true);
+		}
+	};
 
-
-
-
+	const handleNext = () => {
+		if (!isLast) {
+			setCurrentIndex((prev) => prev + 1);
+			setSelected(null);
+			setShowAnswer(false);
+		} else {
+			// Tu potem przekierować do podsumowania quizu
+			alert("Quiz zakończony!");
+		}
+	};
 
 	return (
 		<div className={styles.startQuiz}>
 			<StartQuizTopBar />
-			<StartQuizQuestionNum />
+			<StartQuizQuestionNum
+				currQuestion={currentIndex}
+				total={questions.length}
+			/>
 			<StartQuizDeadline />
 			<div className={styles.question_wrapper}>
 				<div className={styles.question_box}>
-					<TerminalAutoTyping>
-						Which pill allows Neo to learn the truth about the Matrix?
+					<TerminalAutoTyping key={currentIndex}>
+						{currentQuestion.question}
 					</TerminalAutoTyping>
 				</div>
 				<div className={styles.answer_bars}>
-					<StartQuizQuestionOption>A. Green</StartQuizQuestionOption>
-					<StartQuizQuestionOption>B. Red</StartQuizQuestionOption>
-					<StartQuizQuestionOption>C. Blue</StartQuizQuestionOption>
-					<StartQuizQuestionOption>D. Yellow</StartQuizQuestionOption>
+					{Object.entries(currentQuestion.options)
+						.sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+						.map(([key, value]) => {
+							const isCorrectAnswer = key === currentQuestion.correctAnswer;
+							const isSelected = key === selected;
+
+							let className = "";
+
+							if (showAnswer) {
+								if (isCorrectAnswer) {
+									className = styles.correct;
+									if (isSelected) {
+										className += ` ${styles.selectedCorrect}`;
+									}
+								} else {
+									className = styles.wrong;
+									if (isSelected) {
+										className += ` ${styles.selectedWrong}`;
+									}
+								}
+							}
+
+							return (
+								<StartQuizQuestionOption
+									key={key}
+									className={className}
+									onClick={() => handleSelect(key)}
+								>
+									{key}. {value}
+								</StartQuizQuestionOption>
+							);
+						})}
 				</div>
+
+				{showAnswer && (
+					<StartQuizNextStepBtn onClick={handleNext} isLast={isLast}/>
+				)}
 			</div>
 		</div>
-	);	
+	);
 }
 
 export default StartQuiz;
-
-//Na desktop po najechaniu kursorem na wskazane pole A,B,C,D powinno się ono podświetlić
-// Po kliknięciu w któreś czyli dokonaniu wyboru powinno się dokonać zaznaczenie
-// Zaznaczenie musi wskazać czy odpowiedziano prawidłowo, oraz podświetlić się powinna właściwa odpowiedź
-// Po kliknięciu powinien pojawić się btn next
-// Na koniec quizu przycisk powinien brzmieć finish i być linkiem do podsumowania
-
-
-
-// {
-// 	question: "Which pill allows Neo to learn the truth about the Matrix?",
-// 	options: {
-// 	  A: "Green",
-// 	  B: "Red",
-// 	  C: "Blue",
-// 	  D: "Yellow",
-// 	},
-// 	correctAnswer: "B",
-//   },

@@ -3,6 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-top: 10px;
+    padding-left: 7px;
     // background-color: #9393938b;
 
     .left_box {
@@ -55,7 +57,6 @@
         height: 100px;
         font-family: "Orbitron", serif;
 		letter-spacing: 1.5px;
-		// font-weight: 500;
         // background-color: brown;
 
         .right_box_title{
