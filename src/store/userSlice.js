@@ -5,6 +5,7 @@ const initialState = {
 	userName: "Adam154",
 	// selectedAvatar: null,
 	selectedAvatar: "img/avatars/avatar_zion_woman_1.webp",
+	currentScore: 0,
 };
 
 const userSlice = createSlice({
@@ -16,10 +17,12 @@ const userSlice = createSlice({
 		},
 		setUserAvatar: (state, action) => {
 			state.selectedAvatar = action.payload;
-			// console.log("wybrano avatara: ", state.selectedAvatar);
 		},
+		setCurrentScore: (state, action) => {
+			state.currentScore = action.payload;
+		}
 	},
 });
 
-export const { setUserName, setUserAvatar } = userSlice.actions;
+export const { setUserName, setUserAvatar, setCurrentScore } = userSlice.actions;
 export default userSlice.reducer;

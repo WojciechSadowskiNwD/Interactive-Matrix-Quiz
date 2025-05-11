@@ -1,0 +1,28 @@
+.answer_bars {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 280px;
+	height: 340px;
+	// background-color: rgba(128, 255, 0, 0.233);
+}
+.wrong {
+	background-color: rgba(33, 33, 104, 0.956) !important;	
+	color: white;
+}
+.correct {
+	background-color: rgba(255, 99, 71, 0.177) !important;
+	color: white;
+}
+.selectedCorrect {
+	background-color: rgba(255, 99, 71, 0.177) !important;
+	color: white;
+	transform: translateX(-10%) !important;
+}
+.selectedWrong {
+	background-color: rgba(33, 33, 104, 0.956) !important;	
+	color: white;
+	transform: translateX(-10%) !important;
+}

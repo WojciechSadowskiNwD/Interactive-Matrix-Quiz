@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import styles from "./StartQuizTopBar.module.scss";
 
 function StartQuizTopBar() {
-	const { userName: nickname, selectedAvatar } = useSelector(
+	const { userName: nickname, selectedAvatar, currentScore } = useSelector(
 		(store) => store.user
 	);
 
@@ -24,7 +24,7 @@ function StartQuizTopBar() {
 
 			<div className={styles.right_box}>
 				<div className={styles.right_box_title}>SCORE</div>
-				<div className={styles.right_box_points}>95</div>
+				<div className={styles.right_box_points}>{currentScore}</div>
 			</div>
 		</div>
 	);

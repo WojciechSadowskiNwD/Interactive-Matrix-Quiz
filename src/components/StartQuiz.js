@@ -5,9 +5,9 @@ import StartQuizTopBar from "./StartQuizTopBar";
 import StartQuizDeadline from "./StartQuizDeadline";
 import StartQuizQuestionNum from "./StartQuizQuestionNum";
 import TerminalAutoTyping from "./TerminalAutoTyping";
-import StartQuizQuestionOption from "./StartQuizQuestionOption";
-import styles from "./StartQuiz.module.scss";
 import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
+import StartQuizAnswerOptions from "./StartQuizAnswerOptions";
+import styles from "./StartQuiz.module.scss";
 
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]);
@@ -63,43 +63,17 @@ function StartQuiz() {
 						{currentQuestion.question}
 					</TerminalAutoTyping>
 				</div>
-				<div className={styles.answer_bars}>
-					{Object.entries(currentQuestion.options)
-						.sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
-						.map(([key, value]) => {
-							const isCorrectAnswer = key === currentQuestion.correctAnswer;
-							const isSelected = key === selected;
-
-							let className = "";
-
-							if (showAnswer) {
-								if (isCorrectAnswer) {
-									className = styles.correct;
-									if (isSelected) {
-										className += ` ${styles.selectedCorrect}`;
-									}
-								} else {
-									className = styles.wrong;
-									if (isSelected) {
-										className += ` ${styles.selectedWrong}`;
-									}
-								}
-							}
-
-							return (
-								<StartQuizQuestionOption
-									key={key}
-									className={className}
-									onClick={() => handleSelect(key)}
-								>
-									{key}. {value}
-								</StartQuizQuestionOption>
-							);
-						})}
-				</div>
+				<StartQuizAnswerOptions
+					key={currentIndex}
+					options={currentQuestion.options}
+					correctAnswer={currentQuestion.correctAnswer}
+					selected={selected}
+					showAnswer={showAnswer}
+					onClick={handleSelect}
+				/>
 
 				{showAnswer && (
-					<StartQuizNextStepBtn onClick={handleNext} isLast={isLast}/>
+					<StartQuizNextStepBtn onClick={handleNext} isLast={isLast} />
 				)}
 			</div>
 		</div>

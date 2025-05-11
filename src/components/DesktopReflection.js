@@ -9,7 +9,7 @@ export default function DesktopReflection() {
 	// const [enableQuiz, setEnableQuiz] = useState(false);
 	const [enableQuiz, setEnableQuiz] = useState(true);
 
-
+ 
 	return (
 		<div className={styles.blackDesktop}>
 
