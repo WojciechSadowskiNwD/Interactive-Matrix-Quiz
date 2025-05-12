@@ -9,7 +9,7 @@ import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
 import StartQuizAnswerOptions from "./StartQuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
 import { useDispatch } from "react-redux";
-import { setCurrentScore } from "../store/userSlice";
+import { setBonusActive, setCurrentScore } from "../store/userSlice";
 
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]);
@@ -41,19 +41,20 @@ function StartQuiz() {
 			setSelected(optionKey);
 			setShowAnswer(true);
 
-			if(!showAnswer && optionKey === currentQuestion.correctAnswer){
+			if (!showAnswer && optionKey === currentQuestion.correctAnswer) {
 				dispatch(setCurrentScore(20));
-				setCorrAnswers((prev)=> prev+1);
+				setCorrAnswers((prev) => prev + 1);
 				console.log("Brawo zgadłeś");
-				
-				if(corrAnswers >= 3){
+
+				if (corrAnswers >= 3) {
 					// add bonus points
+					dispatch(setBonusActive(true))
 					dispatch(setCurrentScore(10));
 				}
-
-			}else if(!showAnswer && optionKey !== currentQuestion.correctAnswer){
+			} else if (!showAnswer && optionKey !== currentQuestion.correctAnswer) {
 				console.log("Nieprawda");
 				setCorrAnswers(0);
+				dispatch(setBonusActive(false))
 			}
 		}
 	};

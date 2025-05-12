@@ -4,7 +4,10 @@ const initialState = {
 	firstLaunch: true,
 	isVisible: false,
     activeComponent: "options",
+	status: "quizScreen",
+	// "startScreen", "quizScreen", "finishScreen"
 };
+
 
 const uiSlice = createSlice({
 	name: "ui",
@@ -18,10 +21,15 @@ const uiSlice = createSlice({
 		},
         changeActiveComponent: (state, action) => {
             state.activeComponent = action.payload;
-        }
+			//app screen
+        },
+		changeStatus: (state, action) => {
+			state.status = action.payload;
+			//quiz screen
+		}
 	},
 });
 
 
-export const { isFirstLaunch, itIsVisible, changeActiveComponent } = uiSlice.actions;
+export const { isFirstLaunch, itIsVisible, changeActiveComponent, changeStatus } = uiSlice.actions;
 export default uiSlice.reducer;

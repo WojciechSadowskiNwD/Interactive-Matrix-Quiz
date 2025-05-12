@@ -3,7 +3,6 @@ import StartQuizQuestionOption from "./StartQuizQuestionOption";
 import styles from "./StartQuizAnswerOptions.module.scss";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { setCurrentScore } from "../store/userSlice";
 
 function StartQuizAnswerOptions({
 	options,
@@ -12,15 +11,15 @@ function StartQuizAnswerOptions({
 	showAnswer,
 	onClick,
 }) {
+    
 	const [showOptions, setShowOptions] = useState(false);
-
-    const dispatch = useDispatch();
 
 	useEffect(() => {
 		setTimeout(() => {
 			setShowOptions(true);
 		}, 3000);
 	}, []);
+
 	return (
 		<div className={styles.answer_bars}>
 			{Object.entries(options)

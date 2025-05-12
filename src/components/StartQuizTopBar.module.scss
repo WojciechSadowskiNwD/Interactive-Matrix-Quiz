@@ -1,76 +1,100 @@
 .top_bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 10px;
-    padding-left: 7px;
-    // background-color: #9393938b;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 10px;
+	padding-left: 7px;
+	// background-color: #9393938b;
 
-    .left_box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80px;
-        height: 100px;
-        // background-color: blue;
+	.left_box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80px;
+		height: 100px;
+		// background-color: blue;
 
-        .left_box_img{
-            position: relative;
-            margin-top: 5px;
-            width: 90%;
-            height: 72%;
-            
-            .item_shadow{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                border: 6px solid #33ab00;
-                border: 6px solid #33ab00ec;
-                // box-shadow: 0 0 44px #419d00d9;
-                box-shadow: 0 0 10px #1b4100;
-                z-index: 2;
-            }
-            
-            .img_avatar {
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-            }
-        }
+		.left_box_img {
+			position: relative;
+			margin-top: 5px;
+			width: 90%;
+			height: 72%;
 
-        .left_box_nickname {
-            margin-top: 5px;
-        }
-    }
+			.item_shadow {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				border: 6px solid #33ab00;
+				border: 6px solid #33ab00ec;
+				// box-shadow: 0 0 44px #419d00d9;
+				box-shadow: 0 0 10px #1b4100;
+				z-index: 2;
+			}
 
+			.img_avatar {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
 
-    .right_box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80px;
-        width: 100px;
-        height: 100px;
-        font-family: "Orbitron", serif;
+		.left_box_nickname {
+			margin-top: 5px;
+		}
+	}
+
+	.right_box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80px;
+		width: 100px;
+		height: 100px;
+		font-family: "Orbitron", serif;
 		letter-spacing: 1.5px;
-        // background-color: brown;
+		// background-color: brown;
 
-        .right_box_title{
-            margin-top: 5px;
-            margin-top: 10px;
-            margin-top: 20px;
-            font-size: 16px;
-            letter-spacing: .7px;
-        }
-        .right_box_points{
-            margin-top: 5px;
-            font-size: 20px;
-            font-weight: bold;
-            
-        }
-    }
+		.right_box_title {
+			margin-top: 5px;
+			margin-top: 10px;
+			margin-top: 20px;
+			font-size: 16px;
+			letter-spacing: 0.7px;
+		}
+		.right_box_points {
+			margin-top: 5px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.combo_aura {
+			color: #ff9d00;
+			text-shadow: 0 0 5px #ff0000, 0 0 10px #ff1a1a, 0 0 20px #ff3333,
+				0 0 30px #ff4d4d;
+			animation: auraPulse 1.2s ease-in-out infinite;
+		}
+	}
+}
+
+// bonus combo for correct answer
+
+@keyframes auraPulse {
+	0% {
+		text-shadow: 0 0 5px #ff0000, 0 0 10px #ff1a1a, 0 0 20px #ff3333,
+			0 0 30px #ff4d4d;
+		transform: scale(1);
+	}
+	50% {
+		text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d, 0 0 30px #ff6666,
+			0 0 40px #ff9999;
+		transform: scale(1.1);
+	}
+	100% {
+		text-shadow: 0 0 5px #ff0000, 0 0 10px #ff1a1a, 0 0 20px #ff3333,
+			0 0 30px #ff4d4d;
+		transform: scale(1);
+	}
 }

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react";
 
 const initialState = {
 	// userName: null,
@@ -6,6 +7,7 @@ const initialState = {
 	// selectedAvatar: null,
 	selectedAvatar: "img/avatars/avatar_zion_woman_1.webp",
 	currentScore: 0,
+	bonusActive: false,
 };
 
 const userSlice = createSlice({
@@ -21,9 +23,12 @@ const userSlice = createSlice({
 		setCurrentScore: (state, action) => {
 			state.currentScore = state.currentScore + action.payload;
 		},
+		setBonusActive: (state, action) => {
+			state.bonusActive = action.payload;
+		}
 	},
 });
 
-export const { setUserName, setUserAvatar, setCurrentScore } =
+export const { setUserName, setUserAvatar, setCurrentScore, setBonusActive } =
 	userSlice.actions;
 export default userSlice.reducer;

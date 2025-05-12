@@ -1,20 +1,19 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import Terminal from "./Terminal";
-import styles from "./DesktopReflection.module.scss";
 import StartQuiz from "./StartQuiz";
+import styles from "./DesktopReflection.module.scss";
+
 
 export default function DesktopReflection() {
+	const {status} = useSelector((store)=>store.ui);
+	// "startScreen", "quizScreen", "finishScreen"
 
-	// ! ! ! - zrobić funkcję, która wewnątrz terminala na button odpala enableQuiz na true
-	// const [enableQuiz, setEnableQuiz] = useState(false);
-	const [enableQuiz, setEnableQuiz] = useState(true);
-
- 
 	return (
 		<div className={styles.blackDesktop}>
-
-			{!enableQuiz && <Terminal />}
-			{enableQuiz && <StartQuiz />}
+			{status === "startScreen" && <Terminal />}
+			{status === "quizScreen" && <StartQuiz />}
+			{/* {status === "finishScreen" && <FinishQuiz />} */}
 
 			<img
 				className={styles.blackDesktop_img}
