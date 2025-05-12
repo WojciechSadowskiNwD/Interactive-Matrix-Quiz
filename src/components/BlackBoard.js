@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { itIsVisible } from "../store/uiSlice";
 import { motion } from "framer-motion";
+
 import OptionsPanel from "./OptionsPanel";
 import ScoreBoard from "../pages/ScoreBoard";
 import AboutApp from "../pages/AboutApp";

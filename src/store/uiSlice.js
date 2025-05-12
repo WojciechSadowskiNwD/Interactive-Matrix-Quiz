@@ -4,8 +4,9 @@ const initialState = {
 	firstLaunch: true,
 	isVisible: false,
     activeComponent: "options",
-	status: "quizScreen",
+	status: "startScreen",
 	// "startScreen", "quizScreen", "finishScreen"
+	secondsRemaining: 430,  //for timer quiz
 };
 
 
@@ -25,11 +26,18 @@ const uiSlice = createSlice({
         },
 		changeStatus: (state, action) => {
 			state.status = action.payload;
+			console.log(state.status);
 			//quiz screen
+		},
+		countdown:  (state) => {
+			state.secondsRemaining = state.secondsRemaining - 1;
+			if(state.secondsRemaining === 0){
+				state.status = "finishScreen";
+			}
 		}
 	},
 });
 
 
-export const { isFirstLaunch, itIsVisible, changeActiveComponent, changeStatus } = uiSlice.actions;
+export const { isFirstLaunch, itIsVisible, changeActiveComponent, changeStatus, countdown } = uiSlice.actions;
 export default uiSlice.reducer;

@@ -5,8 +5,9 @@ function StartQuizTopBar() {
 	const { userName: nickname, selectedAvatar, currentScore, bonusActive } = useSelector(
 		(store) => store.user
 	);
-	console.log("bonusActive: " + bonusActive);
+	
 
+	// console.log("Is bonusActive: " + bonusActive);
 	return (
 		<div className={styles.top_bar}>
 			<div className={styles.left_box}>

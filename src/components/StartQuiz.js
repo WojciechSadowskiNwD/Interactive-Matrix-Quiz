@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { fetchQuizQuestions } from "../fetchQuizQuestions ";
+import { useDispatch } from "react-redux";
+import { setBonusActive, setCurrentScore } from "../store/userSlice";
 
 import StartQuizTopBar from "./StartQuizTopBar";
-import StartQuizDeadline from "./StartQuizDeadline";
+import StartQuizTimer from "./StartQuizTimer";
 import StartQuizQuestionNum from "./StartQuizQuestionNum";
 import TerminalAutoTyping from "./TerminalAutoTyping";
 import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
 import StartQuizAnswerOptions from "./StartQuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
-import { useDispatch } from "react-redux";
-import { setBonusActive, setCurrentScore } from "../store/userSlice";
+import { changeStatus } from "../store/uiSlice";
+
 
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]);
-	const [currentIndex, setCurrentIndex] = useState(0);
+	const [currentIndex, setCurrentIndex] = useState(13);
 	const [selected, setSelected] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
 	const [corrAnswers, setCorrAnswers] = useState(0);
@@ -44,7 +46,7 @@ function StartQuiz() {
 			if (!showAnswer && optionKey === currentQuestion.correctAnswer) {
 				dispatch(setCurrentScore(20));
 				setCorrAnswers((prev) => prev + 1);
-				console.log("Brawo zgadłeś");
+				console.log("You answered well!");
 
 				if (corrAnswers >= 3) {
 					// add bonus points
@@ -52,7 +54,7 @@ function StartQuiz() {
 					dispatch(setCurrentScore(10));
 				}
 			} else if (!showAnswer && optionKey !== currentQuestion.correctAnswer) {
-				console.log("Nieprawda");
+				console.log("Wrong answer");
 				setCorrAnswers(0);
 				dispatch(setBonusActive(false))
 			}
@@ -65,8 +67,7 @@ function StartQuiz() {
 			setSelected(null);
 			setShowAnswer(false);
 		} else {
-			// Tu potem przekierować do podsumowania quizu
-			alert("Quiz zakończony!");
+			dispatch(changeStatus("finishScreen"));
 		}
 	};
 
@@ -77,7 +78,7 @@ function StartQuiz() {
 				currQuestion={currentIndex}
 				total={questions.length}
 			/>
-			<StartQuizDeadline />
+			<StartQuizTimer />
 			<div className={styles.question_wrapper}>
 				<div className={styles.question_box}>
 					<TerminalAutoTyping key={currentIndex}>
