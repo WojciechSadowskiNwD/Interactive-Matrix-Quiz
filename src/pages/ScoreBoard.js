@@ -33,7 +33,7 @@ function ScoreBoard({ onBack }) {
 
 	return (
 		<div className={styles.scoreBoard}>
-			<ScoreTitleBanner />
+			<ScoreTitleBanner>Score board</ScoreTitleBanner>
 
 			<div className={styles.green_frame}>
 				<ScoreLabelInfo />

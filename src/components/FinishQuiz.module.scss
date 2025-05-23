@@ -1,0 +1,79 @@
+.finishQuiz_wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+	background-color: rgba(255, 0, 0, 0.179);
+
+	h2 {
+		font-size: 19px;
+		letter-spacing: 1px;
+	}
+
+	.avatar_box {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 300px;
+		// background-color: rgba(255, 123, 0, 0.501);
+
+		.circle_frame {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			// align-items: center;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%);
+			width: 90%;
+			height: 100%;
+			border-radius: 50%;
+			border: 1px solid #33ab0039;
+			box-shadow: 0 0 10px #1b4100;
+			z-index: 2;
+			overflow: hidden;
+
+			.shadow_frame {
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				border: 20px solid gray;
+				border: 20px solid rgba(128, 128, 128, 0.388);
+                opacity: 0.2;
+			}
+
+			.img_avatar {
+				width: 100%;
+				opacity: 0.2;
+			}
+		}
+        .nickname_box {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            align-items: start;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            // background-color: red;
+            
+            .nickname {
+                font-size: 21px;
+                letter-spacing: 1.7px;
+                font-weight: bold;
+                color: #c3c3c3;
+                z-index: 99;
+            }
+        }
+	}
+}

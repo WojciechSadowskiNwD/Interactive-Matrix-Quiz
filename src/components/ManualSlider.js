@@ -4,21 +4,19 @@ import { motion } from "framer-motion";
 import { setUserAvatar } from "../store/userSlice";
 import styles from "./ManualSlider.module.scss";
 
+// było 12 wcześniej
 const avatars = [
-	"img/avatars/avatar_agent_1.webp",
-	"img/avatars/avatar_agent_2.webp",
-	"img/avatars/avatar_architect.webp",
-	"img/avatars/avatar_guard_1.webp",
-	"img/avatars/avatar_guard_2.webp",
-	"img/avatars/avatar_india_woman.webp",
-	"img/avatars/avatar_zion_man_1.webp",
-	"img/avatars/avatar_zion_man_2.webp",
-	"img/avatars/avatar_zion_man_3.webp",
-	"img/avatars/avatar_zion_man_4.webp",
-	"img/avatars/avatar_zion_woman_1.webp",
-	"img/avatars/avatar_zion_woman_2.webp",
+	"img/avatars/avatar_1.webp",
+	"img/avatars/avatar_2.webp",
+	"img/avatars/avatar_3.webp",
+	"img/avatars/avatar_4.webp",
+	"img/avatars/avatar_5.webp",
+	"img/avatars/avatar_6.webp",
+	"img/avatars/avatar_7.webp",
+	"img/avatars/avatar_8.webp",
+	"img/avatars/avatar_9.webp",
+	"img/avatars/avatar_10.webp",
 ];
-
 
 
 // ile mamy avatarów w kolekcji foto?

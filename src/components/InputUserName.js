@@ -17,7 +17,7 @@ export default function InputUserName({onChange, disabled}) {
 				className={styles.inputName}
 				type="text"
 				placeholder="your nick..."
-				value={userName}
+				value={typeof userName === 'string' ? userName : ''}
 				onChange={onChange}
 				disabled={disabled}
 			/>

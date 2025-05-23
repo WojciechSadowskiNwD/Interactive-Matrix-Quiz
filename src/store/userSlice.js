@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
 
 const initialState = {
 	userName: null,
-	// userName: "Adam154",
+	// userName: "Nicola96",
 	selectedAvatar: null,
-	// selectedAvatar: "img/avatars/avatar_zion_woman_1.webp",
+	// selectedAvatar: "img/avatars/avatar_1.webp",
 	currentScore: 0,
+	// currentScore: 200,
 	bonusActive: false,
 };
 
