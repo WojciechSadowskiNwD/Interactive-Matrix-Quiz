@@ -10,7 +10,7 @@ function AboutMoviesCarousel() {
 	const [isDesktopWidth, setIsDesktopWidth] = useState(
 		window.innerWidth >= 992
 	);
-	const [loading, setLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
 		const fetchMatrixMovies = async () => {
 			try {
@@ -23,7 +23,7 @@ function AboutMoviesCarousel() {
 			} catch (error) {
 				console.error("Error downloading API data:", error);
 			} finally {
-				setLoading(false);
+				setIsLoading(false);
 			}
 		};
 
@@ -32,8 +32,10 @@ function AboutMoviesCarousel() {
 
 	return (
 		<>
-			{loading ? (
-				<p>Loading data...</p>
+			{isLoading ? (
+				<div className="allSpace">
+					<div className="loader"></div>
+				</div>
 			) : isDesktopWidth ? (
 				<AboutMoviesCarouselDesktop movies={matrixMovies} />
 			) : (
@@ -43,7 +45,3 @@ function AboutMoviesCarousel() {
 	);
 }
 export default AboutMoviesCarousel;
-
-
-
-
