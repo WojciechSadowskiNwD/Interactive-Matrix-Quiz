@@ -35,10 +35,8 @@ export default function FinishQuiz() {
 					<em className={styles.nickname}>{nickname}</em>
 				</div>
 			</div>
-
-			<SummaryTable/>
 			
-			{/* Buttony hiperłącza: */}
+			<SummaryTable/>
 			<SummaryButtons/>
 		</div>
 	);

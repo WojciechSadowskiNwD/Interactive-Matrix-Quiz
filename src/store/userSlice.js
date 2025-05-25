@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	// userName: null,
-	// selectedAvatar: null,
-	// currentScore: 0,
+	userName: null,
+	selectedAvatar: null,
+	currentScore: 0,
 	
-	userName: "Nicola96",
-	selectedAvatar: "img/avatars/avatar_1.webp",
-	currentScore: 300,
+	// userName: "Nicola96",
+	// selectedAvatar: "img/avatars/avatar_1.webp",
+	// currentScore: 300,
 	
 
 	bonusActive: false,
