@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import {db} from "../firebaseConfig";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import ScoreLabelInfo from "../components/ScoreLabelInfo";
@@ -8,28 +8,45 @@ import ScoreTitleBanner from "../components/ScoreTitleBanner";
 import ScoreUserBar from "../components/ScoreUserBar";
 import styles from "./ScoreBoard.module.scss";
 
-
 function ScoreBoard({ onBack }) {
-
+	const [isLoading, setIsLoading] = useState(true);
 	const [highestRecords, setHighestRecords] = useState([]);
 
 	useEffect(() => {
 		const fetchScores = async () => {
-			const q = query(collection(db, "scores"), orderBy("points", "desc"), limit(5));
-			const querySnapshot = await getDocs(q);
+			try {
+				const q = query(
+					collection(db, "scores"),
+					orderBy("points", "desc"),
+					limit(5)
+				);
+				const querySnapshot = await getDocs(q);
 
-			const scores = querySnapshot.docs.map((doc, index) => ({
-				id: doc.id,
-				nick: doc.data().nick,
-				points: doc.data().points,
-			}));
+				const scores = querySnapshot.docs.map((doc, index) => ({
+					id: doc.id,
+					nick: doc.data().nick,
+					points: doc.data().points,
+				}));
 
-			setHighestRecords(scores);
+				setHighestRecords(scores);
+			} catch (error) {
+				console.error("Error fetching scores: ", error);
+			} finally {
+				setIsLoading(false);
+			}
 		};
 
 		fetchScores();
 	}, []);
 
+	// LOADER:
+	if (isLoading) {
+		return (
+			<div className="setToCenter">
+				<div className="loader"></div>
+			</div>
+		);
+	}
 
 	return (
 		<div className={styles.scoreBoard}>
@@ -48,13 +65,12 @@ function ScoreBoard({ onBack }) {
 				))}
 			</div>
 
-			<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtra}/>
+			<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtra} />
 		</div>
 	);
 }
 
 export default ScoreBoard;
-
 
 // Jak ma to wyglądać?
 // opcjonalnie:

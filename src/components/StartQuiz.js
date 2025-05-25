@@ -15,7 +15,6 @@ import styles from "./StartQuiz.module.scss";
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]);
 	const [currentIndex, setCurrentIndex] = useState(13);
-	// const [currentIndex, setCurrentIndex] = useState(13);
 	const [selected, setSelected] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
 	const [unmistakablyShots, setUnmistakablyShots] = useState(0);
@@ -30,8 +29,13 @@ function StartQuiz() {
 		loadQuestions();
 	}, []);
 
+	// LOADER:
 	if (questions.length === 0 || !questions[currentIndex]) {
-		return <div>Loading quiz...</div>;
+		return (
+			<div className="setToCenter">
+				<div className="loader"></div>
+			</div>
+		);
 	}
 
 	const currentQuestion = questions[currentIndex];
@@ -114,32 +118,3 @@ function StartQuiz() {
 }
 
 export default StartQuiz;
-
-// kopia stary kod:
-// const handleSelect = (optionKey) => {
-// 		if (!showAnswer) {
-// 			setSelected(optionKey);
-// 			setShowAnswer(true);
-
-// 			if (!showAnswer && optionKey === currentQuestion.correctAnswer) {
-// 				dispatch(setCurrentScore(20));
-// 				dispatch(setCorrAnswers(1));
-// 				setUnmistakablyShots((prev) => prev + 1);
-// 				console.log("You answered well!");
-
-// 				if (unmistakablyShots >= 3) {
-// 					// add bonus points
-// 					dispatch(setBonusActive(true));
-// 					dispatch(setCurrentScore(10));
-// 					console.log("added 10 bonus points!");
-// 				}
-// 			} else if (unmistakablyShots >= 6) {
-// 				dispatch(setCurrentScore(15));
-// 				console.log("added 15 bonus points!");
-// 			} else if (!showAnswer && optionKey !== currentQuestion.correctAnswer) {
-// 				console.log("Wrong answer");
-// 				setUnmistakablyShots(0);
-// 				dispatch(setBonusActive(false));
-// 			}
-// 		}
-// 	};

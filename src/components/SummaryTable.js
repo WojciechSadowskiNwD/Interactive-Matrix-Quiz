@@ -90,6 +90,7 @@ function SummaryTable() {
 					className={styles.records_info}
 					initial={{ opacity: 0, scale: 1.2 }}
 					animate={{ opacity: 1, scale: 1 }}
+
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
 					You failed to break the record.
