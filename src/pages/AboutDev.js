@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import AboutAvatarFrame from "../components/AboutAvatarFrame";
 import AboutIconsContainer from "../components/AboutIconsContainer";
 import AboutIconSkill from "../components/AboutIconSkill";
@@ -6,8 +7,24 @@ import AboutTitle from "../components/AboutTitle";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import styles from "./About.module.scss";
 
-
 function AboutDev({ onBack }) {
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(()=> {
+		const timeout = setTimeout(()=>{
+			setIsLoading(false)
+		}, 500);
+
+		return () => clearTimeout(timeout);
+	},[])
+
+	if (isLoading) {
+		return (
+			<div className="allSpace">
+				<div className="loader"></div>
+			</div>
+		);
+	}
 	return (
 		<div className={styles.about_container}>
 			<div className={styles.about_frame}>
@@ -23,7 +40,7 @@ function AboutDev({ onBack }) {
 					<AboutIconSkill img="img/GitIcon.webp" text="Git" />
 				</AboutIconsContainer>
 
-				<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtraAD}/>
+				<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtraAD} />
 			</div>
 		</div>
 	);
