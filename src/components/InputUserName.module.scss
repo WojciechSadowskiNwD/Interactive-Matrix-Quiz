@@ -7,7 +7,9 @@
 	margin-top: 15px;
 	width: 90%;
 	height: 60px;
-	
+	// background-color: red;
+	// margin-bottom: 20px;
+
 	.inputName {
 		padding: 10px 20px;
 		font-size: 17px;
@@ -46,13 +48,22 @@
 }
 @include responsive(md-1) {
 	.inputName_box {
-
 		.inputName {
 			font-size: 18px;
 			min-width: 280px;
 		}
 	}
 }
+@include responsive(high-sm-3) {
+	.inputName_box {
+		margin-bottom: 20px;
+
+		.inputName {
+			font-size: 18px;
+		}
+	}
+}
+
 @include responsive(high-md-2) {
 	.inputName_box {
 		margin-top: 24px;

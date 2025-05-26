@@ -10,7 +10,7 @@ import BtnAccept from "./BtnAccept";
 
 function Terminal() {
 	const [showInput, setShowInput] = useState(false);
-	const [showMoreInfo, setShowMoreInfo] = useState(false);
+	const [showMoreInfo, setShowMoreInfo] = useState(false); 
 	const [showSlider, setShowSlider] = useState(false);
 	const [dispableInput, setDispableInput] = useState(false);
 

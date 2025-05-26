@@ -14,7 +14,8 @@ import styles from "./StartQuiz.module.scss";
 
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]);
-	const [currentIndex, setCurrentIndex] = useState(13);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	// const [currentIndex, setCurrentIndex] = useState(13); //do testowania
 	const [selected, setSelected] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
 	const [unmistakablyShots, setUnmistakablyShots] = useState(0);

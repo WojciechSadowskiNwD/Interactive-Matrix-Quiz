@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .nextStepBtn_wrapper {
 	position: absolute;
 	display: flex;
@@ -10,20 +12,35 @@
 	// background-color: rgba(153, 153, 153, 0.637);
 
 	.nextStepBtn {
-        font-family: "Courier New", monospace;
+		font-family: "Courier New", monospace;
 		font-size: 18px;
-        letter-spacing: 1.4px;
-        font-style: italic;
+		letter-spacing: 1.4px;
+		font-style: italic;
 		text-transform: uppercase;
 		padding: 10px 22px;
-        color: #fff;
-        background-color: rgba(0, 128, 0, 0.626);
-        border: 1px solid transparent;
+		color: #fff;
+		background-color: rgba(0, 128, 0, 0.626);
+		border: 1px solid transparent;
 		cursor: pointer;
 	}
 }
-.icon_forward{
+.icon_forward {
 	font-size: 16px;
-    margin-left: 12px;
+	margin-left: 12px;
+}
 
+@include responsive(xs-1) {
+	.nextStepBtn_wrapper {
+		height: 60px;
+		// background-color: rgba(153, 153, 153, 0.637);
+
+		.nextStepBtn {
+			font-size: 16px;
+			padding: 8px 18px;
+		}
+	}
+	.icon_forward {
+		font-size: 14px;
+		margin-left: 10px;
+	}
 }

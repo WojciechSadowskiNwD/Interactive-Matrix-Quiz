@@ -23,12 +23,12 @@
 		color: #00d300;
 		text-shadow: 0 0 10px #00ff00, 0 5px 30px #00e200;
 	}
-    .sum {
-        font-size: 20px;
-    }
-    .records_info {
-        color: gold;
-    }
+	.sum {
+		font-size: 20px;
+	}
+	.records_info {
+		color: gold;
+	}
 }
 
 .titleBanner {
@@ -112,5 +112,19 @@
 		height: 100px;
 		background-color: greenyellow;
 		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+}
+
+// RWD
+@include responsive(high-sm-3) {
+	.summaryTable {
+		// background-color: #fff;
+
+		em {
+			font-size: 18px;
+		}
+		.sum {
+			font-size: 21px;
+		}
 	}
 }

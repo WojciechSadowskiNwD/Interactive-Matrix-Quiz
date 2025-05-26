@@ -33,3 +33,24 @@
 		}
 	}
 }
+@include responsive(xs-1) {
+	.startQuiz {
+		.question_wrapper {
+			height: 400px;
+			// background-color: #ffffff24; //do zrobienia
+			.question_box {
+				margin-top: 0;
+				width: 85%;
+				height: 160px;
+			}
+		}
+	}
+}
+@include responsive(high-sm-3) {
+	.startQuiz {
+		.question_wrapper {
+			height: 480px;
+			// background-color: #ffffff24;
+		}
+	}
+}

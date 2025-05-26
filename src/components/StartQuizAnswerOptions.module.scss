@@ -1,10 +1,11 @@
+@import "../styles/global.scss";
+
 .answer_bars {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	width: 100%;
-	height: 280px;
 	height: 340px;
 	// background-color: rgba(128, 255, 0, 0.233);
 }
@@ -25,4 +26,11 @@
 	background-color: rgba(33, 33, 104, 0.956) !important;	
 	color: white;
 	transform: translateX(-10%) !important;
+}
+@include responsive(high-sm-3) {
+	.answer_bars  {
+		margin-top: 15px;
+		height: 340px;
+		// background-color: #ffffff40;
+	}
 }

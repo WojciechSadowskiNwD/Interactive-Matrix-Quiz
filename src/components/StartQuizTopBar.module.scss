@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .top_bar {
 	display: flex;
 	flex-direction: row;
@@ -80,7 +82,6 @@
 }
 
 // bonus combo for correct answer
-
 @keyframes auraPulse {
 	0% {
 		text-shadow: 0 0 5px #ff0000, 0 0 10px #ff1a1a, 0 0 20px #ff3333,
@@ -96,5 +97,18 @@
 		text-shadow: 0 0 5px #ff0000, 0 0 10px #ff1a1a, 0 0 20px #ff3333,
 			0 0 30px #ff4d4d;
 		transform: scale(1);
+	}
+}
+
+// RWD
+@include responsive(xs-1) {
+	.top_bar {
+		margin-top: 5px;
+	}
+}
+@include responsive(high-sm-3) {
+	.top_bar {
+		margin-top: 15px;
+		// background-color: #ffffff20;
 	}
 }

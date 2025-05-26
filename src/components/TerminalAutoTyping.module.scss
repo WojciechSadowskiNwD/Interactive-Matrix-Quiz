@@ -34,6 +34,9 @@
 		margin-bottom: 10px;
 		font-size: 20px;
 	}
+	@include responsive(high-sm-3) {
+		font-size: 19px;
+	}
 	@include responsive(high-md-2) {
 		margin-top: 20px;
 	}

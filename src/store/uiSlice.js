@@ -6,7 +6,7 @@ const initialState = {
 	activeComponent: "options",
 	// "startScreen", "quizScreen", "finishScreen"
 	status: "startScreen",
-	// status: "quizScreen", 
+	// status: "quizScreen", 	
 	corrAnswers: 0,
 	secondsRemaining: 430, //time in quiz
 };
