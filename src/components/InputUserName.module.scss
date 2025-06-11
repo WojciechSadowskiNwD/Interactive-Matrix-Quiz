@@ -53,6 +53,33 @@
 		}
 	}
 }
+@include responsive(md-3) {
+	.inputName_box {
+		height: 70px;
+		
+		.inputName {
+			letter-spacing: 1.5px;
+		}
+	}
+}
+@include responsive(lg) {
+	.inputName_box {
+		height: 60px;
+		
+		.inputName {
+			letter-spacing: 1.5px;
+		}
+	}
+}
+@include responsive(xxl) {
+	.inputName_box {
+		height: 70px;
+		
+		.inputName {
+			letter-spacing: 1.5px;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.inputName_box {
 		margin-bottom: 20px;

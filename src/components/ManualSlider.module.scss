@@ -9,7 +9,6 @@
 	margin-top: 30px;
 	width: 100%;
 	height: 260px;
-	// background-color: rgb(125, 125, 125);
 	z-index: 1;
 
 	.btn_nav {
@@ -39,7 +38,6 @@
 		height: 90%;
 		margin: 10px 10px;
 		overflow: hidden;
-		// background-color: #fff;
 
 		.slider {
 			display: flex;
@@ -47,7 +45,6 @@
 			align-items: center;
 			height: 90%;
 			transition: 0.7s;
-			// background-color: red;
 
 			.slider_item {
 				position: relative;
@@ -87,7 +84,6 @@
 @include responsive(xs-1) {
 	.slider_wrapper {
 		margin-top: 20px;
-		// background-color: rgb(125, 125, 125);
 
 		.slider_box {
 			width: 62%;
@@ -123,10 +119,32 @@
 @include responsive(md-1) {
 	.slider_wrapper {
 		height: 280px;
-		// background-color: rgb(125, 125, 125);
 
 		.slider_box {
-			// background-color: rgb(155, 155, 155);
+			width: 245px;
+
+			.slider {
+				// background-color: #ffffff5f;
+				.slider_item {
+					margin-left: 28px;
+					min-width: 192px;
+				}
+			}
+		}
+	}
+}
+@include responsive(md-2) {
+	.slider_wrapper {
+		height: 280px;
+
+		.btn_nav {
+			width: 45px;
+			font-size: 30px;
+			margin: 15px;
+			line-height: 1.5;
+		}
+
+		.slider_box {
 			width: 245px;
 
 			.slider {
@@ -138,23 +156,69 @@
 		}
 	}
 }
-
-@include responsive(lg) {
+@include responsive(md-3) {
 	.slider_wrapper {
-		height: 250px;
-		// background-color: #fff;
+		height: 280px;
+
+		.btn_nav {
+			width: 45px;
+			font-size: 30px;
+			margin: 15px;
+			line-height: 1.5;
+		}
 
 		.slider_box {
-			// width: 670px;  // na szerszy
-			// width: 460px;
-			width: 410px;
-			// background-color: rgb(155, 155, 155);
+			width: 245px;
 
 			.slider {
 				.slider_item {
+					margin-left: 24px;
+					min-width: 197px;
+					height: 78%;
+				}
+			}
+		}
+	}
+}
+@include responsive(lg) {
+	.slider_wrapper {
+		margin-top: 15px;
+		height: 240px;
+
+		.btn_nav {
+			width: 50px;
+			margin: 5px;
+		}
+
+		.btn_prev {
+			border-top-left-radius: 40px;
+			border-bottom-left-radius: 40px;
+		}
+		.btn_next {
+			border-top-right-radius: 40px;
+			border-bottom-right-radius: 40px;
+		}
+
+		.slider_box {
+			width: 410px;
+			height: 90%;
+
+			.slider {
+				.slider_item {
+					margin-left: 30px;
 					min-width: 160px;
 				}
 			}
 		}
+	}
+}
+@include responsive(high-sm-1) {
+	.slider_wrapper {
+		margin-top: 8px;
+	}
+}
+@include responsive(xxl) {
+	.slider_wrapper {
+		margin-top: 25px;
 	}
 }

@@ -21,9 +21,8 @@ const avatars = [
 // How many avatars do we have in the photo collection?
 // console.log(avatars.length);
 
-
 function ManualSlider() {
-	const dispatch = useDispatch();
+	const dispatch = useDispatch(); 
 	const selectedAvatar = useSelector((store) => store.user.selectedAvatar);
 
 	const [shiftWidth, setShiftWidth] = useState(0);
@@ -40,11 +39,13 @@ function ManualSlider() {
 			} else if (window.innerWidth === 390) {
 				setShiftStep(206);
 				console.log("tick 390");
-			}
-			else if (window.innerWidth === 412) {
-				// setShiftStep(215);
+			} else if (window.innerWidth === 412) {
 				setShiftStep(220);
-			} else if(window.innerWidth >= 992) {
+			} else if (window.innerWidth === 576) {
+				setShiftStep(220);
+			} else if (window.innerWidth === 768) {
+				setShiftStep(221);
+			} else if (window.innerWidth >= 992) {
 				setShiftStep(190);
 				// console.log("obecna szerokość: 992px");
 				setX(2);
@@ -86,7 +87,7 @@ function ManualSlider() {
 					scale: 1.1,
 					backgroundColor: "rgb(0, 80, 166)",
 					boxShadow: "0 0 15px rgb(0, 80, 166)",
-					cursor: "none"
+					cursor: "none",
 				}}
 				transition={{ type: "spring", stiffness: 600 }}
 			>
@@ -129,7 +130,7 @@ function ManualSlider() {
 					scale: 1.1,
 					backgroundColor: "rgb(185, 0, 0)",
 					boxShadow: "0 0 15px rgb(185, 0, 0)",
-					cursor: "none"
+					cursor: "none",
 				}}
 				transition={{ type: "spring", stiffness: 600 }}
 			>
