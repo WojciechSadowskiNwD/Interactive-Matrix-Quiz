@@ -6,8 +6,7 @@ function StartQuizTopBar() {
 		(store) => store.user
 	);
 	
-
-	// console.log("Is bonusActive: " + bonusActive);
+	
 	return (
 		<div className={styles.top_bar}>
 			<div className={styles.left_box}>

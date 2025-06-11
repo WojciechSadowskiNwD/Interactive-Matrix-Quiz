@@ -1,3 +1,5 @@
+@import "../styles/global.scss";
+
 .timer_wrapper {
 	display: flex;
 	justify-content: center;
@@ -18,5 +20,28 @@
 			color: #d6d6d6;
 			font-size: 18px;
 		}
+	}
+}
+
+@include responsive(md-1) {
+	.timer_wrapper {
+		margin-bottom: 5px;
+		// background-color: red;
+
+
+		.timer_frame {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 250px;
+		height: 100%;
+		border-radius: 10%;
+		// background-color: red;
+
+		em {
+			letter-spacing: .8px;
+			font-size: 20px;
+		}
+	}
 	}
 }

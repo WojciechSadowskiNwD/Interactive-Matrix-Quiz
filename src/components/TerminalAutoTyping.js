@@ -33,7 +33,7 @@ const TerminalAutoTyping = ({ children }) => {
 
 	return (
 		<div className={styles.terminal}>
-			{displayedText}
+			<em className={styles.displayedText}>{displayedText}</em>
 			{<span className={styles.cursor_box} />}
 		</div>
 	);

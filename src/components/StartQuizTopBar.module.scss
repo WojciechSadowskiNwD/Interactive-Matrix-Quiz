@@ -106,9 +106,39 @@
 		margin-top: 5px;
 	}
 }
+@include responsive(md-1) {
+	.top_bar {
+		// background-color: #ffffff20;
+
+		.left_box {
+			width: 92px;
+			height: 110px;
+			margin-left: 8px;
+			// background-color: blue;
+
+			.left_box_nickname {
+				margin-top: 7px;
+				font-size: 18px;
+				letter-spacing: 0.4px;
+			}
+		}
+		.right_box {
+			margin-right: 10px;
+			// background-color: brown;
+
+			.right_box_title {
+				font-size: 17.5px;
+				letter-spacing: 1px;
+			}
+			.right_box_points {
+				margin-top: 8px;
+				font-size: 21px;
+			}
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.top_bar {
 		margin-top: 15px;
-		// background-color: #ffffff20;
 	}
 }

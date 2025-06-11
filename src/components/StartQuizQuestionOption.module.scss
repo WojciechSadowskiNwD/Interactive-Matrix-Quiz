@@ -68,3 +68,13 @@
 		padding: 0;
 	}
 }
+@include responsive(md-1) {
+	.option {
+		height: 60px;
+		width: 320px;
+	}
+	.text {
+		font-size: 17px;
+		letter-spacing: 0.5px;
+	}
+}

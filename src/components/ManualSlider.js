@@ -18,10 +18,8 @@ const avatars = [
 	"img/avatars/avatar_10.webp",
 ];
 
-
-// ile mamy avatarów w kolekcji foto?
-console.log(avatars.length);
-
+// How many avatars do we have in the photo collection?
+// console.log(avatars.length);
 
 
 function ManualSlider() {
@@ -34,15 +32,21 @@ function ManualSlider() {
 
 	useEffect(() => {
 		const updateShiftStep = () => {
-			if (window.innerWidth < 375) {
+			if (window.innerWidth === 360) {
 				setShiftStep(200);
 			} else if (window.innerWidth === 375) {
 				setShiftStep(205);
-			} else if (window.innerWidth === 412) {
-				setShiftStep(215);
+				console.log("tick 375");
+			} else if (window.innerWidth === 390) {
+				setShiftStep(206);
+				console.log("tick 390");
+			}
+			else if (window.innerWidth === 412) {
+				// setShiftStep(215);
+				setShiftStep(220);
 			} else if(window.innerWidth >= 992) {
-				// console.log("obecna szerokość: 992px");
 				setShiftStep(190);
+				// console.log("obecna szerokość: 992px");
 				setX(2);
 			}
 		};

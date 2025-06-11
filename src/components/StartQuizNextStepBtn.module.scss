@@ -44,3 +44,14 @@
 		margin-left: 10px;
 	}
 }
+@include responsive(md-1) {
+	.nextStepBtn_wrapper {
+		height: 75px;
+		// background-color: rgba(153, 153, 153, 0.637);
+
+		.nextStepBtn {
+			font-size: 19px;
+			padding: 10px 22px;
+		}
+	}
+}

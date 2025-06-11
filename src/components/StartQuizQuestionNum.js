@@ -4,7 +4,7 @@ function StartQuizQuestionNum({currQuestion, total}) {
 	
 	return (
 		<div className={styles.QuestionNum}> 
-			<h3>QUESTION {currQuestion+1}/{total}</h3>
+			<h3 className={styles.title}>QUESTION {currQuestion+1}/{total}</h3>
 		</div>
 	);
 }
