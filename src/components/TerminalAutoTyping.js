@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from './TerminalAutoTyping.module.scss';
 
-const TerminalAutoTyping = ({ children }) => {
+const TerminalAutoTyping = ({ children, customFontSize="" }) => {
 	const [displayedText, setDisplayedText] = useState("");
 	const [showCursor, setShowCursor] = useState(true);
 	const [startTyping, setStartTyping] = useState(false);
@@ -33,7 +33,7 @@ const TerminalAutoTyping = ({ children }) => {
 
 	return (
 		<div className={styles.terminal}>
-			<em className={styles.displayedText}>{displayedText}</em>
+			<em className={customFontSize ||  styles.displayedText}>{displayedText}</em>
 			{<span className={styles.cursor_box} />}
 		</div>
 	);

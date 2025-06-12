@@ -108,7 +108,7 @@
 }
 @include responsive(md-1) {
 	.top_bar {
-		// background-color: #ffffff20;
+		margin-bottom: 30px;
 
 		.left_box {
 			width: 92px;
@@ -118,7 +118,7 @@
 
 			.left_box_nickname {
 				margin-top: 7px;
-				font-size: 18px;
+				font-size: 18.5px;
 				letter-spacing: 0.4px;
 			}
 		}
@@ -127,11 +127,11 @@
 			// background-color: brown;
 
 			.right_box_title {
-				font-size: 17.5px;
-				letter-spacing: 1px;
+				font-size: 18px;
+				letter-spacing: 1.5px;
 			}
 			.right_box_points {
-				margin-top: 8px;
+				margin-top: 9px;
 				font-size: 21px;
 			}
 		}

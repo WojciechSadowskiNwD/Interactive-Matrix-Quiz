@@ -14,6 +14,7 @@
 		padding-bottom: 20px;
 		width: 100%;
 		height: 450px;
+		// background-color: #ffffff2a;  //12.06.25 robiąc RWD
 
 		.question_box {
 			display: flex;
@@ -45,14 +46,34 @@
 		}
 	}
 }
+@include responsive(xs-2){
+	.startQuiz{
+		.question_wrapper{
+			min-height: 530px;
+
+			.question_box{
+				height: 200px;
+
+				.customFontSize{
+					font-size: 19px;
+					letter-spacing: .7px;
+				}
+			}
+		}
+	}
+}
 @include responsive(md-1) {
 	.startQuiz {
 		.question_wrapper {
-			height: 400px;
-			min-height: 520px;
+			height: 540px;
+			min-height: 540px;
 			// background-color: #ffffff24; //do zrobienia
 			.question_box {
 				height: 200px;
+
+				.customFontSize{
+					font-size: 20px;
+				}
 			}
 		}
 	}
