@@ -60,3 +60,12 @@
 		}
 	}
 }
+@include responsive(xxl) {
+	.timer_wrapper {
+		.timer_frame {
+			em {
+				font-size: 22px;
+			}
+		}
+	}
+}

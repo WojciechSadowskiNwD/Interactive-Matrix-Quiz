@@ -76,6 +76,14 @@
 		}
 	}
 }
+@include responsive(xxl) {
+	.QuestionNum {
+		max-height: 55px;
+		.title {
+			font-size: 32px;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.QuestionNum {
 		margin-top: 15px;

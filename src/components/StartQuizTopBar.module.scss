@@ -173,7 +173,6 @@
 		}
 
 		.right_box {
-			margin-right: 10px;
 			margin-right: 4%;
 			border: 1px solid brown;
 		}
@@ -197,7 +196,6 @@
 
 		.right_box {
 			margin-top: 10px;
-			margin-right: 10px;
 			margin-right: 5%;
 			border: none;
 		}
@@ -206,13 +204,11 @@
 @include responsive(high-sm-1) {
 	.top_bar {
 		margin-top: 12px !important;
-		// background-color: #ffffff35;
 		margin-bottom: 2px;
 
 		.left_box {
 			width: 100px;
 			height: 115px;
-			margin-left: 6%;
 			margin-left: 7%;
 
 			.left_box_nickname {
@@ -223,9 +219,40 @@
 
 		.right_box {
 			margin-top: 10px;
-			margin-right: 10px;
 			margin-right: 7%;
 			border: none;
+		}
+	}
+}
+@include responsive(xxl) {
+	.top_bar {
+		margin-top: 15px !important;
+		// background-color: #ffffff35;
+		margin-bottom: 25px;
+
+		.left_box {
+			width: 105px;
+			height: 120px;
+			margin-left: 7.5%;
+
+			.left_box_nickname {
+				margin-top: 10px;
+				font-size: 19.5px;
+			}
+		}
+
+		.right_box {
+			margin-top: 10px;
+			margin-right: 7.5%;
+
+			.right_box_title {
+				font-size: 18.5px;
+				letter-spacing: 1.7px;
+			}
+			.right_box_points {
+				margin-top: 10px;
+				font-size: 22.5px;
+			}
 		}
 	}
 }
