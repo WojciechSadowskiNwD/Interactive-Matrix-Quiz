@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import StartQuizQuestionOption from "./StartQuizQuestionOption";
-import styles from "./StartQuizAnswerOptions.module.scss";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
+import styles from "./StartQuizAnswerOptions.module.scss";
 
 function StartQuizAnswerOptions({
 	options,

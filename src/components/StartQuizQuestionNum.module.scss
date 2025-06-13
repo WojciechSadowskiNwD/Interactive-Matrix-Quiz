@@ -38,6 +38,44 @@
 		}
 	}
 }
+@include responsive(md-2) {
+	.QuestionNum {
+		.title {
+			font-size: 27px;
+			letter-spacing: 1.5px;
+		}
+	}
+}
+@include responsive(md-3) {
+	.QuestionNum {
+		.title {
+			font-size: 30px;
+			letter-spacing: 2px;
+		}
+	}
+}
+@include responsive(lg) {
+	.QuestionNum {
+		max-height: 50px;
+		.title {
+			font-size: 31px;
+		}
+		h3 {
+			text-shadow: 3px 0 35px #ffffff49, 3px 0 35px #ffffffaf;
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.QuestionNum {
+		margin-top: 15px;
+		height: 70px;
+		// background-color: #ffffff40;
+		h3 {
+			font-size: 25px;
+			text-shadow: 3px 0 35px #ffffff49, 3px 0 35px #ffffffaf;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.QuestionNum {
 		margin-top: 15px;

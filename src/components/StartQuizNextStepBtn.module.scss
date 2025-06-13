@@ -21,7 +21,7 @@
 		color: #fff;
 		background-color: rgba(0, 128, 0, 0.626);
 		border: 1px solid transparent;
-		cursor: pointer;
+		cursor: none;
 	}
 }
 .icon_forward {
@@ -56,11 +56,48 @@
 @include responsive(md-1) {
 	.nextStepBtn_wrapper {
 		height: 85px;
-		// background-color: rgba(153, 153, 153, 0.637);
 
 		.nextStepBtn {
 			font-size: 19px;
 			padding: 12px 22px;
+		}
+	}
+}
+@include responsive(md-2) {
+	.nextStepBtn_wrapper {
+		height: 70px;
+
+		.nextStepBtn {
+			font-size: 20px;
+			padding: 11px 24px;
+		}
+	}
+}
+@include responsive(md-3) {
+	.nextStepBtn_wrapper {
+		height: 65px;
+
+		.nextStepBtn {
+			padding: 11px 26px;
+		}
+	}
+}
+@include responsive(lg) {
+	.nextStepBtn_wrapper {
+		height: 80px;
+
+		.nextStepBtn {
+			padding: 11px 26px;
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.nextStepBtn_wrapper {
+		height: 70px;
+
+		.nextStepBtn {
+			font-size: 18px;
+			padding: 10px 24px;
 		}
 	}
 }

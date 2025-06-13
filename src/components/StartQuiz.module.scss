@@ -37,7 +37,6 @@
 	.startQuiz {
 		.question_wrapper {
 			height: 400px;
-			// background-color: #ffffff24; //do zrobienia
 			.question_box {
 				margin-top: 0;
 				width: 85%;
@@ -46,17 +45,17 @@
 		}
 	}
 }
-@include responsive(xs-2){
-	.startQuiz{
-		.question_wrapper{
+@include responsive(xs-2) {
+	.startQuiz {
+		.question_wrapper {
 			min-height: 530px;
 
-			.question_box{
+			.question_box {
 				height: 200px;
 
-				.customFontSize{
+				.customFontSize {
 					font-size: 19px;
-					letter-spacing: .7px;
+					letter-spacing: 0.7px;
 				}
 			}
 		}
@@ -67,13 +66,96 @@
 		.question_wrapper {
 			height: 540px;
 			min-height: 540px;
-			// background-color: #ffffff24; //do zrobienia
 			.question_box {
 				height: 200px;
 
-				.customFontSize{
+				.customFontSize {
 					font-size: 20px;
 				}
+			}
+		}
+	}
+}
+@include responsive(md-2) {
+	.startQuiz {
+		.question_wrapper {
+			height: 540px;
+			min-height: 540px;
+			.question_box {
+				height: 200px;
+				width: 90%;
+
+				.customFontSize {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+@include responsive(md-3) {
+	.startQuiz {
+		.question_wrapper {
+			.question_box {
+				width: 85%;
+
+				.customFontSize {
+					font-size: 21px;
+				}
+			}
+		}
+	}
+}
+@include responsive(lg) {
+	.startQuiz {
+		.question_wrapper {
+			margin-top: 10px;
+			height: 320px;
+			min-height: 300px;
+			max-height: 410px;
+			// background-color: #ffffff51;
+
+			.question_box {
+				min-height: 155px;
+				margin-bottom: 30px;
+				background: linear-gradient(
+					135deg,
+					#0f0f0f4d,
+					#000000,
+					#182f02c8,
+					#000000df
+				);
+				background-size: 100% 120%;
+				filter: drop-shadow(0 0 2px white) drop-shadow(0 0 67px #00ff008f);
+				box-shadow: 0 0 4px #00ff00, 0 0 2px #00ff00, 0 0 2px #00ff00;
+			}
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.startQuiz {
+		.question_wrapper {
+			height: 350px;
+			padding-bottom: 0;
+			padding-top: 5px;
+			margin: 0;
+			// background-color: #ffffff11;
+
+			.question_box {
+				width: 84%;
+				margin-bottom: 12px;
+
+				background: linear-gradient(
+					135deg,
+					#0f0f0f4d,
+					#000000,
+					#182f02c8,
+					#000000df
+				);
+				// filter: drop-shadow(0 0 2px white) drop-shadow(0 0 17px #00ff00);
+				// filter: drop-shadow(0 0 2px white) drop-shadow(0 0 67px #00ff00);
+				background-size: 100% 120%;
+				filter: drop-shadow(0 0 2px white) drop-shadow(0 0 67px #00ff008f);
+				box-shadow: 0 0 4px #00ff00, 0 0 2px #00ff00, 0 0 2px #00ff00;
 			}
 		}
 	}
@@ -82,7 +164,6 @@
 	.startQuiz {
 		.question_wrapper {
 			height: 480px;
-			// background-color: #ffffff24;
 		}
 	}
 }

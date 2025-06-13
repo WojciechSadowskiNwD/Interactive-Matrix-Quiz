@@ -137,6 +137,98 @@
 		}
 	}
 }
+@include responsive(md-2) {
+	.top_bar {
+		margin-top: 7px !important;
+		margin-bottom: 15px;
+
+		.right_box {
+			margin-right: 10px;
+			border: 1px solid brown;
+
+			.right_box_title {
+				font-size: 18px;
+				letter-spacing: 1.5px;
+			}
+			.right_box_points {
+				font-size: 22px;
+			}
+		}
+	}
+}
+@include responsive(md-3) {
+	.top_bar {
+		margin-top: 10px !important;
+		margin-bottom: 20px;
+
+		.left_box {
+			width: 100px;
+			height: 115px;
+			margin-left: 4%;
+
+			.left_box_nickname {
+				margin-top: 9px;
+				font-size: 19px;
+			}
+		}
+
+		.right_box {
+			margin-right: 10px;
+			margin-right: 4%;
+			border: 1px solid brown;
+		}
+	}
+}
+@include responsive(lg) {
+	.top_bar {
+		margin-top: 12px !important;
+		// background-color: #ffffff35;
+
+		.left_box {
+			width: 100px;
+			height: 115px;
+			margin-left: 5%;
+
+			.left_box_nickname {
+				margin-top: 9px;
+				font-size: 19px;
+			}
+		}
+
+		.right_box {
+			margin-top: 10px;
+			margin-right: 10px;
+			margin-right: 5%;
+			border: none;
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.top_bar {
+		margin-top: 12px !important;
+		// background-color: #ffffff35;
+		margin-bottom: 2px;
+
+		.left_box {
+			width: 100px;
+			height: 115px;
+			margin-left: 6%;
+			margin-left: 7%;
+
+			.left_box_nickname {
+				margin-top: 9px;
+				font-size: 19px;
+			}
+		}
+
+		.right_box {
+			margin-top: 10px;
+			margin-right: 10px;
+			margin-right: 7%;
+			border: none;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.top_bar {
 		margin-top: 15px;

@@ -82,3 +82,52 @@
 		letter-spacing: 0.5px;
 	}
 }
+@include responsive(md-2) {
+	.option {
+		height: 62px;
+		width: 355px;
+	}
+}
+@include responsive(md-3) {
+	.option {
+		width: 385px;
+	}
+}
+@include responsive(lg) {
+	.option {
+		height: 58px;
+		width: 355px;
+		margin: 5px;
+		background: linear-gradient(
+			135deg,
+			#0f0f0f1f,
+			#000000b4,
+			#2f020216,
+			#00ff9910
+		);
+		background-size: 1% 100%;
+		opacity: 0.9;
+		color: #baffba;
+		font-weight: bold;
+		text-shadow: 1px 1px 15px #c3c3c3, 1px 1px 15px #82c417;
+		border: 1px solid greenyellow;
+	}
+}
+@include responsive(high-sm-1) {
+	.option {
+		height: 56px;
+		background: linear-gradient(
+			135deg,
+			#0f0f0f1f,
+			#000000b4,
+			#2f020216,
+			#00ff9910
+		);
+		background-size: 1% 100%;
+		opacity: 0.9;
+		color: #baffba;
+		font-weight: bold;
+		text-shadow: 1px 1px 15px #c3c3c3, 1px 1px 15px #82c417;
+		border: 1px solid greenyellow;
+	}
+}
