@@ -128,3 +128,27 @@
 		}
 	}
 }
+@include responsive(md-2) {
+	.summaryTable {
+
+		em {
+			margin: 3px;
+			font-size: 19.5px;
+		}
+		.sum {
+			font-size: 24px;
+		}
+	}
+}
+@include responsive(high-lg) {
+	.summaryTable {
+
+		em {
+			margin: 4px;
+			font-size: 18.5px;
+		}
+		.sum {
+			font-size: 23px;
+		}
+	}
+}

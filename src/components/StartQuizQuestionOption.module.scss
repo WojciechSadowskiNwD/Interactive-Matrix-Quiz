@@ -8,10 +8,21 @@
 	width: 300px;
 	margin-bottom: 5px;
 	height: 55px;
-	border: 1px solid #00ff00;
-	text-shadow: $logo-color-shadow;
 	filter: drop-shadow(0 0 5px white) drop-shadow(0 0 20px #00ff00);
-	background-color: black;
+
+	background: linear-gradient(
+		135deg,
+		#0f0f0f1f,
+		#000000b4,
+		#2f020216,
+		#00ff9910
+	);
+	background-size: 1% 100%;
+	font-weight: bold;
+	color: #baffba;
+	text-shadow: 1px 1px 15px #c3c3c3, 1px 1px 15px #82c417;
+	border: 1px solid greenyellow;
+	opacity: 0.9;
 	transition: 0.3s;
 
 	clip-path: polygon(
@@ -24,7 +35,6 @@
 		0% calc(100% - 25px),
 		0% 25px
 	);
-	border: 2px solid greenyellow;
 	background-color: #000000c9;
 	&::before {
 		content: "";
@@ -98,36 +108,10 @@
 		height: 58px;
 		width: 355px;
 		margin: 5px;
-		background: linear-gradient(
-			135deg,
-			#0f0f0f1f,
-			#000000b4,
-			#2f020216,
-			#00ff9910
-		);
-		background-size: 1% 100%;
-		opacity: 0.9;
-		color: #baffba;
-		font-weight: bold;
-		text-shadow: 1px 1px 15px #c3c3c3, 1px 1px 15px #82c417;
-		border: 1px solid greenyellow;
 	}
 }
 @include responsive(high-sm-1) {
 	.option {
 		height: 56px;
-		background: linear-gradient(
-			135deg,
-			#0f0f0f1f,
-			#000000b4,
-			#2f020216,
-			#00ff9910
-		);
-		background-size: 1% 100%;
-		opacity: 0.9;
-		color: #baffba;
-		font-weight: bold;
-		text-shadow: 1px 1px 15px #c3c3c3, 1px 1px 15px #82c417;
-		border: 1px solid greenyellow;
 	}
 }

@@ -6,9 +6,9 @@ const initialState = {
 	// selectedAvatar: null,
 	// currentScore: 0,
 	
-	userName: "Nicola96",
-	selectedAvatar: "img/avatars/avatar_1.webp",
-	currentScore: 300,
+	userName: "Gregoria021",
+	selectedAvatar: "img/avatars/avatar_4.webp",
+	currentScore: 710,
 	
 
 	bonusActive: false,

@@ -8,8 +8,8 @@ export default function SummaryButtons() {
 				className={`${styles.buttons} ${styles.red_pill}`}
 				onClick={() => window.location.reload()}
 			>
-				Try again
-			</button>
+				Try again 
+			</button> 
 
 			<Link to="/">
 				<button className={`${styles.buttons} ${styles.blue_pill}`}>

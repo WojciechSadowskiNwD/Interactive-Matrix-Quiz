@@ -90,7 +90,32 @@
 		}
 	}
 }
+@include responsive(md-1) {
+	.finishQuiz_wrapper {
+		.congrats {
+			font-size: 20px !important;
+		}
 
+		.avatar_box {
+			margin-top: 12px;
+			margin-bottom: 12px;
+			height: 275px;
+		}
+	}
+}
+@include responsive(md-2) {
+	.finishQuiz_wrapper {
+		.congrats {
+			font-size: 23px !important;
+		}
+
+		.avatar_box {
+			margin-bottom: 8px;
+			width: 80%;
+			height: 300px;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.finishQuiz_wrapper {
 		.congrats {

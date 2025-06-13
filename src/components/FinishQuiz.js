@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ScoreTitleBanner from "./ScoreTitleBanner";
-import SummaryTable from "./SummaryTable";
+import SummaryTable from "./SummaryTable"; 
 import SummaryButtons from "./SummaryButtons";
 import styles from "./FinishQuiz.module.scss";
 
