@@ -6,7 +6,7 @@ import TerminalBar from "./TerminalBar";
 import TerminalAutoTyping from "./TerminalAutoTyping";
 import InputUserName from "./InputUserName";
 import ManualSlider from "./ManualSlider";
-import BtnAccept from "./BtnAccept";
+import BtnAccept from "./BtnAccept"; 
 
 function Terminal() {
 	const [showInput, setShowInput] = useState(false);

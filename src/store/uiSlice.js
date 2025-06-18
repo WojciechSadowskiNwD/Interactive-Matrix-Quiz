@@ -5,9 +5,9 @@ const initialState = {
 	isVisible: false,
 	activeComponent: "options",
 	// "startScreen", "quizScreen", "finishScreen"
-	// status: "startScreen",
+	status: "startScreen",
 	// status: "quizScreen", 	
-	status: "finishScreen",
+	// status: "finishScreen",
 	corrAnswers: 0,
 	secondsRemaining: 430, //time in quiz
 };

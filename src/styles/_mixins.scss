@@ -40,7 +40,7 @@
 		@media (min-height: 740px){
 			@content;
 		}
-	} @else if $breakpoint == high-sm-3 {
+	} @else if $breakpoint == high-sm-3 { 
 		@media (min-height: 800px) {
 			@content;
 		} 

@@ -14,8 +14,8 @@ import styles from "./StartQuiz.module.scss";
 
 function StartQuiz() {
 	const [questions, setQuestions] = useState([]); 
-	const [currentIndex, setCurrentIndex] = useState(0);
-	// const [currentIndex, setCurrentIndex] = useState(13); //do testowania
+	// const [currentIndex, setCurrentIndex] = useState(0);
+	const [currentIndex, setCurrentIndex] = useState(13); //do testowania
 	const [selected, setSelected] = useState(null);
 	const [showAnswer, setShowAnswer] = useState(false);
 	const [unmistakablyShots, setUnmistakablyShots] = useState(0);
@@ -55,22 +55,16 @@ function StartQuiz() {
 				const newStreak = unmistakablyShots + 1;
 				setUnmistakablyShots(newStreak);
 
-				console.log("You answered well!");
-
 				if (newStreak >= 6) {
 					// add bonus points
 					dispatch(setCurrentScore(19));
-					console.log("added 19 bonus points!");
 				} else if (newStreak >= 5) {
 					dispatch(setCurrentScore(15));
-					console.log("added 15 bonus points!");
 				} else if (newStreak >= 3) {
 					dispatch(setBonusActive(true));
 					dispatch(setCurrentScore(10));
-					console.log("added 10 bonus points!");
 				}
 			} else if (!showAnswer && optionKey !== currentQuestion.correctAnswer) {
-				console.log("Wrong answer");
 				setUnmistakablyShots(0);
 				dispatch(setBonusActive(false));
 			}
@@ -95,12 +89,13 @@ function StartQuiz() {
 				total={questions.length}
 			/>
 			<StartQuizTimer />
+			
 			<div className={styles.question_wrapper}>
 				<div className={styles.question_box}>
 					<TerminalAutoTyping key={currentIndex} customFontSize={styles.customFontSize}>
 						{currentQuestion.question}
 					</TerminalAutoTyping>
-				</div>
+				</div> 
 				<StartQuizAnswerOptions
 					key={currentIndex}
 					options={currentQuestion.options}

@@ -23,6 +23,16 @@
 	}
 }
 
+@include responsive(xs-1) {
+	.timer_wrapper {
+		margin-bottom: 10px;
+	}
+}
+@include responsive(xs-2) {
+	.timer_wrapper {
+		margin-bottom: 5px;
+	}
+}
 @include responsive(md-1) {
 	.timer_wrapper {
 		margin-bottom: 5px;

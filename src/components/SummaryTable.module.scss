@@ -116,6 +116,18 @@
 }
 
 // RWD
+@include responsive(xs-1) {
+	.summaryTable {
+		margin-top: 10px;
+		em {
+			font-size: 16px;
+			padding-left: 0;
+		}
+		.sum {
+			margin: 14px;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.summaryTable {
 		// background-color: #fff;
@@ -125,24 +137,83 @@
 		}
 		.sum {
 			font-size: 21px;
+			margin-bottom: 25px;
+		}
+	}
+}
+@include responsive(xs-2) {
+	.summaryTable {
+		em {
+			padding: 6px;
+			font-size: 19px;
+		}
+	}
+}
+@include responsive(md-1) {
+	.summaryTable {
+		em {
+			font-size: 19.5px !important;
 		}
 	}
 }
 @include responsive(md-2) {
 	.summaryTable {
-
 		em {
 			margin: 3px;
-			font-size: 19.5px;
+			font-size: 21px !important;
 		}
 		.sum {
-			font-size: 24px;
+			font-size: 24px;	
 		}
+	}
+}
+@include responsive(md-3) {
+	.summaryTable {
+		em {
+			margin: 4px;
+			font-size: 21px;
+		}
+		.sum {
+			font-size: 25px;
+		}
+	}
+}
+@include responsive(lg) {
+	.summaryTable {
+		align-items: start;
+		padding-left: 20px;
+		border-left: 1px dotted #ffffff85;
+
+		em {
+			padding-left: 20px;
+			margin: 5px;
+			font-size: 21.5px !important;
+		}
+		.sum {
+			padding-left: 25px;
+			margin-top: 30px;
+			font-size: 25px;
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.summaryTable {
+		margin-left: 5px;
+		padding-left: 20px;
+
+		em {
+			font-size: 19.5px !important;
+		}
+	}
+}
+@include responsive(high-md-2) {
+	.summaryTable {
+		margin-top: 20px;
+		margin-left: 10px;
 	}
 }
 @include responsive(high-lg) {
 	.summaryTable {
-
 		em {
 			margin: 4px;
 			font-size: 18.5px;
@@ -150,5 +221,10 @@
 		.sum {
 			font-size: 23px;
 		}
+	}
+}
+@include responsive(xxl) {
+	.summaryTable {
+		padding-top: 20px;
 	}
 }

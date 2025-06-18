@@ -74,12 +74,15 @@
 @include responsive(xs-1) {
 	.option {
 		height: 50px;
+		max-height: 50px;
 		padding: 0;
+		// background-color: #fff;
 	}
 }
 @include responsive(xs-2) {
 	.option {
 		height: 56px;
+		min-height: 56px;
 	}
 }
 @include responsive(md-1) {

@@ -8,98 +8,46 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 99;
-	background-color: rgba(255, 0, 0, 0.179);
+	background-color: rgba(255, 0, 0, 0.159);
+
+	.banner_box {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
 
 	.congrats {
 		margin-top: 20px;
 		font-size: 19px;
 		letter-spacing: 1px;
 	}
-
-	.avatar_box {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		width: 96%;
-		height: 280px;
-		// background-color: rgba(255, 123, 0, 0.501);
-
-		.circle_frame {
-			position: absolute;
-			display: flex;
-			justify-content: center;
-			// align-items: center;
-			top: 0;
-			left: 50%;
-			transform: translate(-50%);
-			width: 90%;
-			height: 100%;
-			border-radius: 50%;
-			border: 1px solid #33ab0039;
-			box-shadow: 0 0 10px #1b4100;
-			z-index: 2;
-			overflow: hidden;
-
-			.shadow_frame {
-				position: absolute;
-				left: 0;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				border-radius: 50%;
-				border: 20px solid gray;
-				border: 20px solid rgba(128, 128, 128, 0.388);
-				opacity: 0.2;
-			}
-
-			.img_avatar {
-				width: 100%;
-				opacity: 0.2;
-			}
-		}
-		.nickname_box {
-			position: absolute;
-			display: flex;
-			justify-content: center;
-			align-items: end;
-			align-items: start;
-			bottom: 0;
-			width: 100%;
-			height: 60px;
-			// background-color: red;
-
-			.nickname {
-				font-size: 21px;
-				letter-spacing: 1.7px;
-				font-weight: bold;
-				color: #c3c3c3;
-				z-index: 99;
-			}
-		}
-	}
 }
 
 // RWD
 @include responsive(xs-1) {
 	.finishQuiz_wrapper {
-		.avatar_box {
-			width: 88%;
-			height: 270px;
+		justify-content: start;
+		.banner_box {
+			margin-top: 0px;
+		}
+	}
+}
+@include responsive(xs-2) {
+	.finishQuiz_wrapper {
+		padding-top: 15px;
+		.banner_box {
+			margin-top: 20px;
+			// background-color: #fff;
+		}
+		.congrats {
+			font-size: 20px !important;
 		}
 	}
 }
 @include responsive(md-1) {
 	.finishQuiz_wrapper {
 		.congrats {
-			font-size: 20px !important;
-		}
-
-		.avatar_box {
-			margin-top: 12px;
-			margin-bottom: 12px;
-			height: 275px;
+			font-size: 20.5px !important;
 		}
 	}
 }
@@ -108,22 +56,64 @@
 		.congrats {
 			font-size: 23px !important;
 		}
+	}
+}
+@include responsive(md-3) {
+	.finishQuiz_wrapper {
+		justify-content: start;
+		padding-top: 20px;
 
-		.avatar_box {
-			margin-bottom: 8px;
-			width: 80%;
-			height: 300px;
+		.banner_box {
+			width: 84%;
 		}
 	}
 }
-@include responsive(high-sm-3) {
+@include responsive(lg) {
 	.finishQuiz_wrapper {
+		background-color: rgba(255, 0, 0, 0.105);
+		// box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.3);
+		// box-shadow: inset 0 0 50px rgba(255, 0, 0, 0.3);
+		box-shadow: inset 0 0 50px rgba(0, 238, 255, 0.3);
+		.banner_box {
+			width: 75%;
+		}
+		.congrats {
+			font-size: 24px !important;
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.finishQuiz_wrapper {
+		.banner_box {
+			margin-top: 5px;
+		}
 		.congrats {
 			font-size: 19px;
 			letter-spacing: 1px;
 			margin-top: 25px;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
 			// background-color: rgba(255, 0, 0, 0.179);
+		}
+	}
+}
+// mobile heigh s21/22
+@include responsive(high-sm-3) {
+	.finishQuiz_wrapper {
+		.banner_box {
+			margin-top: 0px;
+		}
+		.congrats {
+			font-size: 19px;
+			letter-spacing: 1px;
+			margin-top: 25px;
+			margin-bottom: 0px;
+		}
+	}
+}
+@include responsive(xxl) {
+	.finishQuiz_wrapper {
+		.banner_box {
+			width: 70%;
 		}
 	}
 }

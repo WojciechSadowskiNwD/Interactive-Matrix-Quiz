@@ -13,7 +13,7 @@ export default function SummaryButtons() {
 
 			<Link to="/">
 				<button className={`${styles.buttons} ${styles.blue_pill}`}>
-					Back to app
+					Back to app 
 				</button>
 			</Link>
 		</div>

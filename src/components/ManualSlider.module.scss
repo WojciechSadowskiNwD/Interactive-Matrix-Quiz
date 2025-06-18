@@ -100,8 +100,9 @@
 
 @include responsive(xs-2) {
 	.slider_wrapper {
-		margin-top: 40px;
+		margin-top: 25px;
 		height: 270px;
+		// background-color: $test;
 
 		.slider_box {
 			width: 230px;

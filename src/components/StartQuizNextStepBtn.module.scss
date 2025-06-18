@@ -32,35 +32,47 @@
 @include responsive(xs-1) {
 	.nextStepBtn_wrapper {
 		height: 60px;
+		min-height: 58px;
+		max-height: 58px;
+		// background-color: #fff;
 
 		.nextStepBtn {
-			font-size: 16px;
+			font-size: 16px !important;
 			padding: 8px 18px;
 		}
-	}
-	.icon_forward {
-		font-size: 14px;
-		margin-left: 10px;
+		.icon_forward {
+			font-size: 14px;
+			margin-left: 10px;
+		}
 	}
 }
-@include responsive(xs-1) {
+@include responsive(xs-2) {
 	.nextStepBtn_wrapper {
-		height: 72px;
+		height: 60px;
+		min-height: 68px;
+		max-height: 68px;
+		// background-color: #fff;
 
 		.nextStepBtn {
-			font-size: 17px;
+			font-size: 18px !important;
 			padding: 10px 20px;
+		}
+		.icon_forward {
+			font-size: 14px;
+			margin-left: 10px;
 		}
 	}
 }
 @include responsive(md-1) {
 	.nextStepBtn_wrapper {
 		height: 85px;
+		min-height: 82px;
+		// background-color: $test;
 
 		.nextStepBtn {
 			font-size: 19px;
 			padding: 12px 22px;
-		}
+		} 
 	}
 }
 @include responsive(md-2) {
@@ -94,6 +106,8 @@
 @include responsive(high-sm-1) {
 	.nextStepBtn_wrapper {
 		height: 70px;
+		min-height: 60px;
+		// background-color: #fff;
 
 		.nextStepBtn {
 			font-size: 18px;

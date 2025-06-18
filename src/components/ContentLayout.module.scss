@@ -1,0 +1,241 @@
+@import "../styles/global.scss";
+
+.content_layout {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.avatar_box {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		width: 96%;
+		height: 280px;
+		// background-color: rgba(255, 123, 0, 0.501);
+
+		.circle_frame {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			// align-items: center;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%);
+			width: 90%;
+			height: 100%;
+			border-radius: 50%;
+			border: 1px solid #33ab0039;
+			box-shadow: 0 0 10px #1b4100;
+			z-index: 2;
+			overflow: hidden;
+
+			.shadow_frame {
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				// border: 20px solid gray;
+				border: 20px solid rgba(128, 128, 128, 0.388);
+				opacity: 0.2;
+			}
+
+			.img_avatar {
+				width: 100%;
+				opacity: 0.2;
+			}
+		}
+		.nickname_box {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			bottom: 0;
+			width: 100%;
+			height: 60px;
+			// background-color: red;
+
+			.nickname {
+				font-size: 21px;
+				letter-spacing: 1.7px;
+				font-weight: bold;
+				color: #c3c3c3;
+				z-index: 99;
+			}
+		}
+	}
+}
+
+// RWD
+//for SAMSUNG S21/S22
+// @media((min-width: 360px) and (min-height: 800px)){
+// 	.content_layout {
+// 		.avatar_box {
+// 			width: 88%;
+// 			height: 260px;
+// 		}
+// 	}
+// }
+
+@include responsive(xs-1) {
+	.content_layout {
+		min-height: 440px;
+		margin-top: 25px;
+		.avatar_box {
+			width: 88%;
+			min-height: 200px;
+			height: 280px;
+		}
+	}
+}
+@include responsive(xs-2) {
+	.content_layout {
+		margin-top: 50px;
+		max-height: 550px;
+
+		.avatar_box {
+			width: 88%;
+			height: 280px;
+			margin-bottom: 15px;
+		}
+	}
+}
+@include responsive(md-1) {
+	.content_layout {
+		justify-content: start;
+		margin-top: 50px;
+		min-height: 580px;
+		// background-color: $test;
+
+		.avatar_box {
+			margin-top: 0px;
+			height: 285px;
+		}
+	}
+}
+@include responsive(md-2) {
+	.content_layout {
+		margin-top: 25px;
+		.avatar_box {
+			margin-top: 10px;
+			margin-bottom: 5px;
+			width: 70%;
+			max-width: 70%;
+			height: 315px;
+			// background-color: $test;
+
+			.nickname_box {
+				height: 70px;
+				.nickname {
+					font-size: 22px;
+					letter-spacing: 2px;
+					color: #c3c3c3e7;
+				}
+			}
+		}
+	}
+}
+@include responsive(md-3) {
+	.content_layout {
+		.avatar_box {
+			margin-top: 8px;
+			width: 60%;
+			max-width: 60%;
+			height: 305px;
+			min-height: 305px;
+
+			.nickname_box {
+				bottom: 8px;
+				.nickname {
+					font-size: 22px;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+}
+@include responsive(lg) {
+	.content_layout {
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 40px;
+		padding-left: 35px;
+		padding-right: 35px;
+		height: 400px;
+		max-height: 380px;
+		min-height: 360px;
+		// background-color: $test;
+
+		.avatar_box {
+			margin-top: 5px;
+			width: 48%;
+			min-width: 48%;
+			max-width: 48%;
+			height: 280px;
+			min-height: 280px;
+			max-height: 280px;
+
+			.nickname_box {
+				bottom: 8px;
+				.nickname {
+					font-size: 22px;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+}
+@include responsive(high-sm-1) {
+	.content_layout {
+		height: 320px;
+		min-height: 320px;
+		min-height: 320px;
+		// background-color: $test;
+
+		.avatar_box {
+			margin-left: 4%;
+			min-width: 45%;
+			height: 270px;
+			min-height: 260px;
+		}
+	}
+}
+// mobile heigh s21/22
+@include responsive(high-sm-3) {
+	.content_layout {
+		.avatar_box {
+			height: 265px;
+			width: 84%;
+		}
+	}
+}
+@include responsive(xl) {
+	.content_layout {
+		.avatar_box {
+			margin-left: 2%;
+			width: 46%;
+			min-width: 46%;
+			max-width: 46%;
+		}
+	}
+}
+@include responsive(xxl) {
+	.content_layout {
+		min-height: 370px;
+		height: 400px;
+		max-height: 400px;
+		// background-color: $test;
+		.avatar_box {
+			margin-left: 3%;
+			width: 43%;
+			min-width: 43%;
+			max-width: 43%;
+		}
+	}
+}

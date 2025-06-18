@@ -28,8 +28,18 @@
 			height: 180px;
 			border: 1px solid #00ff00;
 			border-radius: 10px;
+			background: linear-gradient(
+				135deg,
+				#0f0f0f4d,
+				#000000,
+				#182f02c8,
+				#000000df
+			);
+			background-size: 100% 120%;
 			filter: drop-shadow(0 0 5px white) drop-shadow(0 0 40px #00ff00);
 			box-shadow: 0 0 15px #00ff00, 0 0 5px #00ff00, 0 0 5px #00ff00;
+			filter: drop-shadow(0 0 1px white) drop-shadow(0 0 20px #00ff00);
+			box-shadow: 0 0 5px #00ff00, 0 0 1px #00ff00, 0 0 5px #00ff00;
 		}
 	}
 }
@@ -37,10 +47,13 @@
 	.startQuiz {
 		.question_wrapper {
 			height: 400px;
+			min-height: 360px;
+
 			.question_box {
 				margin-top: 0;
 				width: 85%;
-				height: 160px;
+				height: 150px;
+				min-height: 130px;
 			}
 		}
 	}
@@ -108,7 +121,6 @@
 @include responsive(lg) {
 	.startQuiz {
 		.question_wrapper {
-			margin-top: 10px;
 			height: 320px;
 			min-height: 300px;
 			max-height: 410px;
@@ -116,14 +128,7 @@
 
 			.question_box {
 				min-height: 155px;
-				margin-bottom: 30px;
-				background: linear-gradient(
-					135deg,
-					#0f0f0f4d,
-					#000000,
-					#182f02c8,
-					#000000df
-				);
+				margin-bottom: 20px;
 				background-size: 100% 120%;
 				filter: drop-shadow(0 0 2px white) drop-shadow(0 0 67px #00ff008f);
 				box-shadow: 0 0 4px #00ff00, 0 0 2px #00ff00, 0 0 2px #00ff00;
@@ -135,6 +140,7 @@
 	.startQuiz {
 		.question_wrapper {
 			height: 350px;
+			height: 340px;
 			padding-bottom: 0;
 			padding-top: 5px;
 			margin: 0;

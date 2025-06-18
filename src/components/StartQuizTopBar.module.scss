@@ -7,7 +7,7 @@
 	width: 100%;
 	margin-top: 10px;
 	padding-left: 7px;
-	// background-color: #9393938b;
+	// background-color: $test;
 
 	.left_box {
 		display: flex;
@@ -15,7 +15,8 @@
 		align-items: center;
 		width: 80px;
 		height: 100px;
-		// background-color: blue;
+		margin-left: 5px;
+		// background-color: $test;
 
 		.left_box_img {
 			position: relative;
@@ -46,6 +47,7 @@
 
 		.left_box_nickname {
 			margin-top: 5px;
+			margin-left: 5px;
 		}
 	}
 
@@ -103,7 +105,28 @@
 // RWD
 @include responsive(xs-1) {
 	.top_bar {
-		margin-top: 5px;
+		.left_box {
+			.left_box_img{
+				height: 70%;
+			}
+			.left_box_nickname {
+				font-size: 16px !important;
+			}
+		}
+	}
+}
+@include responsive(xs-2) {
+	.top_bar {
+		margin-bottom: 20px;
+		.left_box {
+			margin-left: 10px;
+			.left_box_img{
+				height: 70%;
+			}
+			.left_box_nickname {
+				font-size: 16px !important;
+			}
+		}
 	}
 }
 @include responsive(md-1) {
@@ -181,7 +204,7 @@
 @include responsive(lg) {
 	.top_bar {
 		margin-top: 12px !important;
-		// background-color: #ffffff35;
+		// background-color: $test;
 
 		.left_box {
 			width: 100px;
