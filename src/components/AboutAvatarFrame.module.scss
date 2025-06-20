@@ -49,6 +49,8 @@
     @include responsive(high-sm-1) {
         min-height: 160px;
         width: 50%;
+        min-width: 246px;
+        max-width: 246px;
     }
     @include responsive(high-sm-3) {
         margin-top: 8px;

@@ -7,7 +7,6 @@ import MatrixRain from "../components/canvas/MatrixRain";
 import BlackBoard from "../components/BlackBoard";
 import CustomCursor from "../components/CustomCursor";
 
-// To będzie tło dla ekranu startowego oraz 3 pozostałych pages poza EnterTheQuiz
 function StartApp() {
 	const [step, setStep] = useState(1);
 	const dispatch = useDispatch();
@@ -17,8 +16,8 @@ function StartApp() {
 	const [startFadeOut, setStartFadeOut] = useState(false);
 
 	useEffect(() => {
-		const fadeDelay = setTimeout(() => setStartFadeOut(true), 1500);
-		const hideDelay = setTimeout(() => setShowWelcome(false), 2500);
+		const fadeDelay = setTimeout(() => setStartFadeOut(true), 2000);
+		const hideDelay = setTimeout(() => setShowWelcome(false), 3000);
 
 		return () => {
 			clearTimeout(fadeDelay);

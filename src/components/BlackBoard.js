@@ -17,7 +17,8 @@ function BlackBoard() {
 	);
 
 	useEffect(() => {
-		const timer = setTimeout(() => dispatch(itIsVisible(true)), 5000);
+		// const timer = setTimeout(() => dispatch(itIsVisible(true)), 5000);
+		const timer = setTimeout(() => dispatch(itIsVisible(true)), 7000);
 		return () => clearTimeout(timer);
 	}, [dispatch]);
 

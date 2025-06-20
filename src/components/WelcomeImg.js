@@ -11,7 +11,7 @@ export default function WelcomeImg() {
         >
 			<div className={styles.img_box}>
 				<img
-					className={styles.image}
+					className={styles.image} 
 					src="img/openApp.webp"
 					alt="Man in black coat holding two pills in open hands"
 				/>
