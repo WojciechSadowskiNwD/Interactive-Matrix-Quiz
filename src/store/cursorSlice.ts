@@ -1,6 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+type Position = {
+	x: number;
+	y: number;
+}
+
+type CursorStore = {
+	activeCursor: boolean;
+	position: Position;
+	isHoveringBtn: boolean;
+}
+
+const initialState: CursorStore = {
 	activeCursor: false,
 	position: { x: typeof window !== "undefined" ? window.innerWidth / 2 + 200 : 400, 
         y: typeof window !== "undefined" ? window.innerHeight / 2 + 200 : 300 },
@@ -14,10 +25,10 @@ const cursorSlice = createSlice({
 		toggleActive: (state) => {
             state.activeCursor = !state.activeCursor;
 		},
-		changePosition: (state, action) => {
+		changePosition: (state, action: PayloadAction<Position>) => {
 			state.position = action.payload;
 		},
-		toggleHoveringOnBtn: (state, action) => {
+		toggleHoveringOnBtn: (state, action:PayloadAction<boolean>) => {
 			state.isHoveringBtn = action.payload;
 		},
 	},

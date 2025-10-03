@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../store/redux";
 import { AnimatePresence } from "framer-motion";
 import { toggleActive } from "../store/cursorSlice";
+
 import WelcomeImg from "../components/WelcomeImg";
 import MatrixRain from "../components/canvas/MatrixRain";
 import BlackBoard from "../components/BlackBoard";
 import CustomCursor from "../components/CustomCursor";
 
+
 function StartApp() {
-	const [step, setStep] = useState(1);
-	const dispatch = useDispatch();
-	const { activeCursor } = useSelector((store) => store.cursor);
-	const { firstLaunch, activeComponent } = useSelector((store) => store.ui);
-	const [showWelcome, setShowWelcome] = useState(true);
-	const [startFadeOut, setStartFadeOut] = useState(false);
+	const [step, setStep] = useState<number>(1);
+	const dispatch = useAppDispatch();
+	const { activeCursor } = useAppSelector((store) => store.cursor);
+	const { firstLaunch, activeComponent } = useAppSelector((store) => store.ui);
+	const [showWelcome, setShowWelcome] = useState<boolean>(true);
+	const [startFadeOut, setStartFadeOut] = useState<boolean>(false);
 
 	useEffect(() => {
 		const fadeDelay = setTimeout(() => setStartFadeOut(true), 2000);
@@ -27,7 +29,7 @@ function StartApp() {
 
 	useEffect(() => {
 		const timeTriggers = [13200, 1000, 5000];
-		let timeout = null;
+		let timeout: ReturnType<typeof setTimeout> | undefined = undefined;
 
 		if (firstLaunch) {
 			setStep(0);

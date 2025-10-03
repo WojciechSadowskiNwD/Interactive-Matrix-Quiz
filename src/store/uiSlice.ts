@@ -1,13 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+type UiState = {
+	firstLaunch: boolean;
+	isVisible: boolean;
+	activeComponent: string;
+	status: "startScreen" | "quizScreen" | "finishScreen";
+	corrAnswers: number;
+	secondsRemaining: number;
+};
+
+const initialState: UiState = {
 	firstLaunch: true,
 	isVisible: false,
 	activeComponent: "options",
-	// "startScreen", "quizScreen", "finishScreen"
 	status: "startScreen",
-	// status: "quizScreen", 	
-	// status: "finishScreen",
 	corrAnswers: 0,
 	secondsRemaining: 430, //time in quiz
 };
@@ -16,17 +22,20 @@ const uiSlice = createSlice({
 	name: "ui",
 	initialState,
 	reducers: {
-		isFirstLaunch: (state, action) => {
+		isFirstLaunch: (state, action: PayloadAction<boolean>) => {
 			state.firstLaunch = action.payload;
 		},
-		itIsVisible: (state, action) => {
+		itIsVisible: (state, action: PayloadAction<boolean>) => {
 			state.isVisible = action.payload;
 		},
-		changeActiveComponent: (state, action) => {
+		changeActiveComponent: (state, action: PayloadAction<string>) => {
 			state.activeComponent = action.payload;
 			//app screen
 		},
-		changeStatus: (state, action) => {
+		changeStatus: (
+			state,
+			action: PayloadAction<"startScreen" | "quizScreen" | "finishScreen">
+		) => {
 			state.status = action.payload;
 			//quiz screen
 		},
@@ -36,18 +45,19 @@ const uiSlice = createSlice({
 				state.status = "finishScreen";
 			}
 		},
-		setCorrAnswers: (state, action) => {
+		setCorrAnswers: (state, action: PayloadAction<number>) => {
 			state.corrAnswers = state.corrAnswers + action.payload;
 		},
 	},
 });
 
 export const {
-	isFirstLaunch,
+	isFirstLaunch, 
 	itIsVisible,
 	changeActiveComponent,
 	changeStatus,
 	countdown,
 	setCorrAnswers,
 } = uiSlice.actions;
+
 export default uiSlice.reducer;
