@@ -6,7 +6,9 @@ import "./styles/global.scss";
 import "./index.scss";
 import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const container = document.getElementById("root") as HTMLElement;
+const root = ReactDOM.createRoot(container);
+
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>

@@ -4,7 +4,7 @@ import cursorReducer from "./cursorSlice";
 import userReducer from "./userSlice";
 
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
         ui: uiReducer,
         cursor: cursorReducer,
@@ -12,4 +12,5 @@ const store = configureStore({
     }
 })
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
