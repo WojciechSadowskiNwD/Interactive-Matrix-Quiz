@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // aliases unions
-type ActiveComponent = "options" | "scoreBoard" | "aboutApp" | "aboutDev";
+export type ActiveComponent = "start" | "options" | "scoreBoard" | "aboutApp" | "aboutDev";
 type Status = "startScreen" | "quizScreen" | "finishScreen";
 
 // init state type

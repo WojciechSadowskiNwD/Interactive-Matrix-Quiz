@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 import styles from "./TurnOnTitleLetters.module.scss";
 
 function TurnOnTitleLetters() {
-	const titleLetters = "THE MATRIZ"; //prawa autorskie
+	const titleLetters = "THE MATRIZ"; //fot the sake of caution,copyright
 
 	// fill this Array this value -> [false,false,....,false]
-	const [isVisibleLetters, setIsVisibleLetters] = useState(
+	const [isVisibleLetters, setIsVisibleLetters] = useState<boolean[]>(
 		Array(titleLetters.length).fill(false)
 	);
-	const [showExtraText, setShowExtraText] = useState(false);
-	const [adjustFirstChild, setAdjustFirstChild] = useState(false); //spr czy szerokosc osiagnieta
+	const [showExtraText, setShowExtraText] = useState<boolean>(false);
+	const [adjustFirstChild, setAdjustFirstChild] = useState<boolean>(false); //checking whether the width has been achieved
 
 	useEffect(() => {
 		// Order of activation(visible on) of title letters:
-		const showSequences = [4, 1, 6, 0, 7, 2, 9, 8, 5];
+		const showSequences: number[] = [4, 1, 6, 0, 7, 2, 9, 8, 5];
 
 		showSequences.forEach((charIndex, i) => {
 			setTimeout(() => {
@@ -29,13 +29,11 @@ function TurnOnTitleLetters() {
 					setTimeout(() => {
 						setShowExtraText(true);
 
-						setTimeout(()=>{
-							if(window.innerWidth >= 390){
+						setTimeout(() => {
+							if (window.innerWidth >= 390) {
 								setAdjustFirstChild(true);
 							}
-						},100);
-
-
+						}, 100);
 					}, 500);
 				}
 			}, i * 400);
@@ -56,25 +54,25 @@ function TurnOnTitleLetters() {
 				))}
 				{/* ExtraText */}
 				{showExtraText && (
-				<>
-					<motion.div
-						className={styles.extraText}
-						initial={{ y: -50, opacity: 0 }}
-						animate={{ y: adjustFirstChild ? -74 : -65, opacity: 1 }}
-						transition={{ duration: 0.4, ease: "easeOut" }}
-					>
-						Interactive
-					</motion.div>
-					<motion.div
-						className={styles.extraText}
-						initial={{ y: -20, opacity: 0 }}
-						animate={{ y: 5, opacity: 1 }}
-						transition={{ duration: 0.4, ease: "easeOut" }}
-					>
-						Quiz
-					</motion.div>
-				</>
-			)}
+					<>
+						<motion.div
+							className={styles.extraText}
+							initial={{ y: -50, opacity: 0 }}
+							animate={{ y: adjustFirstChild ? -74 : -65, opacity: 1 }}
+							transition={{ duration: 0.4, ease: "easeOut" }}
+						>
+							Interactive
+						</motion.div>
+						<motion.div
+							className={styles.extraText}
+							initial={{ y: -20, opacity: 0 }}
+							animate={{ y: 5, opacity: 1 }}
+							transition={{ duration: 0.4, ease: "easeOut" }}
+						>
+							Quiz
+						</motion.div>
+					</>
+				)}
 			</div>
 		</div>
 	);

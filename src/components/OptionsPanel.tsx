@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../store/redux";
+
 import TurnOnTitleLetters from "./TurnOnTitleLetters";
 import ButtonsContainer from "./ButtonsContainer";
 import Footer from "./Footer";
 
 
 export default function OptionsPanel() {
-	const { firstLaunch } = useSelector((store) => store.ui);
-	const [step, setStep] = useState(0);
+	const { firstLaunch } = useAppSelector((store) => store.ui);
+	const [step, setStep] = useState<number>(0);
 	let timeTriggers = [500, 4000];
 
 	if (firstLaunch) {

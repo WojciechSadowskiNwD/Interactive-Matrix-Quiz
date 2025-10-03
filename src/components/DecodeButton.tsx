@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import styles from "./DecodeButton.module.scss";
 
-function DecodeButton({ children }) {
+type DecodeButtonProps = {
+	children: string;
+};
+
+function DecodeButton({ children }: DecodeButtonProps) {
 	const targetWord = children;
 	const targetWordLength = targetWord.length;
 	const initialString = "_".repeat(targetWordLength);
-	const [randomBinaryCode, setRandomBinaryCode] = useState(initialString);
-	const [detentionFlags, setDetentionFlags] = useState(
+	const [randomBinaryCode, setRandomBinaryCode] =
+		useState<string>(initialString);
+	const [detentionFlags, setDetentionFlags] = useState<boolean[]>(
 		Array(targetWordLength).fill(false)
 	);
-	const [count, setCount] = useState(0);
-	const [isFirstInterval, setIsFirstInterval] = useState(true);
+	const [count, setCount] = useState<number>(0);
+	const [isFirstInterval, setIsFirstInterval] = useState<boolean>(true);
 
 	// substitutes random values 0/1 or a letter from children
 	useEffect(() => {
@@ -52,20 +57,22 @@ function DecodeButton({ children }) {
 		return () => clearTimeout(timeout);
 	}, [count, targetWordLength, isFirstInterval]);
 
-
 	// module for button animation
-	const motionHowToMoveBtn = {
+	const motionHowToMoveBtn: Variants = {
 		move: { x: ["-150%", "15%", "0%"] }, // position start -> move to -> back to central place in view
 	};
 
 	return (
 		<motion.div
-		className={styles.randomCodeButton}
+			className={styles.randomCodeButton}
 			variants={motionHowToMoveBtn}
 			initial="move"
 			animate="move"
 			transition={{ duration: 1, ease: "easeInOut" }}
-			whileHover={{ scale: 1.1, transition: { duration: 0.2, ease: "easeOut" } }}
+			whileHover={{
+				scale: 1.1,
+				transition: { duration: 0.2, ease: "easeOut" },
+			}}
 		>
 			{randomBinaryCode}
 		</motion.div>

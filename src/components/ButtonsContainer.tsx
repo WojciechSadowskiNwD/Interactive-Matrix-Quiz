@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store/redux";
 import { Link } from "react-router-dom";
 import { changeActiveComponent, isFirstLaunch } from "../store/uiSlice";
 import DecodeButton from "./DecodeButton";
 import styles from "./ButtonsContainer.module.scss";
+import type { ActiveComponent } from "../store/uiSlice";
 
-const buttons = [
+type Button = {
+	key: ActiveComponent;
+	label: "START" | "SCORE Board" | "ABOUT App" | "ABOUT Dev";
+	path?: string;
+};
+
+const buttons: Button[] = [
 	{ key: "start", label: "START", path: "/enterTheQuiz" },
 	{ key: "scoreBoard", label: "SCORE Board" },
 	{ key: "aboutApp", label: "ABOUT App" },
@@ -13,8 +20,8 @@ const buttons = [
 ];
 
 export default function ButtonsContainer() {
-	const dispatch = useDispatch();
-	const [mountedBtn, setMountedBtn] = useState({});
+	const dispatch = useAppDispatch();
+	const [mountedBtn, setMountedBtn] = useState<Record<number, boolean>>({});
 
 	useEffect(() => {
 		if (Object.keys(mountedBtn).length >= buttons.length) return;
@@ -30,10 +37,10 @@ export default function ButtonsContainer() {
 	}, [mountedBtn]);
 
 	// after click any btn on optionsPanel:
-	const handleClick = (key) => {
+	const handleClick = (key: ActiveComponent) => {
 		dispatch(isFirstLaunch(false));
 		dispatch(changeActiveComponent(key));
-	}
+	};
 
 	return (
 		<div className={styles.buttonsContainer}>
