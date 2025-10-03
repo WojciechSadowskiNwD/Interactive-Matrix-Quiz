@@ -1,10 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+// aliases unions
+type ActiveComponent = "options" | "scoreBoard" | "aboutApp" | "aboutDev";
+type Status = "startScreen" | "quizScreen" | "finishScreen";
+
+// init state type
 type UiState = {
 	firstLaunch: boolean;
 	isVisible: boolean;
-	activeComponent: string;
-	status: "startScreen" | "quizScreen" | "finishScreen";
+	activeComponent: ActiveComponent;
+	status: Status;
 	corrAnswers: number;
 	secondsRemaining: number;
 };
@@ -28,13 +33,13 @@ const uiSlice = createSlice({
 		itIsVisible: (state, action: PayloadAction<boolean>) => {
 			state.isVisible = action.payload;
 		},
-		changeActiveComponent: (state, action: PayloadAction<string>) => {
+		changeActiveComponent: (state, action: PayloadAction<ActiveComponent>) => {
 			state.activeComponent = action.payload;
 			//app screen
 		},
 		changeStatus: (
 			state,
-			action: PayloadAction<"startScreen" | "quizScreen" | "finishScreen">
+			action: PayloadAction<Status>
 		) => {
 			state.status = action.payload;
 			//quiz screen
@@ -52,7 +57,7 @@ const uiSlice = createSlice({
 });
 
 export const {
-	isFirstLaunch, 
+	isFirstLaunch,
 	itIsVisible,
 	changeActiveComponent,
 	changeStatus,

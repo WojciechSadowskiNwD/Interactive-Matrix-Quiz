@@ -1,25 +1,25 @@
 {
-  "compilerOptions": {
-    /* Podstawowe ustawienia środowiska */
-    "target": "ES2020",
-    "lib": ["DOM", "ES2020"],
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "jsx": "react-jsx",
+	"compilerOptions": {
+		/* Podstawowe ustawienia środowiska */
+		"target": "ES2020",
+		"lib": ["DOM", "ES2020"],
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"jsx": "react-jsx",
 
-    /* Ścisła kontrola typów */
-    "strict": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+		/* Ścisła kontrola typów */
+		"strict": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
 
-    /* Przydatne opcje */
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
+		/* Przydatne opcje */
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noFallthroughCasesInSwitch": true,
 
-    /* CRA nie używa `tsc` do budowania, tylko do sprawdzania typów */
-    "noEmit": true
-  },
-  "include": ["src"]
-} 
+		/* CRA nie używa `tsc` do budowania, tylko do sprawdzania typów */
+		"noEmit": true
+	},
+	"include": ["src", "global.d.ts"]
+}

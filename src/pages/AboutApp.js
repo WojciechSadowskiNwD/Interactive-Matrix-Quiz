@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import AboutTitle from "../components/AboutTitle";
 import AboutText from "../components/AboutText";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";

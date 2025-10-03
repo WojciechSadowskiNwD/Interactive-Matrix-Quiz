@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../store/redux";
 import {
 	changePosition,
 	toggleActive,
@@ -8,17 +8,15 @@ import {
 import { motion } from "framer-motion";
 import styles from "./CustomCursor.module.scss";
 
-
-
 export default function CustomCursor() {
-	const dispatch = useDispatch();
-	const { position, isHoveringBtn } = useSelector((store) => store.cursor);
+	const dispatch = useAppDispatch();
+	const { position, isHoveringBtn } = useAppSelector((store) => store.cursor);
 
 	useEffect(() => {
-		const handleMouseMove = (e) => {
+		const handleMouseMove = (e: MouseEvent) => {
 			dispatch(changePosition({ x: e.clientX, y: e.clientY }));
 		};
-		const initPosition = (e) => {
+		const initPosition = (e: MouseEvent) => {
 			dispatch(changePosition({ x: e.clientX, y: e.clientY }));
 			window.removeEventListener("mousemove", initPosition);
 		};
@@ -29,10 +27,9 @@ export default function CustomCursor() {
 		const handleMouseEnter = () => dispatch(toggleHoveringOnBtn(true)); //change cursor on white
 		const handleMouseLeave = () => dispatch(toggleHoveringOnBtn(false));
 
-		const handleClickBtn = (e) => {
+		const handleClickBtn = (e: MouseEvent) => {
 			dispatch(toggleHoveringOnBtn(false)); //change cursor on green
 			dispatch(toggleActive()); //unmound cursor
-
 		};
 
 		// Catch all the buttons to listen them, to animate the cursor when user hover on and leave the selected button
@@ -46,6 +43,7 @@ export default function CustomCursor() {
 		return () => {
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mousemove", initPosition);
+
 			buttons.forEach((btn) => {
 				btn.removeEventListener("mouseenter", handleMouseEnter);
 				btn.removeEventListener("mouseleave", handleMouseLeave);

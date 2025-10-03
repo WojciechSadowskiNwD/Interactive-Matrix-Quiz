@@ -1,5 +1,4 @@
-import { useSelector } from "react-redux";
-
+import { useAppSelector } from "../store/redux";
 import Terminal from "./Terminal";
 import StartQuiz from "./StartQuiz";
 import FinishQuiz from "./FinishQuiz";
@@ -7,7 +6,7 @@ import styles from "./DesktopReflection.module.scss";
 
 
 export default function DesktopReflection() {
-	const {status} = useSelector((store)=>store.ui);
+	const {status} = useAppSelector((store)=>store.ui);
 	// "startScreen", "quizScreen", "finishScreen"
 
 	return (
@@ -24,4 +23,3 @@ export default function DesktopReflection() {
 		</div>
 	);
 }
-
