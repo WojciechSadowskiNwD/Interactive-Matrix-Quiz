@@ -4,7 +4,8 @@ import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import AboutMoviesCarousel from "../components/AboutMoviesCarousel";
 import styles from "./About.module.scss";
 
-function AboutApp({ onBack }) {
+// function AboutApp({ onBack }) {
+function AboutApp() {
 
 	return (
 		<div className={styles.about_container}>
@@ -12,7 +13,8 @@ function AboutApp({ onBack }) {
 				<AboutTitle marginTitle={styles.marginTitle}>About App</AboutTitle>
 				<AboutText />
 				<AboutMoviesCarousel />
-				<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtra} />
+				{/* <PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtra} /> */}
+				<PulsingReturnBtn marginExtra={styles.marginExtra} />
 			</div> 
 		</div>
 	);

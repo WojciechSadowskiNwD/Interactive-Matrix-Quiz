@@ -7,7 +7,8 @@ import AboutTitle from "../components/AboutTitle";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import styles from "./About.module.scss";
 
-function AboutDev({ onBack }) {
+// function AboutDev({ onBack }) {
+function AboutDev() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(()=> {
@@ -40,7 +41,8 @@ function AboutDev({ onBack }) {
 					<AboutIconSkill img="img/GitIcon.webp" text="Git" />
 				</AboutIconsContainer>
 
-				<PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtraAD} />
+				{/* <PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtraAD} /> */}
+				<PulsingReturnBtn marginExtra={styles.marginExtraAD} />
 			</div>
 		</div>
 	);

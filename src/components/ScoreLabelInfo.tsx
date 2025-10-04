@@ -1,6 +1,5 @@
 import styles from './ScoreLabelInfo.module.scss';
 
-
 export default function ScoreLabelInfo() {
 	return (
 		<div className={styles.label_info_container}>
@@ -10,7 +9,7 @@ export default function ScoreLabelInfo() {
 			<div className={styles.label_info}>
 				<p className={`${styles.label_name} ${styles.label_paragraph}`}>nick</p>
 				<p className={styles.label_paragraph}>
-					<i class="fas fa-bolt"></i>
+					<i className="fas fa-bolt"></i>
 				</p>
 			</div>
 		</div>

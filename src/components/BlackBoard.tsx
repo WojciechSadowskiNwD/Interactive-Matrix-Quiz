@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { itIsVisible } from "../store/uiSlice";
 import { useAppDispatch, useAppSelector } from "../store/redux";
-
 import OptionsPanel from "./OptionsPanel";
 import ScoreBoard from "../pages/ScoreBoard";
 import AboutApp from "../pages/AboutApp";
@@ -9,12 +8,9 @@ import AboutDev from "../pages/AboutDev";
 import { motion } from "framer-motion";
 import styles from "./BlackBoard.module.scss";
 
-
 export default function BlackBoard() {
 	const dispatch = useAppDispatch();
-	const { isVisible, activeComponent } = useAppSelector(
-		(store) => store.ui
-	);
+	const { isVisible, activeComponent } = useAppSelector((store) => store.ui);
 
 	useEffect(() => {
 		const timer = setTimeout(() => dispatch(itIsVisible(true)), 7000);

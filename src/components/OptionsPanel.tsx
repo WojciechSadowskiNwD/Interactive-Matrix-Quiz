@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../store/redux";
-
 import TurnOnTitleLetters from "./TurnOnTitleLetters";
 import ButtonsContainer from "./ButtonsContainer";
 import Footer from "./Footer";

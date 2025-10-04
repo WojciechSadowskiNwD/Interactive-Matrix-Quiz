@@ -1,6 +1,17 @@
-import styles from './ScoreUserBar.module.scss';
+import { FC } from "react";
+import styles from "./ScoreUserBar.module.scss";
 
-export default function ScoreUserBar({number, nick, points}) {
+type ScoreUserBarProps = {
+	number: number;
+	nick: string;
+	points: number;
+};
+
+export const ScoreUserBar: FC<ScoreUserBarProps> = ({
+	number,
+	nick,
+	points,
+}) => {
 	return (
 		<div className={styles.score_box}>
 			<div className={styles.position_rank}>
@@ -12,4 +23,4 @@ export default function ScoreUserBar({number, nick, points}) {
 			</div>
 		</div>
 	);
-}
+};

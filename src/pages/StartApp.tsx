@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/redux";
-import { AnimatePresence } from "framer-motion";
 import { toggleActive } from "../store/cursorSlice";
-
-import WelcomeImg from "../components/WelcomeImg";
+import { AnimatePresence } from "framer-motion";
 import MatrixRain from "../components/canvas/MatrixRain";
+import WelcomeImg from "../components/WelcomeImg";
 import BlackBoard from "../components/BlackBoard";
 import CustomCursor from "../components/CustomCursor";
 
 
 function StartApp() {
-	const [step, setStep] = useState<number>(1);
 	const dispatch = useAppDispatch();
 	const { activeCursor } = useAppSelector((store) => store.cursor);
 	const { firstLaunch, activeComponent } = useAppSelector((store) => store.ui);
+	const [step, setStep] = useState<number>(1);
 	const [showWelcome, setShowWelcome] = useState<boolean>(true);
 	const [startFadeOut, setStartFadeOut] = useState<boolean>(false);
 

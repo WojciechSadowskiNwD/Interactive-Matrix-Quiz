@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../store/redux";
 import { Link } from "react-router-dom";
 import { changeActiveComponent, isFirstLaunch } from "../store/uiSlice";
+import type { ActiveComponent } from "../store/uiSlice";
 import DecodeButton from "./DecodeButton";
 import styles from "./ButtonsContainer.module.scss";
-import type { ActiveComponent } from "../store/uiSlice";
 
 type Button = {
 	key: ActiveComponent;
