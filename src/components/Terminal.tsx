@@ -1,23 +1,21 @@
 import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../store/redux";
 import { setUserName } from "../store/userSlice";
-
 import TerminalBar from "./TerminalBar";
 import TerminalAutoTyping from "./TerminalAutoTyping";
 import InputUserName from "./InputUserName";
 import ManualSlider from "./ManualSlider";
-import BtnAccept from "./BtnAccept"; 
+import BtnAccept from "./BtnAccept";
 
 function Terminal() {
-	const [showInput, setShowInput] = useState(false);
-	const [showMoreInfo, setShowMoreInfo] = useState(false); 
-	const [showSlider, setShowSlider] = useState(false);
-	const [dispableInput, setDispableInput] = useState(false);
+	const [showInput, setShowInput] = useState<boolean>(false);
+	const [showMoreInfo, setShowMoreInfo] = useState<boolean>(false);
+	const [showSlider, setShowSlider] = useState<boolean>(false);
+	const [disableInput, setDisableInput] = useState<boolean>(false);
 
-	const timerRef = useRef(null);
-	const dispatch = useDispatch();
-	const selectedAvatar = useSelector((store) => store.user.selectedAvatar);
-
+	const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+	const dispatch = useAppDispatch();
+	const selectedAvatar = useAppSelector((store) => store.user.selectedAvatar);
 
 	useEffect(() => {
 		const finishTyping = setTimeout(() => {
@@ -38,20 +36,22 @@ function Terminal() {
 	}, [showMoreInfo]);
 
 	useEffect(() => {
-		return () => clearTimeout(timerRef.current);
+		return () => {
+			if (timerRef.current) clearTimeout(timerRef.current);
+		};
 	}, []);
 
-	const handleChange = (e) => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		dispatch(setUserName(value));
 
 		//* reset timer block after any click letter/number on input
 		if (timerRef.current) clearTimeout(timerRef.current);
-		setDispableInput(false);
+		setDisableInput(false);
 
 		// Lock input after 3 sec inaction
 		timerRef.current = setTimeout(() => {
-			setDispableInput(true);
+			setDisableInput(true);
 		}, 3000);
 
 		// if user type 3+ chars, show next part text
@@ -69,7 +69,7 @@ function Terminal() {
 				Wake up user... Will you repeat what your nickname was?
 			</TerminalAutoTyping>
 			{showInput && (
-				<InputUserName onChange={handleChange} disabled={dispableInput} />
+				<InputUserName onChange={handleChange} disabled={disableInput} />
 			)}
 
 			{showMoreInfo && (

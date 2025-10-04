@@ -4,13 +4,22 @@ import AboutMoviesCarouselMobile from "./AboutMoviesCarouselMobile";
 
 const API_KEY = "198446cdebc58256718c7bdcd84bfbc4";
 const MATRIX_COLLECTION_ID = 2344;
+//final link: https://api.themoviedb.org/3/collection/2344?api_key=198446cdebc58256718c7bdcd84bfbc4&language=en-US
+
+export type Movie = {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string | null;
+  release_date: string;
+};
 
 function AboutMoviesCarousel() {
-	const [matrixMovies, setMatrixMovies] = useState([]);
-	const [isDesktopWidth, setIsDesktopWidth] = useState(
-		window.innerWidth >= 992
+	const [matrixMovies, setMatrixMovies] = useState<Movie[]>([]);
+	const [isDesktopWidth, setIsDesktopWidth] = useState<boolean>(
+		typeof window !== "undefined" && window.innerWidth >= 992
 	);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 	useEffect(() => {
 		const fetchMatrixMovies = async () => {
 			try {
@@ -18,8 +27,8 @@ function AboutMoviesCarousel() {
 					`https://api.themoviedb.org/3/collection/${MATRIX_COLLECTION_ID}?api_key=${API_KEY}&language=en-US`
 				);
 				const data = await response.json();
-				console.log(data);
-				setMatrixMovies(data.parts);
+				// console.log(data);
+				setMatrixMovies(data.parts as Movie[]);
 			} catch (error) {
 				console.error("Error downloading API data:", error);
 			} finally {

@@ -1,9 +1,14 @@
 import { useState } from "react";
+import type { Movie } from "./AboutMoviesCarousel";
 import styles from "./AboutMoviesCarouselDesktop.module.scss";
 
-export default function AboutMoviesCarouselDesktop({ movies }) {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const[randomActive, setRandomActive] = useState(true);
+type Props = {
+	movies: Movie[];
+}
+
+export default function AboutMoviesCarouselDesktop({ movies }:Props) {
+	const [currentIndex, setCurrentIndex] = useState<number>(0);
+	const[randomActive, setRandomActive] = useState<boolean>(true);
 	const currentMovie = movies[currentIndex];
 	const secondMovie = movies[currentIndex+1];
 
@@ -15,8 +20,6 @@ export default function AboutMoviesCarouselDesktop({ movies }) {
 		setRandomActive(false);
 		setCurrentIndex((prev) => (prev = 2));
 	}
-		
-
 
 	return (
 		<div className={styles.carousel_container}>

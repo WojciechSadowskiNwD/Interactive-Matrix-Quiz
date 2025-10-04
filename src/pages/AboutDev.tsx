@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import AboutAvatarFrame from "../components/AboutAvatarFrame";
-import AboutIconsContainer from "../components/AboutIconsContainer";
-import AboutIconSkill from "../components/AboutIconSkill";
+import { AboutIconsContainer } from "../components/AboutIconsContainer";
+import { AboutIconSkill } from "../components/AboutIconSkill";
 import AboutSectionInfo from "../components/AboutSectionInfo";
-import AboutTitle from "../components/AboutTitle";
+import { AboutTitle } from "../components/AboutTitle";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import styles from "./About.module.scss";
 
@@ -11,13 +11,13 @@ import styles from "./About.module.scss";
 function AboutDev() {
 	const [isLoading, setIsLoading] = useState(true);
 
-	useEffect(()=> {
-		const timeout = setTimeout(()=>{
-			setIsLoading(false)
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setIsLoading(false);
 		}, 500);
 
 		return () => clearTimeout(timeout);
-	},[])
+	}, []);
 
 	if (isLoading) {
 		return (
