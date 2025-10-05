@@ -1,10 +1,18 @@
-import { useEffect, useState } from "react";
-import styles from './TerminalAutoTyping.module.scss';
+import { FC, ReactNode, useEffect, useState } from "react";
+import styles from "./TerminalAutoTyping.module.scss";
 
-const TerminalAutoTyping = ({ children, customFontSize="" }) => {
-	const [displayedText, setDisplayedText] = useState("");
-	const [showCursor, setShowCursor] = useState(true);
-	const [startTyping, setStartTyping] = useState(false);
+type Props = {
+	children: string;
+	customFontSize?: string;
+};
+
+export const TerminalAutoTyping: FC<Props> = ({
+	children,
+	customFontSize = "",
+}) => {
+	const [displayedText, setDisplayedText] = useState<string>("");
+	const [showCursor, setShowCursor] = useState<boolean>(true);
+	const [startTyping, setStartTyping] = useState<boolean>(false);
 
 	useEffect(() => {
 		const cursorBlink = setInterval(() => {
@@ -21,7 +29,6 @@ const TerminalAutoTyping = ({ children, customFontSize="" }) => {
 		};
 	}, []);
 
-
 	useEffect(() => {
 		if (startTyping && displayedText.length < children.length) {
 			const typingInterval = setInterval(() => {
@@ -33,10 +40,10 @@ const TerminalAutoTyping = ({ children, customFontSize="" }) => {
 
 	return (
 		<div className={styles.terminal}>
-			<em className={customFontSize ||  styles.displayedText}>{displayedText}</em>
+			<em className={customFontSize || styles.displayedText}>
+				{displayedText}
+			</em>
 			{<span className={styles.cursor_box} />}
 		</div>
 	);
 };
-
-export default TerminalAutoTyping;

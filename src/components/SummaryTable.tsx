@@ -1,23 +1,22 @@
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../store/redux";
 import { updateHighScores } from "../updateHighScores";
 import { motion } from "framer-motion";
-
 import styles from "./SummaryTable.module.scss";
 
 function SummaryTable() {
-	const { currentScore, userName } = useSelector((store) => store.user);
-	const { secondsRemaining, corrAnswers } = useSelector((store) => store.ui);
+	const { currentScore, userName } = useAppSelector((store) => store.user);
+	const { secondsRemaining, corrAnswers } = useAppSelector((store) => store.ui);
 
-	const alreadyCheckedRef = useRef(false);
+	const alreadyCheckedRef = useRef<boolean>(false);
 
-	const [isNewRecord, setIsNewRecord] = useState(false);
+	const [isNewRecord, setIsNewRecord] = useState<boolean>(false);
+	const [index, setIndex] = useState<number>(0);
 	const totalScore = currentScore + secondsRemaining;
-	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
 		const checkRecord = async () => {
-			if (alreadyCheckedRef.current) return;
+			if (alreadyCheckedRef.current || !userName) return;
 
 			alreadyCheckedRef.current = true;
 			const updated = await updateHighScores(userName, totalScore);

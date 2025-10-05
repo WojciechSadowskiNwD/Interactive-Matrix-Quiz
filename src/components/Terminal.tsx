@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/redux";
 import { setUserName } from "../store/userSlice";
 import TerminalBar from "./TerminalBar";
-import TerminalAutoTyping from "./TerminalAutoTyping";
-import InputUserName from "./InputUserName";
+import {TerminalAutoTyping} from "./TerminalAutoTyping";
+import { InputUserName } from "./InputUserName";
 import ManualSlider from "./ManualSlider";
 import BtnAccept from "./BtnAccept";
 

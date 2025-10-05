@@ -1,15 +1,14 @@
+import { useAppDispatch } from "../store/redux";
+import { changeStatus } from "../store/uiSlice";
 import { motion } from "framer-motion";
 import styles from "./BtnAccept.module.scss";
-import { useDispatch } from "react-redux";
-import { changeStatus } from "../store/uiSlice";
 
-function BtnAccept() {
-	const dispatch = useDispatch();
+export default function BtnAccept() {
+	const dispatch = useAppDispatch();
 	
 	const handleClick=()=> {
 		dispatch(changeStatus("quizScreen"));
 	}
-
 
 	return (
 		<div className={styles.button_wrapper}>
@@ -24,5 +23,3 @@ function BtnAccept() {
 		</div>
 	);
 }
-
-export default BtnAccept;

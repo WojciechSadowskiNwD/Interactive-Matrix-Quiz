@@ -1,14 +1,13 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../store/redux";
 import SummaryTable from "./SummaryTable";
 import { motion } from "framer-motion";
-
 import styles from "./ContentLayout.module.scss";
 
 export default function ContentLayout() {
-	const { userName: nickname, selectedAvatar } = useSelector(
+	const { userName: nickname, selectedAvatar } = useAppSelector(
 		(store) => store.user
 	);
-  
+
 	return (
 		<div className={styles.content_layout}>
 			<motion.div
@@ -19,11 +18,13 @@ export default function ContentLayout() {
 			>
 				<div className={styles.circle_frame}>
 					<div className={styles.shadow_frame}></div>
-					<img
-						className={styles.img_avatar}
-						src={selectedAvatar}
-						alt="selected face avatar" 
-					/>
+					{selectedAvatar ? (
+						<img
+							className={styles.img_avatar}
+							src={selectedAvatar}
+							alt="selected face avatar"
+						/>
+					) : null}
 				</div>
 				<div className={styles.nickname_box}>
 					<em className={styles.nickname}>{nickname}</em>

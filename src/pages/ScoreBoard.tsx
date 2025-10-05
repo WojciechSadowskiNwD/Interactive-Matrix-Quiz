@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { db } from "../firebaseConfig";
-import {ScoreTitleBanner} from "../components/ScoreTitleBanner";
+import { ScoreTitleBanner } from "../components/ScoreTitleBanner";
 import ScoreLabelInfo from "../components/ScoreLabelInfo";
-import {ScoreUserBar} from "../components/ScoreUserBar";
+import { ScoreUserBar } from "../components/ScoreUserBar";
 import PulsingReturnBtn from "../components/PulsingReturnBtn";
 import styles from "./ScoreBoard.module.scss";
 
