@@ -1,11 +1,11 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 
-type QuizQuestion = {
+export type QuizQuestion = {
 	id: string;
-	question: string;
-	answers: string[];
 	correctAnswer: string;
+	options: string[];
+	question: string;
 };
 
 export const fetchQuizQuestions = async (): Promise<QuizQuestion[]> => {

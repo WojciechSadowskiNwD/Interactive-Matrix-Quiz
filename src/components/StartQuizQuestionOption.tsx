@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import styles from './StartQuizQuestionOption.module.scss';
 
 type Props = {
-    children: string;
+    children: ReactNode;
     customClass?: string;
     onSelect: () => void;
 }   

@@ -1,17 +1,24 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import StartQuizQuestionOption from "./StartQuizQuestionOption";
 import { motion } from "framer-motion";
 import styles from "./StartQuizAnswerOptions.module.scss";
 
-function StartQuizAnswerOptions({
+type Props = {
+	options: string[];
+	correctAnswer: string;
+	selected: string | null;
+	showAnswer: boolean;
+	onSelect: (key: string) => void;
+};
+
+export const StartQuizAnswerOptions: FC<Props> = ({
 	options,
 	correctAnswer,
 	selected,
 	showAnswer,
 	onSelect,
-}) {
-    
-	const [showOptions, setShowOptions] = useState(false);
+}) => {
+	const [showOptions, setShowOptions] = useState<boolean>(false);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -67,6 +74,4 @@ function StartQuizAnswerOptions({
 				})}
 		</div>
 	);
-}
-
-export default StartQuizAnswerOptions;
+};

@@ -1,7 +1,13 @@
-import styles from "./StartQuizNextStepBtn.module.scss";
+import { FC } from "react";
 import { motion } from "framer-motion";
+import styles from "./StartQuizNextStepBtn.module.scss";
 
-function StartQuizNextStepBtn({ isLast, onClick }) {
+type Props = {
+	isLast: boolean;
+	onClick: () => void;
+};
+
+export const StartQuizNextStepBtn: FC<Props> = ({ isLast, onClick }) => {
 	return (
 		<div className={styles.nextStepBtn_wrapper}>
 			<motion.button
@@ -31,10 +37,8 @@ function StartQuizNextStepBtn({ isLast, onClick }) {
 				}}
 			>
 				{isLast ? "Finish" : "Next"}
-            <i className={`fa-solid fa-forward ${styles.icon_forward}`}></i>
+				<i className={`fa-solid fa-forward ${styles.icon_forward}`}></i>
 			</motion.button>
 		</div>
 	);
-}
-
-export default StartQuizNextStepBtn;
+};

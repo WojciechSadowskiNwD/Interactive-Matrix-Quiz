@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "../store/redux";
-import { fetchQuizQuestions } from "../fetchQuizQuestions";
+import { fetchQuizQuestions, QuizQuestion } from "../fetchQuizQuestions";
 import { setBonusActive, setCurrentScore } from "../store/userSlice";
 import { changeStatus, setCorrAnswers } from "../store/uiSlice";
 import StartQuizTopBar from "./StartQuizTopBar";
 import StartQuizTimer from "./StartQuizTimer";
-import StartQuizQuestionNum from "./StartQuizQuestionNum";
+import { StartQuizQuestionNum } from "./StartQuizQuestionNum";
 import { TerminalAutoTyping } from "./TerminalAutoTyping";
-import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
-import StartQuizAnswerOptions from "./StartQuizAnswerOptions";
+import { StartQuizNextStepBtn } from "./StartQuizNextStepBtn";
+import { StartQuizAnswerOptions } from "./StartQuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
 
 function StartQuiz() {
-	const [questions, setQuestions] = useState([]);
+	const [questions, setQuestions] = useState<QuizQuestion[]>([]);
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
-	const [selected, setSelected] = useState(null);
+	const [selected, setSelected] = useState<string | null>(null);
 	const [showAnswer, setShowAnswer] = useState<boolean>(false);
 	const [unmistakablyShots, setUnmistakablyShots] = useState<number>(0);
 
@@ -41,7 +41,10 @@ function StartQuiz() {
 	const isCorrect = selected === currentQuestion.correctAnswer;
 	const isLast = currentIndex === questions.length - 1;
 
-	const handleSelect = (optionKey) => {
+	const handleSelect = (optionKey: string): void => {
+		// ten if to TEST  z dnia 05.10.25
+		// if(showAnswer) return;
+
 		if (!showAnswer) {
 			setSelected(optionKey);
 			setShowAnswer(true);
