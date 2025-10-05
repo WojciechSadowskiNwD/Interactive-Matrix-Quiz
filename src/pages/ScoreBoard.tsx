@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { db } from "../firebase/firebaseConfig";
 import { ScoreTitleBanner } from "../components/ScoreTitleBanner";
 import ScoreLabelInfo from "../components/ScoreLabelInfo";
 import { ScoreUserBar } from "../components/ScoreUserBar";

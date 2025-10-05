@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useAppSelector } from "../store/redux";
-import { updateHighScores } from "../updateHighScores";
+import { updateHighScores } from "../firebase/updateHighScores";
 import { motion } from "framer-motion";
 import styles from "./SummaryTable.module.scss";
 
@@ -89,7 +89,6 @@ function SummaryTable() {
 					className={styles.records_info}
 					initial={{ opacity: 0, scale: 1.2 }}
 					animate={{ opacity: 1, scale: 1 }}
-
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
 					You failed to break the record.

@@ -11,7 +11,6 @@ import {
 	DocumentData,
 } from "firebase/firestore";
 
-// Typ rekordu w kolekcji "scores"
 export type HighScore = {
 	id: string;
 	nick: string;
@@ -35,20 +34,20 @@ export const updateHighScores = async (
 		};
 	});
 
-	// Sprawdź czy nowy wynik zasługuje na miejsce w top 5
+	// Check whether the new result deserves a place in the top 5.
 	const minScore =
 		currentTopScores.length > 0
 			? Math.min(...currentTopScores.map((s) => s.points))
 			: 0;
 
 	if (newScore > minScore || currentTopScores.length < 5) {
-		// Dodaj nowy rekord
+		// Add new record
 		await addDoc(scoresRef, {
 			nick,
-			points: newScore.toString(), // jeśli faktycznie przechowujesz jako string
+			points: newScore.toString(),
 		});
 
-		// Jeśli jest więcej niż 5 wyników, usuń najsłabszy
+		// If move than 5, delete the lower one
 		if (currentTopScores.length === 5) {
 			const lowest = currentTopScores.reduce((a, b) =>
 				a.points < b.points ? a : b
@@ -66,37 +65,30 @@ export const updateHighScores = async (
 // Prev version .js:
 // import { db } from './firebaseConfig';
 // import { collection, getDocs, query, orderBy, limit, addDoc, deleteDoc, doc } from "firebase/firestore";
-
 // export const updateHighScores = async (nick, newScore) => {
 //     const scoresRef = collection(db, 'scores');
 //     const q = query(scoresRef, orderBy('points', 'desc'), limit(5));
 //     const querySnapshot = await getDocs(q);
-
 //     const currentTopScores = querySnapshot.docs.map(doc => ({
 //         id: doc.id,
 //         ...doc.data(),
 //         points: Number(doc.data().points),
 //     }));
-
 //     // Check whether the new result deserves a place in the top 5.
 //     const minScore = Math.min(...currentTopScores.map(s => s.points));
-
 //     if (newScore > minScore || currentTopScores.length < 5) {
 //         // Dodaj nowy rekord
 //         await addDoc(scoresRef, {
 //             nick,
 //             points: newScore.toString(),
 //         });
-
 //         // If there are more than 5 results, remove the weakest one.
 //         if (currentTopScores.length === 5) {
 //             const lowest = currentTopScores.reduce((a, b) => a.points < b.points ? a : b);
 //             const docRef = doc(db, 'scores', lowest.id);
 //             await deleteDoc(docRef);
 //         }
-
 //         return true;
 //     }
-
 //     return false;
 // };

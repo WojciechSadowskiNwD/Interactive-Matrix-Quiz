@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "../store/redux";
-import { fetchQuizQuestions, QuizQuestion } from "../fetchQuizQuestions";
+import { fetchQuizQuestions, QuizQuestion } from "../firebase/fetchQuizQuestions";
 import { setBonusActive, setCurrentScore } from "../store/userSlice";
 import { changeStatus, setCorrAnswers } from "../store/uiSlice";
 import StartQuizTopBar from "./StartQuizTopBar";

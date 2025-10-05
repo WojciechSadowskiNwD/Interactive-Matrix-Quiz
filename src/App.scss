@@ -1,5 +1,11 @@
 @import "./styles/global.scss";
+* {
+	box-sizing: border-box;
+}
 
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
 canvas {
 	position: absolute;
 	top: 0;

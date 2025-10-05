@@ -21,13 +21,11 @@ const firebaseConfig: {
   measurementId: "G-MBTKG6NS6X",
 };
 
-// Inicjalizacja Firebase
+// Init Firebase
 const app = initializeApp(firebaseConfig);
-
-// jawne typowanie instancji
 const db: Firestore = getFirestore(app);
 
-// Analytics działa tylko w przeglądarce (window)
+// Analytics work only in browser (window)
 let analytics: Analytics | undefined;
 if (typeof window !== "undefined") {
   analytics = getAnalytics(app);
