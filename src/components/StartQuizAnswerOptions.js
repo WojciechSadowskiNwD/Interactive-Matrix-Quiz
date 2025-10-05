@@ -8,7 +8,7 @@ function StartQuizAnswerOptions({
 	correctAnswer,
 	selected,
 	showAnswer,
-	onClick,
+	onSelect,
 }) {
     
 	const [showOptions, setShowOptions] = useState(false);
@@ -47,8 +47,8 @@ function StartQuizAnswerOptions({
 					return (
 						<StartQuizQuestionOption
 							key={key}
-							className={className}
-							onClick={() => onClick(key)}
+							customClass={className}
+							onSelect={() => onSelect(key)}
 						>
 							<motion.div
 								key={key}

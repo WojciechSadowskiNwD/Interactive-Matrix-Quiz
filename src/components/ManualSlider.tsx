@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
+import { useAppDispatch, useAppSelector } from "../store/redux";
 import { setUserAvatar } from "../store/userSlice";
+import { motion } from "framer-motion";
 import styles from "./ManualSlider.module.scss";
 
-// było 12 wcześniej
 const avatars = [
 	"img/avatars/avatar_1.webp",
 	"img/avatars/avatar_2.webp",
@@ -21,13 +20,14 @@ const avatars = [
 // How many avatars do we have in the photo collection?
 // console.log(avatars.length);
 
-function ManualSlider() {
-	const dispatch = useDispatch(); 
-	const selectedAvatar = useSelector((store) => store.user.selectedAvatar);
+export default function ManualSlider() {
+	const dispatch = useAppDispatch();
+	const selectedAvatar = useAppSelector((store) => store.user.selectedAvatar);
 
-	const [shiftWidth, setShiftWidth] = useState(0);
-	const [shiftStep, setShiftStep] = useState(200); //default value
-	const [x, setX] = useState(1); // value for function btn: handleNext
+	const [shiftWidth, setShiftWidth] = useState<number>(0);
+	const [shiftStep, setShiftStep] = useState<number>(200); //default value
+	const [x, setX] = useState<number>(1); // value for function btn: handleNext
+	const [index, setIndex] = useState<number>(0);
 
 	useEffect(() => {
 		const updateShiftStep = () => {
@@ -47,7 +47,7 @@ function ManualSlider() {
 				setShiftStep(221);
 			} else if (window.innerWidth >= 992) {
 				setShiftStep(190);
-				// console.log("obecna szerokość: 992px");
+				// console.log("now width is: 992px");
 				setX(2);
 			}
 		};
@@ -58,14 +58,13 @@ function ManualSlider() {
 		return () => window.removeEventListener("resize", updateShiftStep);
 	}, []);
 
-	const [index, setIndex] = useState(0);
-
 	const handlePrev = () => {
 		if (index > 0) {
 			setIndex((i) => i - 1);
 			setShiftWidth((prev) => prev - shiftStep);
 		}
 	};
+	
 	const handleNext = () => {
 		if (index < avatars.length - x) {
 			setIndex((i) => i + 1);
@@ -139,5 +138,3 @@ function ManualSlider() {
 		</motion.div>
 	);
 }
-
-export default ManualSlider;

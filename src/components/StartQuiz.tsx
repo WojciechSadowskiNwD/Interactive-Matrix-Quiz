@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
-import { fetchQuizQuestions } from "../fetchQuizQuestions ";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store/redux";
+import { fetchQuizQuestions } from "../fetchQuizQuestions";
 import { setBonusActive, setCurrentScore } from "../store/userSlice";
 import { changeStatus, setCorrAnswers } from "../store/uiSlice";
-
 import StartQuizTopBar from "./StartQuizTopBar";
 import StartQuizTimer from "./StartQuizTimer";
 import StartQuizQuestionNum from "./StartQuizQuestionNum";
-import TerminalAutoTyping from "./TerminalAutoTyping";
+import { TerminalAutoTyping } from "./TerminalAutoTyping";
 import StartQuizNextStepBtn from "./StartQuizNextStepBtn";
 import StartQuizAnswerOptions from "./StartQuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
 
 function StartQuiz() {
-	const [questions, setQuestions] = useState([]); 
-	// const [currentIndex, setCurrentIndex] = useState(0);
-	const [currentIndex, setCurrentIndex] = useState(13); //do testowania
+	const [questions, setQuestions] = useState([]);
+	const [currentIndex, setCurrentIndex] = useState<number>(0);
 	const [selected, setSelected] = useState(null);
-	const [showAnswer, setShowAnswer] = useState(false);
-	const [unmistakablyShots, setUnmistakablyShots] = useState(0);
+	const [showAnswer, setShowAnswer] = useState<boolean>(false);
+	const [unmistakablyShots, setUnmistakablyShots] = useState<number>(0);
 
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		const loadQuestions = async () => {
@@ -89,20 +87,23 @@ function StartQuiz() {
 				total={questions.length}
 			/>
 			<StartQuizTimer />
-			
+
 			<div className={styles.question_wrapper}>
 				<div className={styles.question_box}>
-					<TerminalAutoTyping key={currentIndex} customFontSize={styles.customFontSize}>
+					<TerminalAutoTyping
+						key={currentIndex}
+						customFontSize={styles.customFontSize}
+					>
 						{currentQuestion.question}
 					</TerminalAutoTyping>
-				</div> 
+				</div>
 				<StartQuizAnswerOptions
 					key={currentIndex}
 					options={currentQuestion.options}
 					correctAnswer={currentQuestion.correctAnswer}
 					selected={selected}
 					showAnswer={showAnswer}
-					onClick={handleSelect}
+					onSelect={handleSelect}
 				/>
 
 				{showAnswer && (

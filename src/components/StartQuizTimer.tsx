@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import styles from "./StartQuizTimer.module.scss";
+import { useAppDispatch, useAppSelector } from "../store/redux";
 import { countdown } from "../store/uiSlice";
+import styles from "./StartQuizTimer.module.scss";
 
-function StartQuizTimer() {
-	const { secondsRemaining } = useSelector((store) => store.ui);
-	const dispatch = useDispatch();
+export default function StartQuizTimer() {
+	const { secondsRemaining } = useAppSelector((store) => store.ui);
+	const dispatch = useAppDispatch();
 	
 	const minutes = Math.floor(secondsRemaining / 60);
 	const seconds = secondsRemaining % 60;
@@ -31,5 +31,3 @@ function StartQuizTimer() {
 		</div>
 	);
 }
-
-export default StartQuizTimer;

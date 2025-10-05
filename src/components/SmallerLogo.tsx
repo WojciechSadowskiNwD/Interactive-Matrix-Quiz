@@ -1,7 +1,7 @@
 import styles from "./SmallerLogo.module.scss";
 
-function SmallerLogo() {
-	const titleLetters = "THE MATRIZ"; //prawa autorskie
+export default function SmallerLogo() {
+	const titleLetters = "THE MATRIZ";
 
 	return (
 		<div className={styles.titleContainer}>
@@ -14,5 +14,3 @@ function SmallerLogo() {
 		</div>
 	);
 }
-
-export default SmallerLogo;
