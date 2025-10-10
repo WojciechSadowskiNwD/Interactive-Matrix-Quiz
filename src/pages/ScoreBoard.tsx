@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
-import { ScoreTitleBanner } from "../components/ScoreTitleBanner";
-import ScoreLabelInfo from "../components/ScoreLabelInfo";
-import { ScoreUserBar } from "../components/ScoreUserBar";
-import PulsingReturnBtn from "../components/PulsingReturnBtn";
+import { ScoreTitleBanner } from "../layout/scoreBoard/ScoreTitleBanner";
+import ScoreLabelInfo from "../layout/scoreBoard/ScoreLabelInfo";
+import { ScoreUserBar } from "../layout/scoreBoard/ScoreUserBar";
+import PulsingReturnBtn from "../layout/components/PulsingReturnBtn";
 import styles from "./ScoreBoard.module.scss";
 
 type HighestRecord = {
@@ -13,7 +13,6 @@ type HighestRecord = {
 	points: number;
 };
 
-// function ScoreBoard({ onBack }) {
 function ScoreBoard() {
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [highestRecords, setHighestRecords] = useState<HighestRecord[]>([]);
@@ -73,7 +72,6 @@ function ScoreBoard() {
 				))}
 			</div>
 
-			{/* <PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtra} /> */}
 			<PulsingReturnBtn marginExtra={styles.marginExtra} />
 		</div>
 	);

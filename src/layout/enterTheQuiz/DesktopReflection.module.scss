@@ -1,0 +1,49 @@
+@import "../styles/global.scss";
+
+
+.blackDesktop {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 1);
+
+	.blackDesktop_img {
+		position: absolute;
+		// top: 12vh;
+		top: 0vh;
+		width: 160vw;
+		height: 100vh;
+		opacity: 0.9;
+	}
+}
+
+@include responsive(lg) {
+	.blackDesktop {
+		display: flex;
+		width: 85vw;
+		height: 95vh;
+		max-height: 740px;
+		box-shadow: 0 0 15px $shadow-color;
+
+		.blackDesktop_img {
+			width: 100%;
+		}
+	}
+}
+@include responsive(xl) {
+	.blackDesktop {
+		max-width: 900px;
+		max-height: 740px;
+	}
+}
+@include responsive(xxl) {
+	.blackDesktop {
+		max-width: 1000px;
+		max-height: 780px;
+	}
+}

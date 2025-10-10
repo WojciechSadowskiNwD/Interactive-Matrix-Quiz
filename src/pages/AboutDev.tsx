@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import AboutAvatarFrame from "../components/AboutAvatarFrame";
-import { AboutIconsContainer } from "../components/AboutIconsContainer";
-import { AboutIconSkill } from "../components/AboutIconSkill";
-import AboutSectionInfo from "../components/AboutSectionInfo";
-import { AboutTitle } from "../components/AboutTitle";
-import PulsingReturnBtn from "../components/PulsingReturnBtn";
+import AboutAvatarFrame from "../layout/aboutDev/AboutAvatarFrame";
+import { AboutIconsContainer } from "../layout/aboutDev/AboutIconsContainer";
+import { AboutIconSkill } from "../layout/aboutDev/AboutIconSkill";
+import AboutSectionInfo from "../layout/aboutDev/AboutSectionInfo";
+import { AboutTitle } from "../layout/components/AboutTitle";
+import PulsingReturnBtn from "../layout/components/PulsingReturnBtn";
 import styles from "./About.module.scss";
 
-// function AboutDev({ onBack }) {
-function AboutDev() {
+export default function AboutDev() {
 	const [isLoading, setIsLoading] = useState(true);
 
-	useEffect(() => {
+	useEffect(() => { 
 		const timeout = setTimeout(() => {
 			setIsLoading(false);
 		}, 500);
@@ -41,11 +40,8 @@ function AboutDev() {
 					<AboutIconSkill img="img/GitIcon.webp" text="Git" />
 				</AboutIconsContainer>
 
-				{/* <PulsingReturnBtn onBack={onBack} marginExtra={styles.marginExtraAD} /> */}
 				<PulsingReturnBtn marginExtra={styles.marginExtraAD} />
 			</div>
 		</div>
 	);
 }
-
-export default AboutDev;

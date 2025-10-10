@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/redux";
 import { toggleActive } from "../store/cursorSlice";
+import MatrixRain from "../layout/components/MatrixRain";
+import WelcomeImg from "../layout/startApp/WelcomeImg";
+import BlackBoard from "../layout/startApp/BlackBoard";
+import CustomCursor from "../layout/components/CustomCursor";
 import { AnimatePresence } from "framer-motion";
-import MatrixRain from "../components/canvas/MatrixRain";
-import WelcomeImg from "../components/WelcomeImg";
-import BlackBoard from "../components/BlackBoard";
-import CustomCursor from "../components/CustomCursor";
-
 
 function StartApp() {
 	const dispatch = useAppDispatch();

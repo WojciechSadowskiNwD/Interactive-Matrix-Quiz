@@ -1,0 +1,57 @@
+@import '../styles/global.scss';
+
+.buttonsContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	width: 100%;
+	height: 360px;
+	margin-top: 20px;
+	padding-top: 35px;
+	cursor: none;
+}
+.btn {
+	background-color: transparent;
+	border: none;
+	cursor: none;
+}
+
+@include responsive(xs-1){
+	.buttonsContainer{
+		margin-top: 10px;
+		padding-top: 0;
+	}
+}
+@include responsive(xs-2){
+	.buttonsContainer{	
+		margin-top: 50px;	
+		padding-top: 20px;
+	}
+}
+@include responsive(md-1){
+	.buttonsContainer{	
+		margin-top: 60px;	
+		padding-top: 30px;
+		margin-bottom: 90px;
+		height: 380px;
+	}
+}
+@include responsive(md-2){
+	.buttonsContainer{	
+		margin-bottom: 50px;
+		height: 100%;
+	}
+}
+@include responsive(high-md-2){
+	.buttonsContainer{
+		margin-top: 14%;
+	}
+
+}
+@include responsive(high-lg){
+	.buttonsContainer{
+		margin-top: 19%;
+	}
+}

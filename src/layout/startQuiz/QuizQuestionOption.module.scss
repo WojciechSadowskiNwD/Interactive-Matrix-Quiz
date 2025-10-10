@@ -1,0 +1,121 @@
+@import "../styles/global.scss";
+
+
+.option {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 300px;
+	margin-bottom: 5px;
+	height: 55px;
+	filter: drop-shadow(0 0 5px white) drop-shadow(0 0 20px #00ff00);
+
+	background: linear-gradient(
+		135deg,
+		#0f0f0f1f,
+		#000000b4,
+		#2f020216,
+		#00ff9910
+	);
+	background-size: 1% 100%;
+	font-weight: bold;
+	color: #baffba;
+	text-shadow: 1px 1px 15px #c3c3c3, 1px 1px 15px #82c417;
+	border: 1px solid greenyellow;
+	opacity: 0.9;
+	transition: 0.3s;
+
+	clip-path: polygon(
+		10px 0%,
+		calc(105% - 25px) 0%,
+		100% 25px,
+		100% calc(100% - 25px),
+		calc(100% - 15px) 100%,
+		15px 100%,
+		0% calc(100% - 25px),
+		0% 25px
+	);
+	background-color: #000000c9;
+	&::before {
+		content: "";
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		transform: rotate(45deg);
+		width: 11px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		transform: rotate(-45deg);
+		width: 12px;
+		height: 100px;
+		background-color: greenyellow;
+		filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px #00ff00);
+	}
+
+	&:hover {
+		background-color: rgba(0, 128, 0, 0.162);
+		// transform: translateX(-10%);
+	}
+}
+
+.text {
+	text-align: center;
+	font-size: 16px;
+	padding: 5px;
+}
+
+@include responsive(xs-1) {
+	.option {
+		height: 50px;
+		max-height: 50px;
+		padding: 0;
+		// background-color: #fff;
+	}
+}
+@include responsive(xs-2) {
+	.option {
+		height: 56px;
+		min-height: 56px;
+	}
+}
+@include responsive(md-1) {
+	.option {
+		height: 60px;
+		width: 320px;
+	}
+	.text {
+		font-size: 17px;
+		letter-spacing: 0.5px;
+	}
+}
+@include responsive(md-2) {
+	.option {
+		height: 62px;
+		width: 355px;
+	}
+}
+@include responsive(md-3) {
+	.option {
+		width: 385px;
+	}
+}
+@include responsive(lg) {
+	.option {
+		height: 58px;
+		width: 355px;
+		margin: 5px;
+	}
+}
+@include responsive(high-sm-1) {
+	.option {
+		height: 56px;
+	}
+}

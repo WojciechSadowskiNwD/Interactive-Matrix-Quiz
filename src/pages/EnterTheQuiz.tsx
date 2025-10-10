@@ -1,6 +1,6 @@
-import MatrixRain from "../components/canvas/MatrixRain";
-import DesktopReflection from "../components/DesktopReflection";
-import CustomCursor from "../components/CustomCursor";
+import MatrixRain from "../layout/components/MatrixRain";
+import DesktopReflection from "../layout/enterTheQuiz/DesktopReflection";
+import CustomCursor from "../layout/components/CustomCursor";
 
 export default function EnterTheQuiz() {
 	return (

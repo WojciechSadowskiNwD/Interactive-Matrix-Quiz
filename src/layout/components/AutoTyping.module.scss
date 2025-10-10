@@ -1,0 +1,90 @@
+@import "../styles/global.scss";
+
+
+.terminal {
+	position: relative;
+	top: 1%;
+	width: 90%;
+	padding: 15px;
+	padding-right: 20px;
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre-wrap;
+	z-index: 100;
+	color: #51d751;
+	// background-color: red;
+
+	@include responsive(xs-1) {
+		width: 85%;
+	}
+	@include responsive(high-sm-2) {
+		font-size: 18.5px;
+		margin-bottom: 10px;
+	}
+	@include responsive(xs-2) {
+		width: 90%;
+		font-size: 19px;
+		line-height: 1.3;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+	@include responsive(md-1) {
+		top: 1.5%;
+		// font-size: 20px;
+	}
+	@include responsive(md-2) {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	@include responsive(md-3) {
+		padding-left: 10px;
+		margin-bottom: 30px;
+	}
+	@include responsive(high-sm-3) {
+		font-size: 19px;
+	}
+	@include responsive(high-md-2) {
+		margin-top: 0px;
+	}
+	@include responsive(lg) {
+		width: 82%;
+		margin-bottom: 10px;
+	}
+	@include responsive(xxl) {
+		margin-top: 8px;
+		margin-bottom: 20px;
+	}
+}
+.displayedText {
+	font-style: normal;
+
+	@include responsive(xs-2) {
+		top: 1.5%;
+		font-size: 21px;
+	}
+	@include responsive(md-1) {
+		top: 1.5%;
+		font-size: 22px;
+	}
+}
+
+.cursor_box {
+	display: inline-block;
+	width: 15px;
+	height: 18px;
+	margin-left: 5px;
+	vertical-align: bottom;
+	background-color: #00ff00;
+	animation: blink 1s steps(2, start) 11 forwards;
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}

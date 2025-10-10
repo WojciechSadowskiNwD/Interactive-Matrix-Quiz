@@ -1,0 +1,36 @@
+@import '../styles/global.scss';
+
+.randomCodeButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 215px;
+    height: 52px;
+    margin: 13px;
+    font-size: 19px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #0f0 10%, #004400 90%);
+    border: 2px solid $primary-color;
+    color: #0f0;
+    color: $text-color;
+    text-shadow: $logo-color-shadow;
+    text-shadow: 0 0 15px $shadow-color;
+    font-family: "Courier New", monospace;
+    letter-spacing: 1.5px;
+    cursor: none;
+}
+
+@include responsive(xs-2){
+    .randomCodeButton{
+        margin: 14px;
+        width: 225px;
+        height: 54px;
+        font-size: 20px;
+    }
+}
+@include responsive(md-1){
+    .randomCodeButton{
+        width: 230px;
+    }
+}
