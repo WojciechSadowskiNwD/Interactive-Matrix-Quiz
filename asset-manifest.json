@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Interactive-Matrix-Quiz/static/css/main.ce24e7ac.css",
-    "main.js": "/Interactive-Matrix-Quiz/static/js/main.d1adb472.js",
+    "main.js": "/Interactive-Matrix-Quiz/static/js/main.f9762c7e.js",
     "index.html": "/Interactive-Matrix-Quiz/index.html",
     "main.ce24e7ac.css.map": "/Interactive-Matrix-Quiz/static/css/main.ce24e7ac.css.map",
-    "main.d1adb472.js.map": "/Interactive-Matrix-Quiz/static/js/main.d1adb472.js.map"
+    "main.f9762c7e.js.map": "/Interactive-Matrix-Quiz/static/js/main.f9762c7e.js.map"
   },
   "entrypoints": [
     "static/css/main.ce24e7ac.css",
-    "static/js/main.d1adb472.js"
+    "static/js/main.f9762c7e.js"
   ]
 }
