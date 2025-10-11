@@ -5,10 +5,11 @@ import "../layout/styles/App.scss";
 
 const App = () => {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/Interactive-Matrix-Quiz">
 			<Routes>
 				<Route path="/" element={<StartApp />} />
 				<Route path="/enterTheQuiz" element={<EnterTheQuiz />} />
+				<Route path="*" element={<StartApp />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -12,7 +12,7 @@ export default function WelcomeImg() {
 			<div className={styles.img_box}>
 				<img
 					className={styles.image} 
-					src="img/openApp.webp"
+					src={process.env.PUBLIC_URL + "/img/openApp.webp"}
 					alt="Man in black coat holding two pills in open hands"
 				/>
                 <motion.em className={styles.text}
