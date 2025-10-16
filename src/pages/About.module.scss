@@ -18,8 +18,8 @@
 		background-color: #ffffff0f;
 		padding: 10px 0;
 		position: relative;
-		
-		@include responsive(lg){
+
+		@include responsive(lg) {
 			width: 98%;
 			height: 98%;
 			border: 1px solid #00dc00;
@@ -28,12 +28,12 @@
 }
 
 .marginTitle {
-	@include responsive(xs-2){
+	@include responsive(xs-2) {
 		margin-top: 5px;
 		margin-bottom: 5px;
 	}
-	
-	@include responsive(md-1){
+
+	@include responsive(md-1) {
 		margin-top: 26px;
 	}
 }
@@ -43,14 +43,19 @@
 	height: 70px;
 	margin-bottom: 15px;
 
-	@include responsive(xs-1){
+	@include responsive(oppoA98) {
+		height: 50px;
+	}
+
+	@include responsive(xs-1) {
 		height: 60px;
 		margin-bottom: 10px;
 	}
-	@include responsive(xs-2){
+
+	@include responsive(xs-2) {
 		margin-bottom: 15px;
 	}
-	@include responsive(md-1){
+	@include responsive(md-1) {
 		height: 70px;
 		margin-bottom: 20px;
 	}
@@ -61,10 +66,14 @@
 }
 // for AboutDev button
 .marginExtraAD {
-	@include responsive(md-1){
+	@include responsive(xs-1) {
 		margin-top: 5px;
 	}
-	@include responsive(md-2){
+
+	@include responsive(md-1) {
+		margin-top: 5px;
+	}
+	@include responsive(md-2) {
 		margin-top: 0px;
 	}
 }

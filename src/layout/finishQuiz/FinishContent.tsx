@@ -6,7 +6,7 @@ import styles from "./FinishContent.module.scss";
 export default function FinishContent() {
 	const { userName: nickname, selectedAvatar } = useAppSelector(
 		(store) => store.user
-	);
+	); 
 
 	return (
 		<div className={styles.content_layout}>

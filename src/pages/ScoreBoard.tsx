@@ -65,7 +65,7 @@ function ScoreBoard() {
 				{highestRecords.map((record, index) => (
 					<ScoreUserBar
 						key={record.id}
-						number={index + 1}
+						number={index + 1} 
 						nick={record.nick}
 						points={record.points}
 					/>
@@ -73,7 +73,7 @@ function ScoreBoard() {
 			</div>
 
 			<PulsingReturnBtn marginExtra={styles.marginExtra} />
-		</div>
+		</div> 
 	);
 }
 

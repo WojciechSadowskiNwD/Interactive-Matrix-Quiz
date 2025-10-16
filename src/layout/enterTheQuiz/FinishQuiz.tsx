@@ -25,8 +25,8 @@ export default function FinishQuiz() {
 			<div className={styles.banner_box}>
 				<ScoreTitleBanner customMarginTop={titleMarginValue}>
 					Final Score
-				</ScoreTitleBanner>
-			</div>
+				</ScoreTitleBanner> 
+			</div> 
 
 			{/* Info block */}
 			<h2 className={styles.congrats}>Congratulations</h2>

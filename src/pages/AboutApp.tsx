@@ -12,7 +12,7 @@ export default function AboutApp() {
 				<AboutText />
 				<MoviesCarousel />
 				<PulsingReturnBtn marginExtra={styles.marginExtra} />
-			</div>
+			</div> 
 		</div>
 	);
 }

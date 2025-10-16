@@ -1,6 +1,5 @@
 @import "../styles/global.scss";
 
-
 .score_box {
 	display: flex;
 	flex-direction: row;
@@ -49,32 +48,46 @@
 		}
 	}
 }
+@include responsive(oppoA98) {
+	.score_box {
+		.position_rank {
+			p {
+				font-size: 16px;
+			}
+		}
+		.position_info {
+			p {
+				font-size: 15px;
+			}
+		}
+	}
+}
 
-@include responsive(md-2){
+@include responsive(md-2) {
 	.score_box {
 		width: 91%;
 		margin-bottom: 2px;
 	}
 }
-@include responsive(md-2){
+@include responsive(md-2) {
 	.score_box {
 		gap: 20px;
 	}
 }
-@include responsive(lg){
+@include responsive(lg) {
 	.score_box {
 		width: 91%;
 		height: 7.3vh;
 	}
 }
-@include responsive(high-sm-2){
+@include responsive(high-sm-2) {
 	.score_box {
 		width: 91%;
 		height: 7.3vh;
 		margin-top: 20px;
 	}
 }
-@include responsive(high-lg){
+@include responsive(high-lg) {
 	.score_box {
 		margin-top: 25px;
 	}

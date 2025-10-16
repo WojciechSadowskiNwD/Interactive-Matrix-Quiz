@@ -19,6 +19,7 @@ const initialState: UiState = {
 	isVisible: false,
 	activeComponent: "options",
 	status: "startScreen",
+	// status: "quizScreen",
 	// status: "finishScreen",
 	corrAnswers: 0,
 	secondsRemaining: 430, //time in quiz

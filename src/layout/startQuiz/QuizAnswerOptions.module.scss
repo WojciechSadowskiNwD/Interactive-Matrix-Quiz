@@ -40,6 +40,14 @@
 		// background-color: #fff;
 	}
 }
+
+// small phones
+@include responsive(oppoA98) {
+	.answer_bars {
+		height: 220px;
+		// background-color: #fff;
+	}
+}
 @include responsive(xs-2) {
 	.answer_bars {
 		margin-top: 0px;

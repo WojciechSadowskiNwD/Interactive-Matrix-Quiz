@@ -40,7 +40,9 @@
 // RWD
 @include responsive(xs-1) {
 	.summaryButtons {
-		height: 70px;
+		// bottom: 50px;
+		bottom: 0;
+		// height: 70px;
 	}
 }
 @include responsive(xs-2) {

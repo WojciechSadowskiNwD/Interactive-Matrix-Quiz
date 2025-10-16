@@ -22,7 +22,9 @@
         height: 100%;
         background-color: #00ff0029;
     }
-
+    @include responsive(oppoA98){
+        margin-bottom: 25px;
+    }
     @include responsive(md-1) {
         margin-bottom: 501px;
     }

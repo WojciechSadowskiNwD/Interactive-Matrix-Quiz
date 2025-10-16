@@ -29,7 +29,20 @@
     }
 
 }
-
+@include responsive(oppoA98) {
+    .about_icon_container{
+        
+        .about_icon_box {
+            width: 65px;
+            height: 60px;
+            margin: 14px;
+            margin-top: 0px;
+        }
+        .about_icon_text {
+            font-size: 16px;
+        }
+    }
+}
 @include responsive(high-sm-1) {
     .about_icon_container{
         

@@ -18,7 +18,7 @@ const MatrixRain = () => {
 		const numbers = "0123456789";
 		const symbols = "@#$%^&*()-=+[]{}|<>?";
 		const matrixSymbols = katakana + latinChars + numbers + symbols;
-		const fontSize = 22;
+		const fontSize = 22;	
 		const fontSizeSmall = 15;
 		const columnsCloser = Math.ceil(window.innerWidth / fontSize);
 		const columnsSmaller = Math.ceil(window.innerWidth / fontSizeSmall);

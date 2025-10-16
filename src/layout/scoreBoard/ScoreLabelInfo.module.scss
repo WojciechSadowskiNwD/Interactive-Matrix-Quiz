@@ -12,8 +12,8 @@
 	border-radius: 8px;
 	border: 1px dotted #00ff00;
 
-	.label_rank {
-	}
+	.label_rank {}
+
 	.label_info {
 		display: flex;
 		flex-direction: row;
@@ -28,6 +28,18 @@
 	}
 	.label_paragraph {
 		font-size: 16px;
+	}
+}
+
+@include responsive(oppoA98){
+	.label_info_container{
+
+		.label_info {
+			font-size: 15px;
+		}
+		.label_paragraph {
+		font-size: 14px;
+	}
 	}
 }
 

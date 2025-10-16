@@ -16,6 +16,16 @@ p {
 	font-size: 12px;
 }
 
+// budgetary - low resolution
+@include responsive(oppoA98) {
+	.footer{
+		width: 96%;
+	}
+	p{
+		font-size: 11px;
+	}
+}
+
 @include responsive(xs-2) {
 	.footer {
 		width: 92%;

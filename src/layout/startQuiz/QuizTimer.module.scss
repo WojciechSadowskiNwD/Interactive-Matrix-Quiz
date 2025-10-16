@@ -29,6 +29,11 @@
 		margin-bottom: 10px;
 	}
 }
+@include responsive(oppoA98) {
+	.timer_wrapper {
+		height: 30px;
+	}
+}
 @include responsive(xs-2) {
 	.timer_wrapper {
 		margin-bottom: 5px;

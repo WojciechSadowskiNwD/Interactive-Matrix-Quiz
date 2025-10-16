@@ -10,7 +10,7 @@
 	height: 70px;
 	bottom: 0;
 	padding-top: 5px;
-	// background-color: rgba(153, 153, 153, 0.637); //testing RWD
+	// background-color: rgba(153, 153, 153, 0.637);
 
 	.nextStepBtn {
 		font-family: "Courier New", monospace;
@@ -20,7 +20,7 @@
 		text-transform: uppercase;
 		padding: 10px 22px;
 		color: #fff;
-		background-color: rgba(0, 128, 0, 0.626);
+		// background-color: rgba(0, 128, 0, 0.626);
 		border: 1px solid transparent;
 		cursor: none;
 	}
@@ -32,14 +32,37 @@
 
 @include responsive(xs-1) {
 	.nextStepBtn_wrapper {
+		bottom: 20px;
 		height: 60px;
 		min-height: 58px;
 		max-height: 58px;
+		// background-color: #ffffff44;
+
+		.nextStepBtn {
+			font-size: 17px !important;
+			padding: 10px 20px;
+		}
+		.icon_forward {
+			font-size: 14px;
+			margin-left: 10px;
+		}
+	}
+}
+
+// small phones
+@include responsive(oppoA98) {
+	.nextStepBtn_wrapper {
+		position: relative;
+		margin-top: 10px;
+		padding-top: 10px;
+		height: 50px;
+		min-height: 50px;
+		max-height: 50px;
 		// background-color: #fff;
 
 		.nextStepBtn {
-			font-size: 16px !important;
-			padding: 8px 18px;
+			font-size: 17px !important;
+			padding: 10px 20px;
 		}
 		.icon_forward {
 			font-size: 14px;
@@ -52,7 +75,7 @@
 		height: 60px;
 		min-height: 68px;
 		max-height: 68px;
-		// background-color: #fff;
+		// background-color: brown;
 
 		.nextStepBtn {
 			font-size: 18px !important;
@@ -68,7 +91,7 @@
 	.nextStepBtn_wrapper {
 		height: 85px;
 		min-height: 82px;
-		// background-color: $test;
+		// background-color: yellow;
 
 		.nextStepBtn {
 			font-size: 19px;
@@ -97,7 +120,8 @@
 }
 @include responsive(lg) {
 	.nextStepBtn_wrapper {
-		height: 80px;
+		height: 80px; 
+		align-items: center;
 
 		.nextStepBtn {
 			padding: 11px 26px;

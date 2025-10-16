@@ -1,14 +1,12 @@
 @import "../styles/global.scss";
 
-
 .button_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100px;
 	z-index: 1;
-	// background-color: red;
 
 	.accept_btn {
 		padding: 12px 24px;
@@ -18,39 +16,41 @@
 		background-color: #9c9c9c1f;
 		color: #00ff00;
 		letter-spacing: 1px;
-        text-transform: uppercase;
-        font-style: italic;
+		text-transform: uppercase;
+		font-style: italic;
 		cursor: none;
 	}
 }
 
-
 @include responsive(xs-1) {
-	.button_wrapper{
-		position: absolute;
-		align-items: center;
-		align-items: flex-start;
-		bottom: 0;
-		height: 80px;
+	.button_wrapper {
+		margin-top: 20px;
+	}
+}
+@include responsive(oppoA98) {
+	.button_wrapper {
+		.accept_btn {
+			font-size: 18px;
+		}
 	}
 }
 @include responsive(high-sm-3) {
-	.button_wrapper{
+	.button_wrapper {
 		margin-top: 20px;
 	}
 }
 @include responsive(xs-2) {
-	.button_wrapper{
+	.button_wrapper {
 		bottom: 25px;
 	}
 }
 @include responsive(md-1) {
-	.button_wrapper{
+	.button_wrapper {
 		bottom: 10px !important;
 	}
 }
 @include responsive(md-2) {
-	.button_wrapper{
+	.button_wrapper {
 		bottom: 40px !important;
 		.accept_btn {
 			margin-top: 30px;
@@ -58,16 +58,20 @@
 	}
 }
 @include responsive(high-md-2) {
-	.button_wrapper{
+	.button_wrapper {
 		bottom: 40px;
+		
 		.accept_btn {
 			margin-top: 0px;
 		}
 	}
 }
 
-@include responsive(lg){
-	.button_wrapper{
+@include responsive(lg) {
+	.button_wrapper {
+		padding: 0;
+		margin: 0;
+		height: clamp(60px, 11vh, 100px);
 		align-items: end;
 	}
 }

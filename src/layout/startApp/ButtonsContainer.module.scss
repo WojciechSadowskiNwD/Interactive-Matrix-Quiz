@@ -25,6 +25,13 @@
 		padding-top: 0;
 	}
 }
+@include responsive(oppoA98){
+	.buttonsContainer{
+		padding-top: 10px;
+		// background-color: #fff;
+	}
+}
+
 @include responsive(xs-2){
 	.buttonsContainer{	
 		margin-top: 50px;	

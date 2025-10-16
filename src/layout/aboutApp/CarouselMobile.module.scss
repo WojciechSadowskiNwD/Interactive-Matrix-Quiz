@@ -57,6 +57,23 @@
 	border-radius: 8px;
 }
 
+@include responsive(oppoA98) {
+	.movie_display {
+		width: 230px;
+		height: 360px;
+
+		h3{
+			font-size: 15px;
+		}
+		p{
+			font-size: 14px;
+		}
+	}
+	.poster {
+		height: 300px;
+	}
+}
+
 @include responsive(high-sm-1) {
 	.movie_display {
 		height: 360px;
@@ -106,7 +123,6 @@
 			margin-top: 2px;
 			font-size: 18px;
 		}
-
 	}
 	.poster {
 		min-width: 98%;

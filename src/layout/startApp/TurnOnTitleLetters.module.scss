@@ -1,4 +1,4 @@
-@import '../styles/global.scss';
+@import "../styles/global.scss";
 
 .titleContainer {
 	display: flex;
@@ -6,6 +6,7 @@
 	position: relative;
 	align-items: center;
 	height: 250px;
+	// background-color: #fff;
 }
 
 .titleLettersBox {
@@ -41,7 +42,7 @@
 	text-shadow: none;
 }
 
-@include responsive(xs) {
+@include responsive(xs-1) {
 	.titleContainer {
 		font-size: 2.6rem;
 	}
@@ -50,6 +51,31 @@
 	}
 	.extraText:last-child {
 		bottom: -28px;
+	}
+}
+// oppoA98
+@include responsive(oppoA98) {
+	.titleContainer {
+		height: 200px;
+		// background-color: brown;
+	}
+	.titleLettersBox {
+		top: 80px;
+		font-size: 2.2rem;
+	}
+	.extraText {
+		left: 11%;
+		font-size: 1.3rem;
+	}
+	.extraText:last-child{
+		bottom: -25px;
+		font-size: 1.8rem;
+	}
+}
+
+@include responsive(xs-2) {
+	.titleContainer {
+		height: 250px;
 	}
 }
 @include responsive(xl) {

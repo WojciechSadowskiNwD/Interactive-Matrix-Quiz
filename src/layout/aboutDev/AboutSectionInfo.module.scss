@@ -20,6 +20,14 @@
 	}
 }
 
+@include responsive(oppoA98){
+	.about_section_info{
+		.about_title{
+			font-size: 15px;
+		}
+	}
+}
+
 @include responsive(high-sm-1) {
 	.about_section_info {
 		height: 45px;

@@ -11,7 +11,7 @@ export const AboutIconSkill: FC<AboutIconSkillProps> = ({ img, text }) => {
 		<div className={styles.about_icon_container}>
 			<div className={styles.about_icon_box}>
 				<div className={styles.matrix_blur}></div>
-				<img className={styles.icon_img} src={img} alt="react icon" />
+				<img className={styles.icon_img} src={process.env.PUBLIC_URL + img} alt="react icon" />
 			</div>
 			<p className={styles.about_icon_text}>{text}</p>
 		</div>

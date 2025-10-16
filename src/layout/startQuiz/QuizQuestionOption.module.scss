@@ -80,6 +80,18 @@
 		// background-color: #fff;
 	}
 }
+
+// small phones
+@include responsive(oppoA98) {
+	.option {
+		height: 48px;
+		max-height: 48px;
+		// background-color: #fff;
+	}
+	.text {
+		font-size: 14px;
+	}
+}
 @include responsive(xs-2) {
 	.option {
 		height: 56px;

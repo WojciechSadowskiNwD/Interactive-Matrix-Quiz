@@ -5,7 +5,7 @@ import styles from "./QuizNextStepBtn.module.scss";
 type Props = {
 	isLast: boolean;
 	onClick: () => void;
-};
+}; 
 
 export const QuizNextStepBtn: FC<Props> = ({ isLast, onClick }) => {
 	return (

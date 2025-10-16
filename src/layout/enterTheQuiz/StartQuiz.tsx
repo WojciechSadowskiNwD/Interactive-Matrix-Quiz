@@ -14,9 +14,11 @@ import { QuizNextStepBtn } from "../startQuiz/QuizNextStepBtn";
 import { QuizAnswerOptions } from "../startQuiz/QuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
 
+
 function StartQuiz() {
 	const [questions, setQuestions] = useState<QuizQuestion[]>([]);
-	const [currentIndex, setCurrentIndex] = useState<number>(0);
+	// for tests !!!
+	const [currentIndex, setCurrentIndex] = useState<number>(10);
 	const [selected, setSelected] = useState<string | null>(null);
 	const [showAnswer, setShowAnswer] = useState<boolean>(false);
 	const [unmistakablyShots, setUnmistakablyShots] = useState<number>(0);

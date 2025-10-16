@@ -30,14 +30,14 @@ export default function AboutDev() {
 			<div className={styles.about_frame}>
 				<AboutTitle marginTitle={styles.marginTitleB}>About dev</AboutTitle>
 				<AboutAvatarFrame />
-				<AboutSectionInfo />
+				<AboutSectionInfo /> 
 				<AboutIconsContainer>
-					<AboutIconSkill img="img/JSIcon.webp" text="JavaScript" />
-					<AboutIconSkill img="img/reactIcon.webp" text="React" />
-					<AboutIconSkill img="img/SassIcon.webp" text="Sass" />
-					<AboutIconSkill img="img/restApiIcon.webp" text="Rest API" />
-					<AboutIconSkill img="img/TSIcon2.webp" text="TypeScript" />
-					<AboutIconSkill img="img/GitIcon.webp" text="Git" />
+					<AboutIconSkill img="/img/JSIcon.webp" text="JavaScript" />
+					<AboutIconSkill img="/img/reactIcon.webp" text="React" />
+					<AboutIconSkill img="/img/SassIcon.webp" text="Sass" />
+					<AboutIconSkill img="/img/restApiIcon.webp" text="Rest API" />
+					<AboutIconSkill img="/img/TSIcon2.webp" text="TypeScript" />
+					<AboutIconSkill img="/img/GitIcon.webp" text="Git" />
 				</AboutIconsContainer>
 
 				<PulsingReturnBtn marginExtra={styles.marginExtraAD} />

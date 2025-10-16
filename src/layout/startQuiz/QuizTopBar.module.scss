@@ -1,6 +1,5 @@
 @import "../styles/global.scss";
 
-
 .top_bar {
 	display: flex;
 	flex-direction: row;
@@ -56,7 +55,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 80px;
 		width: 100px;
 		height: 100px;
 		font-family: "Orbitron", serif;
@@ -64,8 +62,6 @@
 		// background-color: brown;
 
 		.right_box_title {
-			margin-top: 5px;
-			margin-top: 10px;
 			margin-top: 20px;
 			font-size: 16px;
 			letter-spacing: 0.7px;
@@ -106,12 +102,44 @@
 // RWD
 @include responsive(xs-1) {
 	.top_bar {
+		margin-top: 2px;
+		// background-color: #fff;
 		.left_box {
-			.left_box_img{
+			height: 80px;
+			.left_box_img {
 				height: 70%;
 			}
 			.left_box_nickname {
 				font-size: 16px !important;
+			}
+		}
+		.right_box {
+			height: 80px;
+		}
+	}
+}
+
+// small phones
+@include responsive(oppoA98) {
+	.top_bar {
+		margin-top: 2px;
+
+		.left_box {
+			height: 90px;
+			.left_box_img {
+				width: 88%;
+				height: 70%;
+			}
+		}
+		.right_box {
+			height: 90px;
+
+			.right_box_title {
+				font-size: 14px;
+			}
+			.right_box_points {
+				margin-top: 7px;
+				font-size: 18px;
 			}
 		}
 	}
@@ -121,7 +149,7 @@
 		margin-bottom: 20px;
 		.left_box {
 			margin-left: 10px;
-			.left_box_img{
+			.left_box_img {
 				height: 70%;
 			}
 			.left_box_nickname {
@@ -165,9 +193,18 @@
 	.top_bar {
 		margin-top: 7px !important;
 		margin-bottom: 15px;
+		// background-color: #ffffff4e;
+		.left_box {
+			height: 110px;
 
+			.left_box_img {
+				width: 100%;
+				height: 75%;
+			}
+		}
 		.right_box {
 			margin-right: 10px;
+			height: 100px;
 			border: 1px solid brown;
 
 			.right_box_title {

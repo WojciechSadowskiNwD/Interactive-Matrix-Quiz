@@ -1,12 +1,11 @@
 @import "../styles/global.scss";
 
-
 .btn_back {
 	padding: 12px 24px;
 	font-family: "Courier New", monospace;
 	color: #fff;
 	background-color: rgba(0, 128, 0, 0.626);
-    border: none;
+	border: none;
 	cursor: none;
 }
 .em {
@@ -21,10 +20,19 @@
 
 @include responsive(xs-1) {
 	.btn_back {
-		margin-top: -15px;
+		margin-top: 10px;
+	}
+}
+@include responsive(oppoA98) {
+	.btn_back {
+		margin-bottom: 20px;
+		padding: 10px 20px;
 	}
 	.em {
-		// font-size: 21px;
+		font-size: 17px;
+	}
+	.back_icon {
+		font-size: 15px;
 	}
 }
 @include responsive(xs-2) {

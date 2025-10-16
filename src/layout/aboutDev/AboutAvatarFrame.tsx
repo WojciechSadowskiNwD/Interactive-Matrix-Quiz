@@ -4,7 +4,7 @@ export default function AboutAvatarFrame() {
 	return (
 		<div className={styles.about_avatar_frame}>
             <div className={styles.matrix_blur}></div>
-            <img className={styles.avatar_img} src="img/AvatarM.webp" alt="avatar developer in matriz style"/>
+            <img className={styles.avatar_img} src={process.env.PUBLIC_URL + "/img/AvatarM.webp"} alt="avatar developer in matriz style"/>
 		</div>
 	)
 }

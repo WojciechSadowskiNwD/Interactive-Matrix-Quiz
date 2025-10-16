@@ -21,7 +21,11 @@
 	}
 }
 .marginExtra {
-	margin: 10px;
+	margin: 30px !important;
+
+	@include responsive(oppoA98){
+		margin: 0 !important;
+	}
 }
 
 @include responsive(xs-1) {
@@ -87,6 +91,9 @@
 			margin-bottom: 2.2vh;
 			margin-top: 45px;
 		}
+	}
+	.marginExtra {
+		margin: 0px !important;
 	}
 }
 @include responsive(xxl) {

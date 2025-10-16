@@ -20,7 +20,7 @@ export const ScoreUserBar: FC<ScoreUserBarProps> = ({
 			<div className={styles.position_info}>
 				<p className={styles.user_name}>{nick}</p>
 				<p>{points}</p>
-			</div>
+			</div> 
 		</div>
 	);
 };

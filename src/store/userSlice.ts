@@ -8,12 +8,12 @@ type UserState = {
 };
 
 const initialState: UserState = {
-	userName: null,
+	// userName: null,
 	selectedAvatar: null,
 	currentScore: 0,
-	// userName: "Gregoria021",
+	userName: "Andy_001",
 	// selectedAvatar: "img/avatars/avatar_4.webp",
-	// currentScore: 710,
+	// currentScore: 320,
 	bonusActive: false,
 };
 

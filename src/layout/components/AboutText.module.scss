@@ -18,6 +18,16 @@
 		color: rgb(142, 142, 142);
 	}
 }
+@include responsive(oppoA98){
+	.aboutText_box {
+		margin-top: 2px;
+
+		.aboutText_box_text{
+			font-size: 14px;
+		}
+	}
+}
+
 @include responsive(high-sm-1) {
 	.aboutText_box {
 		margin-top: 2px;

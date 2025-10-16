@@ -10,6 +10,10 @@
 	text-shadow: $logo-color-shadow-b;
 	filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.319))
 		drop-shadow(0 0 10px #00ff00);
+	
+		@include responsive(oppoA98){
+			font-size: 16px;
+		}
 
 	@include responsive(md-1) {
 		display: flex;
