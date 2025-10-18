@@ -12,7 +12,7 @@
 	height: 270px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	// background-color: rgba(0, 128, 0, 0.752);
+	// background-color: $test;
 
 	em {
 		text-align: center;
@@ -131,8 +131,6 @@
 }
 @include responsive(high-sm-3) {
 	.summaryTable {
-		// background-color: #fff;
-
 		em {
 			font-size: 18px;
 		}
@@ -207,6 +205,23 @@
 		}
 	}
 }
+@include responsive(notebook14) {
+	.summaryTable {
+		margin-top: 50px;
+		margin-left: 10px;
+
+		em {
+			font-size: 18px !important;
+		}
+		.sum {
+			padding-left: 45px;
+			margin-top: 20px;
+			margin-bottom: 25px;
+			font-size: 22px;
+		}
+	}
+}
+
 @include responsive(high-md-2) {
 	.summaryTable {
 		margin-top: 20px;

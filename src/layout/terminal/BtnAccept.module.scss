@@ -11,13 +11,13 @@
 	.accept_btn {
 		padding: 12px 24px;
 		font-size: 22px;
-		border: 2px solid #00ff00;
-		background-color: transparent;
-		background-color: #9c9c9c1f;
-		color: #00ff00;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		font-style: italic;
+		color: #00ff00;
+		border: 2px solid #00ff00;
+		background-color: transparent;
+		background-color: #9c9c9c1f;
 		cursor: none;
 	}
 }
@@ -57,16 +57,27 @@
 		}
 	}
 }
+@include responsive(notebook14) {
+	.button_wrapper {
+		max-height: 50px;
+		
+		.accept_btn {
+			padding: 9px 20px;
+			font-size: 18px;
+		}
+	}
+}
+
+// h 860px
 @include responsive(high-md-2) {
 	.button_wrapper {
 		bottom: 40px;
-		
+
 		.accept_btn {
 			margin-top: 0px;
 		}
 	}
 }
-
 @include responsive(lg) {
 	.button_wrapper {
 		padding: 0;

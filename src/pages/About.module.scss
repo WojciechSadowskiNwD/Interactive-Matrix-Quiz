@@ -76,4 +76,7 @@
 	@include responsive(md-2) {
 		margin-top: 0px;
 	}
+	@include responsive(notebook14) {
+		margin-top: 0px;
+	}
 }

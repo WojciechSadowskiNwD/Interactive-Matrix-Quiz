@@ -118,6 +118,13 @@
         }
     }
 }
+@include responsive(notebook14){
+    .about_icon_container{
+        .about_icon_text {
+            font-size: 16px !important;
+        }
+    }
+}
 @include responsive(lg) {
     .about_icon_container{
         margin-left: 0;

@@ -40,13 +40,17 @@
         height: 325px;
 
     }    
+    @include responsive(notebook14) {
+        min-height: 150px;
+        height: 150px;
+        max-height: 200px;
+        width: clamp(240px, 40vw, 260px);
+    }    
     @include responsive(lg) {
-        min-width: 285px;
-        max-width: 285px;
-        min-height: 210px;
-        height: 250px;
+        width: clamp(260px, 42vw, 290px);
+        height: clamp(290px, 40vh, 380px);
         margin-bottom: 30px;
-
+        
     }    
     @include responsive(high-sm-1) {
         min-height: 160px;
@@ -72,6 +76,4 @@
         margin-bottom: 50px;
         height: 225px;
     }
-    
 }
-

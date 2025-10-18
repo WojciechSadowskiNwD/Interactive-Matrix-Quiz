@@ -2,7 +2,7 @@ import {motion} from "framer-motion";
 import styles from "./WelcomeImg.module.scss";
 
 export default function WelcomeImg() {
-	return (
+	return ( 
 		<motion.div className={styles.welcomeImg_wrapper}
             initial={{opacity: 1}}
             animate={{opacity: 1}}

@@ -10,7 +10,7 @@
 	width: 90%;
 	height: 250px;
 	margin-bottom: 20px;
-	// background-color: #ffffff07;
+	// background-color: $test;
 
 	@include responsive(xs-2) {
 		margin-bottom: 30px;
@@ -36,7 +36,6 @@
 		width: 75%;
 		height: 256px;
 		margin-bottom: 40px;
-		// background-color: red;
 	}
 	@include responsive(high-md-2) {
 		height: 256px;
@@ -46,5 +45,9 @@
 	@include responsive(high-lg) {
 		margin-bottom: 40px;
 		height: 265px;
+	}
+	@include responsive(notebook14) {
+		margin-bottom: 10px;
+		height: 240px;
 	}
 }

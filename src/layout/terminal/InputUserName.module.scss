@@ -7,7 +7,7 @@
 	margin-top: 15px;
 	width: 90%;
 	height: 60px;
-	// background-color: red;
+	// background-color: $test;
 
 	.inputName {
 		padding: 10px 20px;
@@ -68,6 +68,16 @@
 
 		.inputName {
 			letter-spacing: 1.5px;
+		}
+	}
+}
+@include responsive(notebook14) {
+	.inputName_box {
+		height: 50px;
+		margin-bottom: 0px;
+
+		.inputName {
+			font-size: 15px !important;
 		}
 	}
 }

@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import styles from "./QuizNextStepBtn.module.scss";
 
 type Props = {
-	isLast: boolean;
+	isLast: boolean; 
 	onClick: () => void;
 }; 
-
+ 
 export const QuizNextStepBtn: FC<Props> = ({ isLast, onClick }) => {
 	return (
 		<div className={styles.nextStepBtn_wrapper}>

@@ -3,7 +3,7 @@ import styles from "./QuizTopBar.module.scss";
 
 export default function QuizTopBar() {
 	const {
-		userName: nickname,
+		userName: nickname, 
 		selectedAvatar,
 		currentScore,
 		bonusActive,

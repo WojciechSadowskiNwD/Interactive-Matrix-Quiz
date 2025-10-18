@@ -16,7 +16,6 @@
 		width: 80px;
 		height: 100px;
 		margin-left: 5px;
-		// background-color: $test;
 
 		.left_box_img {
 			position: relative;
@@ -33,7 +32,6 @@
 				border-radius: 50%;
 				border: 6px solid #33ab00;
 				border: 6px solid #33ab00ec;
-				// box-shadow: 0 0 44px #419d00d9;
 				box-shadow: 0 0 10px #1b4100;
 				z-index: 2;
 			}
@@ -59,7 +57,7 @@
 		height: 100px;
 		font-family: "Orbitron", serif;
 		letter-spacing: 1.5px;
-		// background-color: brown;
+		// background-color: $test;
 
 		.right_box_title {
 			margin-top: 20px;
@@ -103,9 +101,10 @@
 @include responsive(xs-1) {
 	.top_bar {
 		margin-top: 2px;
-		// background-color: #fff;
+		margin-bottom: 25px;
+
 		.left_box {
-			height: 80px;
+			height: 85px;
 			.left_box_img {
 				height: 70%;
 			}
@@ -114,7 +113,7 @@
 			}
 		}
 		.right_box {
-			height: 80px;
+			height: 85px;
 		}
 	}
 }
@@ -166,7 +165,6 @@
 			width: 92px;
 			height: 110px;
 			margin-left: 8px;
-			// background-color: blue;
 
 			.left_box_nickname {
 				margin-top: 7px;
@@ -176,7 +174,6 @@
 		}
 		.right_box {
 			margin-right: 10px;
-			// background-color: brown;
 
 			.right_box_title {
 				font-size: 18px;
@@ -193,7 +190,7 @@
 	.top_bar {
 		margin-top: 7px !important;
 		margin-bottom: 15px;
-		// background-color: #ffffff4e;
+
 		.left_box {
 			height: 110px;
 
@@ -242,7 +239,6 @@
 @include responsive(lg) {
 	.top_bar {
 		margin-top: 12px !important;
-		// background-color: $test;
 
 		.left_box {
 			width: 100px;
@@ -285,10 +281,32 @@
 		}
 	}
 }
+@include responsive(notebook14) {
+	.top_bar {
+		height: 90px;
+		
+		.left_box {
+			width: 85px;
+			height: 85px;
+			margin-left: 6%;
+		}
+		.right_box {
+			margin-top: 0px;
+			margin-right: 6%;
+
+			.right_box_title {
+				font-size: 16.5px;
+			}
+			.right_box_points {
+				margin-top: 5px;
+				font-size: 22px;
+			}
+		}
+	}
+}
 @include responsive(xxl) {
 	.top_bar {
 		margin-top: 15px !important;
-		// background-color: #ffffff35;
 		margin-bottom: 25px;
 
 		.left_box {

@@ -8,7 +8,7 @@ import AboutDev from "../../pages/AboutDev";
 import { motion } from "framer-motion";
 import styles from "./BlackBoard.module.scss";
 
-export default function BlackBoard() {
+export default function BlackBoard() { 
 	const dispatch = useAppDispatch();
 	const { isVisible, activeComponent } = useAppSelector((store) => store.ui);
 
@@ -17,7 +17,7 @@ export default function BlackBoard() {
 		return () => clearTimeout(timer);
 	}, [dispatch]);
 
-	// Render the clicked section
+	// Render the clicked section (my pseudoPages)
 	const renderComponent = () => {
 		switch (activeComponent) {
 			case "scoreBoard":
@@ -27,7 +27,7 @@ export default function BlackBoard() {
 			case "aboutDev":
 				return <AboutDev />;
 			default:
-				return <OptionsPanel />; //start this component first
+				return <OptionsPanel />; // start this component first
 		}
 	};
 

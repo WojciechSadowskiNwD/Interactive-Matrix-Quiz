@@ -10,7 +10,7 @@
 	height: 340px;
 	padding-left: 4%;
 	padding-right: 4%;
-	// background-color: rgba(128, 255, 0, 0.233);
+	// background-color: $test;
 }
 .wrong {
 	background-color: rgba(33, 33, 104, 0.956) !important;
@@ -35,9 +35,7 @@
 		margin-top: 15px;
 		margin-bottom: 10px;
 		padding-top: 5px;
-		height: 360px;
-		min-height: 220px;
-		// background-color: #fff;
+		height: clamp(280px, 35vh, 380px);
 	}
 }
 
@@ -45,7 +43,6 @@
 @include responsive(oppoA98) {
 	.answer_bars {
 		height: 220px;
-		// background-color: #fff;
 	}
 }
 @include responsive(xs-2) {
@@ -54,7 +51,6 @@
 		padding-top: 0px;
 		height: 460px;
 		min-height: 290px;
-		// background-color: $test;
 	}
 }
 @include responsive(md-1) {
@@ -74,7 +70,6 @@
 		min-height: 150px;
 		padding-top: 0px;
 		padding-bottom: 0px;
-		// background-color: $test;
 	}
 	.selectedCorrect {
 		transform: translateX(0%) !important;
@@ -90,13 +85,20 @@
 	.answer_bars {
 		margin-top: 15px;
 		margin-top: 0px;
-		// background-color: #ffffff40;
 	}
 }
+@include responsive(notebook14) {
+	.answer_bars {
+		margin-top: 0;
+		min-height: 120px;
+		max-height: 120px;
+	}
+}
+
+// h 860px
 @include responsive(high-sm-3) {
 	.answer_bars {
 		margin-top: 15px;
 		height: 340px;
-		// background-color: #ffffff40;
 	}
 }

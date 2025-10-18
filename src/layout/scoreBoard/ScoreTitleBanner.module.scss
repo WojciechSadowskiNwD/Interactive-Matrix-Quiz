@@ -124,3 +124,9 @@
 		padding: 8px;
 	}
 }
+@include responsive(notebook14) {
+	.titleBanner {
+		width: 60%;
+		font-size: 23px;
+	}
+}

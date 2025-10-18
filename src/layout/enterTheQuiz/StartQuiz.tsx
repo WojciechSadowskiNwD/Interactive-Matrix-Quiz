@@ -15,9 +15,8 @@ import { QuizAnswerOptions } from "../startQuiz/QuizAnswerOptions";
 import styles from "./StartQuiz.module.scss";
 
 
-function StartQuiz() {
+function StartQuiz() { 
 	const [questions, setQuestions] = useState<QuizQuestion[]>([]);
-	// for tests !!!
 	const [currentIndex, setCurrentIndex] = useState<number>(10);
 	const [selected, setSelected] = useState<string | null>(null);
 	const [showAnswer, setShowAnswer] = useState<boolean>(false);
@@ -90,18 +89,18 @@ function StartQuiz() {
 	return (
 		<div className={styles.startQuiz}>
 			<QuizTopBar />
-			<QuizQuestionNum
+			<QuizQuestionNum 
 				currQuestion={currentIndex}
 				total={questions.length}
 			/>
 			<QuizTimer />
-
+ 
 			<div className={styles.question_wrapper}>
 				<div className={styles.question_box}>
 					<AutoTyping key={currentIndex} customFontSize={styles.customFontSize}>
 						{currentQuestion.question}
 					</AutoTyping>
-				</div>
+				</div>  
 				<QuizAnswerOptions
 					key={currentIndex}
 					options={currentQuestion.options}

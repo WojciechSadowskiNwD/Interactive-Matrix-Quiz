@@ -21,7 +21,7 @@
 	cursor: none;
 }
 
-// budgetary - low resolution
+// budgetary - phone low resolution
 @include responsive(oppoA98) {
 	.randomCodeButton {
         width: 200px;
@@ -41,5 +41,14 @@
 @include responsive(md-1) {
 	.randomCodeButton {
 		width: 230px;
+	}
+}
+@include responsive(notebook14){
+	.randomCodeButton{
+		width: 225px;
+		height: 48px;
+		font-size: 16px;
+		letter-spacing: 1.4px;
+		font-weight: 600;
 	}
 }

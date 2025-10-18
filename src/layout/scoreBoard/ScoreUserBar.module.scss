@@ -74,6 +74,12 @@
 		gap: 20px;
 	}
 }
+@include responsive(notebook14) {
+	.score_box {
+		margin-top: 10px;
+		gap: 10px;
+	}
+}
 @include responsive(lg) {
 	.score_box {
 		width: 91%;

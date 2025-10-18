@@ -49,6 +49,17 @@
 		margin-bottom: 20px;
 	}
 }
+@include responsive(notebook14) {
+	.btn_back {
+		padding: 10px 18px !important;	
+	}
+	.em {
+		font-size: 17px;
+	}
+	.back_icon {
+		font-size: 14px;
+	}
+}
 @include responsive(lg) {
 	.btn_back {
 		padding: 10px 24px;

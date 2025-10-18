@@ -13,7 +13,7 @@ type Props = {
 
 export const QuizAnswerOptions: FC<Props> = ({
 	options,
-	correctAnswer,
+	correctAnswer, 
 	selected,
 	showAnswer,
 	onSelect,

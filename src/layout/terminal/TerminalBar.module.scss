@@ -31,3 +31,12 @@
         }
     }
 }
+@include responsive(notebook14){
+	.terminalTitle_box{
+        height: 40px;
+        
+        .terminalTitle {
+            font-size: 15px;
+        }
+    }
+}

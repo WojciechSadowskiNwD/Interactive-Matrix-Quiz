@@ -23,7 +23,6 @@
 
 @include responsive(lg) {
 	.blackDesktop {
-		display: flex;
 		width: 85vw;
 		height: 95vh;
 		max-height: 740px;

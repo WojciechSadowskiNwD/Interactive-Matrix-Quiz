@@ -12,7 +12,7 @@
 	text-align: center;
 	background-color: $background-color;
 	overflow-x: hidden;
-    
+
     @include responsive(lg) {
         width: 90%;
         height: 95vh;
@@ -23,7 +23,7 @@
     }
     @include responsive(xl) {
         max-width: 900px;
-        max-height: 740px;
+        height: clamp(540px, 95vh, 740px);
     }
     @include responsive(xxl) {
         max-width: 1000px;

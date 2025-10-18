@@ -8,7 +8,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// background-color: green;
+	// background-color: $test;
 
 	.avatar_box {
 		position: relative;
@@ -16,13 +16,11 @@
 		justify-content: center;
 		width: 96%;
 		height: 260px;
-		// background-color: rgba(255, 123, 0, 0.501);
 
 		.circle_frame {
 			position: absolute;
 			display: flex;
 			justify-content: center;
-			// align-items: center;
 			top: 0;
 			left: 50%;
 			transform: translate(-50%);
@@ -43,7 +41,6 @@
 				width: 100%;
 				height: 100%;
 				border-radius: 50%;
-				// border: 20px solid gray;
 				border: 20px solid rgba(128, 128, 128, 0.388);
 				opacity: 0.2;
 			}
@@ -61,7 +58,6 @@
 			bottom: 0;
 			width: 100%;
 			height: 60px;
-			// background-color: red;
 
 			.nickname {
 				font-size: 21px;
@@ -78,7 +74,7 @@
 	.content_layout {
 		min-height: 440px;
 		margin-top: 0px;
-		// background-color: #fff;
+
 		.avatar_box {
 			width: 88%;
 			min-height: 200px;
@@ -103,7 +99,6 @@
 		justify-content: start;
 		margin-top: 50px;
 		min-height: 580px;
-		// background-color: $test;
 
 		.avatar_box {
 			margin-top: 0px;
@@ -120,7 +115,6 @@
 			width: 70%;
 			max-width: 70%;
 			height: 315px;
-			// background-color: $test;
 
 			.nickname_box {
 				height: 70px;
@@ -162,7 +156,6 @@
 		height: 400px;
 		max-height: 380px;
 		min-height: 360px;
-		// background-color: $test;
 
 		.avatar_box {
 			margin-top: 5px;
@@ -185,18 +178,36 @@
 }
 @include responsive(high-sm-1) {
 	.content_layout {
-		height: 450px;
-		min-height: 450px;
-		// background-color: $test;
+		margin-top: 10px;
+		height: 360px;
+		min-height: 360px;
 
 		.avatar_box {
 			margin-left: 4%;
 			min-width: 45%;
-			height: 210px;
+			height: 260px;
 			min-height: 210px;
 		}
 	}
 }
+@include responsive(notebook14) {
+	.content_layout {
+		margin-top: 0px;
+		height: 300px;
+		min-height: 300px;
+
+		.avatar_box {
+			height: 245px;
+			min-height: 220px;
+		}
+	}
+}
+@media (min-height: 720px) {
+	.content_layout {
+		margin-top: 0;
+	}
+}
+
 // mobile heigh s21/22
 @include responsive(high-sm-3) {
 	.content_layout {
@@ -221,12 +232,13 @@
 		min-height: 340px;
 		height: 340px;
 		max-height: 400px;
-		// background-color: $test;
+
 		.avatar_box {
 			margin-left: 3%;
 			width: 43%;
 			min-width: 43%;
 			max-width: 43%;
+			height: 90vh;
 		}
 	}
 }
@@ -234,7 +246,6 @@
 	.content_layout {
 		margin-top: 50px;
 		height: clamp(420px, 40vh, 500px);
-		// background-color: $test;
 	}
 }
 @include responsive(high-lg) {
@@ -243,6 +254,5 @@
 		min-height: 590px;
 		height: 590px;
 		max-height: 590px;
-		// background-color: $test;
 	}
 } 

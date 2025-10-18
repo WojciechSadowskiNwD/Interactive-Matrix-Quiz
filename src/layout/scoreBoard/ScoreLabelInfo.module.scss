@@ -48,3 +48,8 @@
 		width: 92%;
 	}
 }
+@include responsive(notebook14){
+	.label_info_container {
+		height: 45px;
+	}
+}

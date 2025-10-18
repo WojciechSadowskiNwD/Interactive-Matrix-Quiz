@@ -1,6 +1,5 @@
 @import "../styles/global.scss";
 
-
 .slider_wrapper {
 	position: relative;
 	display: flex;
@@ -117,6 +116,18 @@
 @include responsive(high-sm-1) {
 	.slider_wrapper {
 		margin-top: 8px;
+	}
+}
+@include responsive(notebook14) {
+	.slider_wrapper {
+		margin-top: 15px;
+		width: 70%;
+		height: 190px;
+
+		.btn_nav {
+			height: 42px;
+			font-size: 22px;
+		}
 	}
 }
 @include responsive(xxl) {

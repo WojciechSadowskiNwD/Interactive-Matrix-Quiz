@@ -23,7 +23,7 @@
 .marginExtra {
 	margin: 30px !important;
 
-	@include responsive(oppoA98){
+	@include responsive(oppoA98) {
 		margin: 0 !important;
 	}
 }
@@ -50,7 +50,7 @@
 	}
 }
 
-@include responsive(high-sm-2){
+@include responsive(high-sm-2) {
 	.scoreBoard {
 		.green_frame {
 			margin-top: 18%;
@@ -60,7 +60,7 @@
 		margin: 5px;
 	}
 }
-@include responsive(high-sm-3){
+@include responsive(high-sm-3) {
 	.scoreBoard {
 		.green_frame {
 			margin-top: 20%;
@@ -74,13 +74,14 @@
 			margin-top: 7vh;
 			margin-bottom: 4.5vh;
 			padding-bottom: 2.3vh;
+			width: 90%;
 		}
 	}
 }
-@include responsive(md-2) {
+@include responsive(notebook14){
 	.scoreBoard {
 		.green_frame {
-			width: 90%;
+			width: 85% !important;
 		}
 	}
 }

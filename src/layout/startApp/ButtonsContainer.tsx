@@ -18,7 +18,7 @@ const buttons: Button[] = [
 	{ key: "aboutApp", label: "ABOUT App" },
 	{ key: "aboutDev", label: "ABOUT Dev" },
 ];
-
+   
 export default function ButtonsContainer() {
 	const dispatch = useAppDispatch();
 	const [mountedBtn, setMountedBtn] = useState<Record<number, boolean>>({});

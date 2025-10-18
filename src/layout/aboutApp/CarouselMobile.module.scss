@@ -7,7 +7,7 @@
 	width: 100%;
 	flex-grow: 1;
 	margin: 10px 0;
-	// background-color: #fff;
+	// background-color: $test;
 }
 
 .nav_btn {
@@ -35,7 +35,6 @@
 	text-align: center;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	background-color: #121212;
-	// background-color: red; //test
 
 	h3 {
 		margin: 7px 0 5px;
@@ -113,7 +112,6 @@
 		width: 68vw;
 		min-height: 440px;
 		max-height: 450px;
-		// background-color: #fff;
 
 		h3 {
 			font-size: 19px;
@@ -176,7 +174,7 @@
 		height: 320px;
 		width: 85%;
 		min-width: 85%;
-		object-fit: fill; //rozciągnij
+		object-fit: fill;
 	}
 }
 @include responsive(md-3) {
@@ -189,7 +187,7 @@
 	.poster {
 		height: 320px;
 		width: 90%;
-		object-fit: fill; //rozciągnij
+		object-fit: fill;
 	}
 }
 
@@ -206,8 +204,6 @@
 		width: 92%;
 	}
 }
-
-// desktop TEST *******************************************
 @include responsive(lg) {
 	.movie_display {
 		width: 280px;

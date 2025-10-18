@@ -12,7 +12,7 @@
 	white-space: pre-wrap;
 	z-index: 100;
 	color: #51d751;
-	// background-color: red;
+	// background-color: $test;
 
 	@include responsive(xs-1) {
 		width: 85%;
@@ -30,7 +30,6 @@
 	}
 	@include responsive(md-1) {
 		top: 1.5%;
-		// font-size: 20px;
 	}
 	@include responsive(md-2) {
 		margin-top: 10px;
@@ -66,6 +65,9 @@
 	@include responsive(md-1) {
 		top: 1.5%;
 		font-size: 22px;
+	}
+	@include responsive(notebook14) {
+		font-size: 18px;
 	}
 }
 

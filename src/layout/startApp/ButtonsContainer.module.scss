@@ -12,6 +12,7 @@
 	margin-top: 0;
 	padding-top: 35px;
 	cursor: none;
+	// background-color: $test;
 }
 .btn {
 	background-color: transparent;
@@ -28,7 +29,6 @@
 @include responsive(oppoA98){
 	.buttonsContainer{
 		padding-top: 10px;
-		// background-color: #fff;
 	}
 }
 
@@ -52,14 +52,29 @@
 		height: 100%;
 	}
 }
-@include responsive(high-md-2){
+@include responsive(md-3){
 	.buttonsContainer{
-		margin-top: 14%;
+		height: 400px;
 	}
-
 }
+@include responsive(notebook14){
+	.buttonsContainer{
+		margin-top: 120px;
+		padding-top: 0;
+		height: 320px;
+		min-height: 320px;
+	}
+}
+
 @include responsive(high-lg){
 	.buttonsContainer{
-		margin-top: 19%;
+		margin-top: 14%;
+		background-color: #fff;
+	}
+}
+@media (min-height: 700px){
+	.buttonsContainer{
+		height: 370px;
+		min-height: 370px;
 	}
 }

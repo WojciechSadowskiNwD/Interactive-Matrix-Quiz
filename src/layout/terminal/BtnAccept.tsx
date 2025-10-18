@@ -9,7 +9,7 @@ export default function BtnAccept() {
 	const handleClick = () => {
 		dispatch(changeStatus("quizScreen"));
 	};
-
+ 
 	return (
 		<div className={styles.button_wrapper}>
 			<motion.button

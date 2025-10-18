@@ -13,8 +13,8 @@ export default function FinishQuiz() {
 			setTitleMarginValue(20);
 		} else if (window.innerWidth === 768) {
 			setTitleMarginValue(0);
-		} else if (window.innerHeight) {
-			setTitleMarginValue(30);
+		} else if (window.innerWidth > 992 && window.innerHeight <= 560) {
+			setTitleMarginValue(0);
 		} else {
 			setTitleMarginValue(40);
 		}
@@ -25,7 +25,7 @@ export default function FinishQuiz() {
 			<div className={styles.banner_box}>
 				<ScoreTitleBanner customMarginTop={titleMarginValue}>
 					Final Score
-				</ScoreTitleBanner> 
+				</ScoreTitleBanner>
 			</div> 
 
 			{/* Info block */}

@@ -8,7 +8,7 @@ export default function FinishContent() {
 		(store) => store.user
 	); 
 
-	return (
+	return ( 
 		<div className={styles.content_layout}>
 			<motion.div
 				className={styles.avatar_box}

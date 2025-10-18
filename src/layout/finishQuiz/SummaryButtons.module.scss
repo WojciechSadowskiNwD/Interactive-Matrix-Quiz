@@ -9,7 +9,7 @@
 	bottom: 0;
 	width: 100%;
 	height: 100px;
-	// background-color: black;
+	// background-color: $test;
 }
 
 .buttons {
@@ -40,12 +40,10 @@
 // RWD
 @include responsive(xs-1) {
 	.summaryButtons {
-		// bottom: 50px;
-		bottom: 0;
-		// height: 70px;
+		bottom: clamp(0px, 5vh, 40px);
 	}
 }
-@include responsive(xs-2) {
+@include responsive(xs-2) { 
 	.summaryButtons {
 		height: 80px;
 	}
@@ -86,6 +84,34 @@
 	}
 	.buttons {
 		padding: 14px 25px;
+	}
+}
+@include responsive(notebook14){
+	.summaryButtons {
+		bottom: 12px;
+		height: 50px;
+	}
+	.buttons {
+		width: 150px;
+		padding: 12px 24px;
+		font-size: 13px;
+	}
+}
+@include responsive(high-sm-1){
+	.summaryButtons {
+		bottom: 30px;
+		height: 50px;
+	}
+}
+@media (min-height: 700px) and (max-width: 412px){
+	.summaryButtons {
+		bottom: 70px !important;
+	}
+}
+@media (min-height: 720px){
+	.summaryButtons {
+		bottom: 30px;
+		height: 50px;
 	}
 }
 @include responsive(xxl){
