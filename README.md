@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Interactive-Matrix-Quiz
+Demo - live version available at:
+[**Interactive Matrix Quiz – GitHub Pages Demo**](https://wojciechsadowskinwd.github.io/Interactive-Matrix-Quiz/)
+A single-page web application (SPA), inspired by the Matrix movie series.
+The project was designed and implemented with both mobile devices and large screens in mind – fully responsive, in line with RWD principles.
+The goals of the application were:
+•	creating a quiz with immersion and interaction effects,
+•	using modern animation techniques (Framer Motion library, smooth transitions, canvas background),
+•	integrating the quiz with external data sources (REST API, Firebase),
+•	implementing TypeScript and state management mechanisms (Reducer, async/await).
+The project follows the concept of a fullscreen interface – all content fits 100% of the window’s height and width, eliminating the need for scrolling.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Functionalities
+•	Welcome screen with graphics, followed by a “Matrix Rain” animation (canvas + Framer Motion).
+•	Movie collection fetched from a REST API, containing filtered titles from the Matrix series. [**API - The Movie Database**](https://api.themoviedb.org)
+•	Interactive quiz with questions retrieved from Firebase (NoSQL).
+•	Dynamic animations when switching between questions and screens.
+•	Firebase integration – including retrieving and saving user scores.
+•	Fullscreen mode – no scrolling, the entire interface adapts to the current browser dimensions.
+•	RWD – works seamlessly on both mobile devices and large monitors.
+•	TypeScript – static typing and code safety.
 
-## Available Scripts
+### Technology stack
+•	React + TypeScript
+•	Framer Motion – animations and transition effects
+•	Redux – global state management (prepared for further extension)
+•	HTML5 Canvas – background animation (falling code effect as in The Matrix)
+•	REST API – fetching movie data related to the quiz theme
+•	Firebase – database and score handling
+•	CSS / SCSS – styling with responsive design in mind (RWD)
 
-In the project directory, you can run:
+## Technologies and Solutions Used in the Project
+This project was built with a modern React/TypeScript stack.  
+Below is an overview of the libraries, React hooks, custom hooks, TypeScript features, and SCSS techniques applied in the codebase.  
+The list highlights both the tools used and the specific language/React features I worked with, so you can quickly see the scope of technologies applied in practice.
 
-### `npm start`
+Libraries
+•	react-redux – state management
+•	react-router-dom – routing
+•	framer-motion – smooth, interactive animations
+•	firebase/app – the main Firebase SDK module, used to initialize the application and provide access to other Firebase services
+•	firebase/firestore – Cloud Firestore support, a NoSQL cloud database enabling real-time data storage and retrieval
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Core React
+- **useState** – Stores and updates local component state  
+- **useEffect** – Handles side effects (e.g. data fetching, subscriptions, DOM updates) after rendering  
+- **useMemo** – Memoizes computed values to avoid redundant recalculations  
+- **useRef** – Persists mutable values across renders (e.g. DOM element references)  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### React Router
+- **useLocation** – Provides information about the current route (path, query params)  
+- **useNavigate** – Enables programmatic navigation between routes  
 
-### `npm test`
+#### React Redux
+- **useDispatch** – Returns the `dispatch` function to send actions to the Redux store  
+- **useSelector** – Selects data from the Redux store and subscribes to changes  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### TypeScript
+- Basic types (`string`, `number`, `boolean`, `null`, `undefined`)  
+- Type aliases, interfaces  
+- Union types, generics (`<T>`)  
+- Optional properties (`prop?: type`)  
+- Type assertions (`as`)  
+- Utility types (`ReturnType`, `typeof`, `extends`)  
+- Typing React props & events (`ReactNode`, `HTMLInputElement`, `ComponentPropsWithoutRef`)  
+- `CSSProperties` (typing for inline styles)  
+- Redux Toolkit typing (`RootState`, `AppDispatch`, `PayloadAction`, `TypedUseSelectorHook`)  
+- Import/export types
 
-### `npm run build`
+### SCSS (Sass)
+- Variables (`$variable`)  
+- Mixins (`@mixin ...`)  
+- Module system (`@import`)  
+- CSS Modules integration (`*.module.scss`)  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
+### Mobile views
+….. … … …
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Desktop views ( xxx )
+… … …
