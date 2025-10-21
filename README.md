@@ -78,7 +78,67 @@ The list highlights both the tools used and the specific language/React features
 
 ## Screenshots
 ### Mobile views
-….. … … …
+![Mobile 1](docs/screenshots/matrix_mobile_1.jpg)
+![Mobile 2](docs/screenshots/matrix_mobile_2.jpg)
 
-### Desktop views ( xxx )
-… … …
+### Desktop views
+![Desktop 1](docs/screenshots/matrix_desktop_1.jpg)
+![Desktop 2](docs/screenshots/matrix_desktop_2.jpg)
+![Desktop 3](docs/screenshots/matrix_desktop_3.jpg)
+![Desktop 4](docs/screenshots/matrix_desktop_4.jpg)
+![Desktop 5](docs/screenshots/matrix_desktop_5.jpg)
+![Desktop 6](docs/screenshots/matrix_desktop_6.jpg)
+![Desktop 7](docs/screenshots/matrix_desktop_7.jpg)
+![Desktop 8](docs/screenshots/matrix_desktop_8.jpg)
+
+
+## Installation
+
+To run the project locally:
+1. **Clone the repository**
+   ```bash
+    git clone https://github.com/WojciechSadowskiNwD/Interactive-Matrix-Quiz.git
+    cd Interactive-Matrix-Quiz
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   
+  3. Start the development server
+     ```bash
+     npm start
+* The app will be available at http://localhost:3000 by default.
+
+4. Build for production:
+   ```bash
+   npm run build
+  *	The optimized production files will be created in the build/ directory.
+
+## Deployment (GitHub Pages)
+This project is configured to run on GitHub Pages.
+
+1. Ensure package.json contains the correct homepage field:
+   ```bash
+   "homepage": "https://WojciechSadowskiNwD.github.io/Interactive-Matrix-Quiz"
+
+2. Build the project:
+    ```bash
+    npm run build
+
+3. Deploy to GitHub Pages:
+   ```bash
+   npm run deploy
+(This project uses the gh-pages package to automate deployment — it pushes the contents of the build/ folder to the gh-pages branch.)
+
+4. Ensure basename is set in React Router for proper routing:
+   ```jsx
+   <BrowserRouter basename="/Interactive-Matrix-Quiz">
+      <App />
+    </BrowserRouter>
+
+## 📄 License
+
+This project is open source and licensed under the MIT License.  
+You are free to use, modify, and distribute it under the terms of this license.
