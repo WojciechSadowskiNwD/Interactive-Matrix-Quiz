@@ -7,7 +7,6 @@
 	width: 100%;
 	flex-grow: 1;
 	margin: 10px 0;
-	// background-color: $test;
 }
 
 .nav_btn {
@@ -72,7 +71,6 @@
 		height: 300px;
 	}
 }
-
 @include responsive(high-sm-1) {
 	.movie_display {
 		height: 360px;
@@ -101,7 +99,6 @@
 		height: 360px;
 	}
 }
-
 @include responsive(xs-2) {
 	.about_carousel_container {
 		min-height: 450px;
@@ -129,7 +126,6 @@
 		max-height: 370px;
 	}
 }
-
 @include responsive(md-1) {
 	.about_carousel_container {
 		max-height: 550px;
@@ -190,7 +186,6 @@
 		object-fit: fill;
 	}
 }
-
 @include responsive(high-md-1) {
 	.movie_display {
 		height: 80%;

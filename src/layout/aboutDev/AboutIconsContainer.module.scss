@@ -10,7 +10,6 @@
 	width: 90%;
 	height: 250px;
 	margin-bottom: 20px;
-	// background-color: $test;
 
 	@include responsive(xs-2) {
 		margin-bottom: 30px;

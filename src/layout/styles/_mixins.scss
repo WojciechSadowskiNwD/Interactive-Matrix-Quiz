@@ -8,7 +8,7 @@
 			@content;
 		}
 	} @else if $breakpoint == galaxyA55 {
-		@media (min-width: 412px) and (max-width: 420px) and (min-height: 812px) and (max-height: 895px) {
+		@media (max-width: 390px) and (min-height: 690px) and (max-height: 750px) {
 			@content;
 		}
 	} @else if $breakpoint == xs-2 {

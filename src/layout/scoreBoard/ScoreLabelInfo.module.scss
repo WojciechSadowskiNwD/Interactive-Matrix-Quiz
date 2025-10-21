@@ -1,6 +1,5 @@
 @import "../styles/global.scss";
 
-
 .label_info_container {
 	display: flex;
 	flex-direction: row;
@@ -30,7 +29,6 @@
 		font-size: 16px;
 	}
 }
-
 @include responsive(oppoA98){
 	.label_info_container{
 
@@ -42,7 +40,6 @@
 	}
 	}
 }
-
 @include responsive(md-2){
 	.label_info_container {
 		width: 92%;

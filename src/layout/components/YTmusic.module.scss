@@ -1,0 +1,47 @@
+@import "../styles/global.scss";
+
+.YTmusic_wrapper {
+	.YT_btn {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		top: 2%;
+		right: 7%;
+		width: 65px;
+		height: 60px;
+		gap: 5px;
+		padding: 10px 10px;
+		font-size: 18px;
+		color: rgb(113, 172, 235);
+		background: transparent;
+		border: 1px solid rgb(113, 172, 235);
+		border-radius: 5px;
+		z-index: 9999;
+
+		@include responsive(lg) {
+			top: 10%;
+			right: 9%;
+		}
+		@include responsive(xl) {
+			right: 15%;
+		}
+		@include responsive(xxl) {
+			right: 17%;
+		}
+		@media (min-width: 1530px) {
+			right: 20%;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.YT_iframe {
+		position: absolute;
+		opacity: 0;
+		bottom: 0;
+		left: 0;
+	}
+}

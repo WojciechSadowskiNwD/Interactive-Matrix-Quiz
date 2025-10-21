@@ -307,11 +307,11 @@
 @include responsive(xxl) {
 	.top_bar {
 		margin-top: 15px !important;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 
 		.left_box {
-			width: 105px;
-			height: 120px;
+			width: 92px;
+			height: clamp(100px, 5vh, 110px);
 			margin-left: 7.5%;
 
 			.left_box_nickname {

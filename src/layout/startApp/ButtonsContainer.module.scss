@@ -12,7 +12,6 @@
 	margin-top: 0;
 	padding-top: 35px;
 	cursor: none;
-	// background-color: $test;
 }
 .btn {
 	background-color: transparent;
@@ -69,7 +68,6 @@
 @include responsive(high-lg){
 	.buttonsContainer{
 		margin-top: 14%;
-		background-color: #fff;
 	}
 }
 @media (min-height: 700px){

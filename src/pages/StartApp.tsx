@@ -6,6 +6,7 @@ import WelcomeImg from "../layout/startApp/WelcomeImg";
 import BlackBoard from "../layout/startApp/BlackBoard";
 import CustomCursor from "../layout/components/CustomCursor";
 import { AnimatePresence } from "framer-motion";
+import YTmusic from "../layout/components/YTmusic";
 
 function StartApp() {
 	const dispatch = useAppDispatch();
@@ -54,7 +55,7 @@ function StartApp() {
 			<AnimatePresence>
 				{showWelcome && <WelcomeImg key={startFadeOut ? "exit" : "enter"} />}
 			</AnimatePresence>
-
+			{/* <YTmusic/> */}
 			<BlackBoard />
 			{activeCursor && <CustomCursor />}
 		</>

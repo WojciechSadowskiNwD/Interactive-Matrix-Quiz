@@ -95,7 +95,13 @@
 		}
 	}
 }
-// mobile heigh s21/22
+@include responsive(galaxyA55) {
+	.finishQuiz_wrapper {
+		.banner_box {
+			margin-top: -10px;
+		}
+	}
+}
 @include responsive(high-sm-3) {
 	.finishQuiz_wrapper {
 		.banner_box {
@@ -120,6 +126,7 @@
 @include responsive(xxl) {
 	.finishQuiz_wrapper {
 		.banner_box {
+			margin-top: 0;
 			width: 70%;
 		}
 	}

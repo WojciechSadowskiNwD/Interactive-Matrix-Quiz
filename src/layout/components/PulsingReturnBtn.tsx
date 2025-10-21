@@ -20,7 +20,7 @@ export default function PulsingReturnBtn({
 		dispatch(changeActiveComponent("options"));
 	};
 
-	return (
+	return ( 
 		<motion.button
 			onClick={() => backToOptions()}
 			data-action="goBack"

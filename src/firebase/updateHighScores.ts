@@ -61,34 +61,3 @@ export const updateHighScores = async (
 
 	return false;
 };
-
-// Prev version .js:
-// import { db } from './firebaseConfig';
-// import { collection, getDocs, query, orderBy, limit, addDoc, deleteDoc, doc } from "firebase/firestore";
-// export const updateHighScores = async (nick, newScore) => {
-//     const scoresRef = collection(db, 'scores');
-//     const q = query(scoresRef, orderBy('points', 'desc'), limit(5));
-//     const querySnapshot = await getDocs(q);
-//     const currentTopScores = querySnapshot.docs.map(doc => ({
-//         id: doc.id,
-//         ...doc.data(),
-//         points: Number(doc.data().points),
-//     }));
-//     // Check whether the new result deserves a place in the top 5.
-//     const minScore = Math.min(...currentTopScores.map(s => s.points));
-//     if (newScore > minScore || currentTopScores.length < 5) {
-//         // Dodaj nowy rekord
-//         await addDoc(scoresRef, {
-//             nick,
-//             points: newScore.toString(),
-//         });
-//         // If there are more than 5 results, remove the weakest one.
-//         if (currentTopScores.length === 5) {
-//             const lowest = currentTopScores.reduce((a, b) => a.points < b.points ? a : b);
-//             const docRef = doc(db, 'scores', lowest.id);
-//             await deleteDoc(docRef);
-//         }
-//         return true;
-//     }
-//     return false;
-// };

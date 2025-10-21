@@ -8,10 +8,10 @@ type UserState = {
 };
 
 const initialState: UserState = {
-	// userName: null,
+	userName: null,
 	selectedAvatar: null,
 	currentScore: 0,
-	userName: "Andy_001",
+	// userName: "Andy_001",
 	// selectedAvatar: "img/avatars/avatar_4.webp",
 	// currentScore: 320,
 	bonusActive: false,
@@ -34,9 +34,15 @@ const userSlice = createSlice({
 		setBonusActive: (state, action: PayloadAction<boolean>) => {
 			state.bonusActive = action.payload;
 		},
+		resetSettings: () => initialState,
 	},
 });
 
-export const { setUserName, setUserAvatar, setCurrentScore, setBonusActive } =
-	userSlice.actions;
+export const {
+	setUserName,
+	setUserAvatar,
+	setCurrentScore,
+	setBonusActive,
+	resetSettings,
+} = userSlice.actions;
 export default userSlice.reducer;

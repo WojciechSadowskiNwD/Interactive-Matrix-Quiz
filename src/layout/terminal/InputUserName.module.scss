@@ -7,7 +7,6 @@
 	margin-top: 15px;
 	width: 90%;
 	height: 60px;
-	// background-color: $test;
 
 	.inputName {
 		padding: 10px 20px;
@@ -44,7 +43,6 @@
 		}
 	}
 }
-
 @include responsive(xs-2) {
 	.inputName_box {
 		margin-bottom: 10px;
@@ -108,7 +106,6 @@
 		}
 	}
 }
-
 @include responsive(high-md-2) {
 	.inputName_box {
 		margin-top: 24px;

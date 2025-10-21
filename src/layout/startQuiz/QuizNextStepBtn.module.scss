@@ -1,13 +1,14 @@
 @import "../styles/global.scss";
 
 .nextStepBtn_wrapper {
-	position: absolute;
+	// position: absolute;
+	position: relative;  //tests
 	display: flex;
 	justify-content: center;
 	align-items: start;
 	width: 100%;
-	height: 70px;
-	bottom: 0;
+	height: 40px;
+	// bottom: 0;
 	padding-top: 5px;
 
 	.nextStepBtn {
@@ -29,8 +30,8 @@
 
 @include responsive(xs-1) {
 	.nextStepBtn_wrapper {
-		bottom: 100px;
-		height: 60px;
+		// bottom: 100px;
+		// height: 60px;
 		min-height: 58px;
 		max-height: 58px;
 
@@ -81,17 +82,11 @@
 		}
 	}
 }
-@include responsive(galaxyA55) {
-	.nextStepBtn_wrapper {
-		bottom: 10px !important;
-		background-color: rgba(255, 255, 0, 0.276);
-	}
-}
 
 @include responsive(md-1) {
 	.nextStepBtn_wrapper {
-		height: 85px;
-		min-height: 82px;
+		height: 60px;
+		min-height: 60px;
 
 		.nextStepBtn {
 			font-size: 19px;
@@ -101,7 +96,7 @@
 }
 @include responsive(md-2) {
 	.nextStepBtn_wrapper {
-		height: 70px;
+		height: 60px;
 
 		.nextStepBtn {
 			font-size: 20px;
@@ -111,7 +106,6 @@
 }
 @include responsive(md-3) {
 	.nextStepBtn_wrapper {
-		height: 65px;
 
 		.nextStepBtn {
 			padding: 11px 26px;
@@ -120,7 +114,6 @@
 }
 @include responsive(lg) {
 	.nextStepBtn_wrapper {
-		height: 80px;
 		align-items: center;
 
 		.nextStepBtn {
@@ -130,8 +123,8 @@
 }
 @include responsive(high-sm-1) {
 	.nextStepBtn_wrapper {
-		height: 70px;
-		min-height: 60px;
+		// height: 60px;
+		// min-height: 60px;
 
 		.nextStepBtn {
 			font-size: 18px;
@@ -141,7 +134,7 @@
 }
 @include responsive(notebook14) {
 	.nextStepBtn_wrapper {
-		bottom: 12px;
+		// bottom: 12px;
 		height: 40px;
 		min-height: 40px;
 
@@ -154,13 +147,13 @@
 		}
 	}
 }
-@media (min-height: 700px) {
-	.nextStepBtn_wrapper {
-		bottom: 15px;
-	}
-}
-@media (min-height: 700px) and (max-width: 412px) {
-	.nextStepBtn_wrapper {
-		bottom: 70px;
-	}
-}
+// @media (min-height: 700px) {
+// 	.nextStepBtn_wrapper {
+// 		// bottom: 15px;
+// 	}
+// }
+// @media (min-height: 700px) and (max-width: 412px) {
+// 	.nextStepBtn_wrapper {
+// 		// bottom: 70px;
+// 	}
+// }

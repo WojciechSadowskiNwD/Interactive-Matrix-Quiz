@@ -10,7 +10,6 @@
 	height: 340px;
 	padding-left: 4%;
 	padding-right: 4%;
-	// background-color: $test;
 }
 .wrong {
 	background-color: rgba(33, 33, 104, 0.956) !important;
@@ -83,7 +82,6 @@
 }
 @include responsive(high-sm-1) {
 	.answer_bars {
-		margin-top: 15px;
 		margin-top: 0px;
 	}
 }
@@ -100,5 +98,10 @@
 	.answer_bars {
 		margin-top: 15px;
 		height: 340px;
+	}
+}
+@include responsive(high-md-1) {
+	.answer_bars {
+		height: auto;
 	}
 }

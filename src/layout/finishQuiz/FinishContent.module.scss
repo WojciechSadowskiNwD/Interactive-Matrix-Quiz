@@ -1,6 +1,5 @@
 @import "../styles/global.scss";
 
-
 .content_layout {
 	width: 100%;
 	height: 100%;
@@ -8,7 +7,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// background-color: $test;
 
 	.avatar_box {
 		position: relative;
@@ -190,6 +188,18 @@
 		}
 	}
 }
+@include responsive(galaxyA55) {
+	.content_layout {
+		margin-top: 30px;
+		height: auto;
+
+		.avatar_box {
+			margin-bottom: 8px;
+			width: 80%;
+			height: 240px;
+		}
+	}
+}
 @include responsive(notebook14) {
 	.content_layout {
 		margin-top: 0px;
@@ -207,8 +217,6 @@
 		margin-top: 0;
 	}
 }
-
-// mobile heigh s21/22
 @include responsive(high-sm-3) {
 	.content_layout {
 		.avatar_box {
@@ -255,4 +263,4 @@
 		height: 590px;
 		max-height: 590px;
 	}
-} 
+}

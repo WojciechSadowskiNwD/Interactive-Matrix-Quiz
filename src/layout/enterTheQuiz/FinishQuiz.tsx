@@ -8,7 +8,6 @@ export default function FinishQuiz() {
 	const [titleMarginValue, setTitleMarginValue] = useState<number>(40);
 
 	useEffect(() => {
-		// only for iPhone SE
 		if (window.innerWidth === 375) {
 			setTitleMarginValue(20);
 		} else if (window.innerWidth === 768) {
@@ -17,7 +16,7 @@ export default function FinishQuiz() {
 			setTitleMarginValue(0);
 		} else {
 			setTitleMarginValue(40);
-		}
+		} 
 	}, []);
 
 	return (
