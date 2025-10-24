@@ -6,6 +6,7 @@ A single-page web application (SPA), inspired by the Matrix movie series.
 The project was designed and implemented with both mobile devices and large screens in mind – fully responsive, in line with RWD principles.
 The goals of the application were:
 -	creating a quiz with immersion and interaction effects,
+-   the ability to turn the background soundtrack on/off (flashing button in the upper right corner of the screen)
 -	using modern animation techniques (Framer Motion library, smooth transitions, canvas background),
 -	integrating the quiz with external data sources (REST API, Firebase),
 -	implementing TypeScript and state management mechanisms (Reducer, async/await).
@@ -41,6 +42,7 @@ The list highlights both the tools used and the specific language/React features
 -	**react-redux** – state management
 -	**react-router-dom** – routing
 -	**framer-motion** – smooth, interactive animations
+-   **react-youtube** - embedding and controlling YouTube videos as React components, in this case the music itself
 -	**firebase/app** – the main Firebase SDK module, used to initialize the application and provide access to other Firebase services
 -	**firebase/firestore** – Cloud Firestore support, a NoSQL cloud database enabling real-time data storage and retrieval
 
